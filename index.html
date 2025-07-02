@@ -15,13 +15,13 @@
       브라우저가 비디오를 지원하지 않습니다.
     </video>
     <div class="video-overlay">
-      <h1 class="video-title">갤럭시가 Ai와 결합하다</h1>
-      <p class="video-subtitle">구매특전 알아보기</p>
+      <h1 class="video-title">갤럭시와 Ai가 결합하다</h1>
+      <p class="video-subtitle">구매특전</p>
     </div>
   </div>
 
   <!-- 상단 서브 메뉴 -->
-  <div class="top-bar hide-on-mobile">
+  <div class="top-bar hide-on-mobile" id="topBar">
     <a href="#">고객센터</a>
     <a href="#">비즈니스</a>
     <a href="#">삼성스토어</a>
@@ -29,40 +29,43 @@
   </div>
 
   <!-- 헤더 -->
-  <header class="header" id="mainHeader">
-    <nav class="nav-menu">
-      <a href="#" id="logo">
-        <img src="image/logo_samsung_white.png" alt="삼성로고" id="logoImage">
-      </a>
+ <header class="header" id="mainHeader">
+  <nav class="nav-menu">
+    <a href="#" id="logo">
+      <img src="image/logo_samsung_white.png" alt="삼성로고" id="logoImage">
+    </a>
 
-      <a href="#" id="menuToggle" class="menu-always">전체메뉴</a>
-      <a href="#" class="menu-hide-on-mobile">기획전</a>
-      <a href="#" class="menu-hide-on-mobile">기업정보</a>
-      <a href="#" class="menu-hide-on-mobile">고객지원</a>
+    <!-- ✅ 모바일에서는 숨겨야 하므로 class 수정 -->
+    <a href="#" id="menuToggle" class="menu-hide-on-mobile">전체메뉴</a>
+    <a href="#" class="menu-hide-on-mobile">기획전</a>
+    <a href="#" class="menu-hide-on-mobile">기업정보</a>
+    <a href="#" class="menu-hide-on-mobile">고객지원</a>
 
-      <div class="search-box menu-always">
-        <input type="text" class="search-input" placeholder="갤럭시 25 엣지">
-        <button class="search-btn">
-          <img src="image/Search1.png" alt="검색">
-        </button>
-      </div>
+    <div class="search-box menu-always">
+      <input type="text" class="search-input" placeholder="갤럭시 25 엣지">
+      <button class="search-btn">
+        <img src="image/Search1.png" alt="검색">
+      </button>
+    </div>
 
-      <!-- 데스크탑용 아이콘 -->
-      <div class="icon-group menu-hide-on-mobile">
-        <a href="#"><img id="loginImgDesktop" src="image/login_white.png" alt="로그인"></a>
-        <a href="#"><img id="cartImgDesktop" src="image/cart_white.png" alt="카트"></a>
-      </div>
+    <!-- 데스크탑용 아이콘 -->
+    <div class="icon-group menu-hide-on-mobile">
+      <a href="#"><img id="loginImgDesktop" src="image/login_white.png" alt="로그인"></a>
+      <a href="#"><img id="cartImgDesktop" src="image/cart_white.png" alt="카트"></a>
+    </div>
 
-      <!-- 모바일용 아이콘 -->
-      <div class="icon-group menu-mobile-only">
-        <a href="#"><img id="loginImgMobile" src="image/login_white.png" alt="로그인"></a>
-        <a href="#"><img id="cartImgMobile" src="image/cart_white.png" alt="카트"></a>
-      </div>
-    </nav>
-  </header>
+    <!-- 모바일용 아이콘 -->
+    <div class="icon-group menu-mobile-only">
+      <a href="#"><img id="loginImgMobile" src="image/login_white.png" alt="로그인"></a>
+      <a href="#"><img id="cartImgMobile" src="image/cart_white.png" alt="카트"></a>
+      <button id="menuToggleMobile">
+        <img src="image/s_m_h.jpg" alt="메뉴">
+      </button>
+    </div>
+  </nav>
+</header>
 
-  
-  
+
   <div class="main-visual dropdown-content" id="dropdownPanel">
   <div class="dropdown-inner">
     <!-- 왼쪽 텍스트 메뉴 영역 -->
@@ -209,22 +212,107 @@
 
   <!-- 콘텐츠 확장 영역 -->
   <div class="content2">
-    <h3>컨텐츠1</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque labore, laborum iure magni nisi neque soluta eligendi quaerat assumenda quas vel, deserunt nulla nesciunt. Exercitationem sint sed tenetur veniam harum.</p>
+  <div class="highlight-banner">
+    <div class="highlight-text">
+      <h2>Galaxy S25 <span>|</span> S25+</h2>
+      <h3>Galaxy AI ✨</h3>
+      <div class="highlight-buttons">
+        <a href="#" class="btn-learn">더 알아보기</a>
+        <a href="#" class="btn-benefit">구매 혜택 보기</a>
+      </div>
+    </div>
+    <div class="highlight-image">
+      <img src="image/s_m_event2.jpg" alt="Galaxy S25 제품 이미지">
+    </div>
   </div>
-  <div class="content3">
+</div>
+  <!-- 슬라이드 콘텐츠 영역 -->
+<div class="slider-content">
+  <div class="slider-item">
+    <img src="image/s_c_galaxy1.jpg" alt="Galaxy S25 Ultra">
+    <h4>Galaxy S25 Ultra</h4>
+  </div>
+  <div class="slider-item">
+    <img src="image/s_c_galaxy2.jpg" alt="Galaxy S25 Edge">
+    <h4>Galaxy S25 Edge</h4>
+  </div>
+  <div class="slider-item">
+    <img src="image/s_c_galaxy3.jpg" alt="Galaxy Tab S10 Ultra">
+    <h4>Galaxy Tab S10 Ultra</h4>
+  </div>
+  <div class="slider-item">
+    <img src="image/s_c_galaxy4.jpg" alt="Galaxy Watch7">
+    <h4>Galaxy Watch7</h4>
+  </div>
+</div>
+   <div class="content3">
+    <h3>컨텐츠3</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae officia ab nesciunt maiores voluptates, iure necessitatibus rem velit explicabo, neque, quam consequatur corporis dignissimos fugiat cum eius recusandae esse amet!</p>
+  </div>
+    <div class="content3">
+    <h3>컨텐츠2</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae officia ab nesciunt maiores voluptates, iure necessitatibus rem velit explicabo, neque, quam consequatur corporis dignissimos fugiat cum eius recusandae esse amet!</p>
+  </div>
+    <div class="content3">
     <h3>컨텐츠2</h3>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae officia ab nesciunt maiores voluptates, iure necessitatibus rem velit explicabo, neque, quam consequatur corporis dignissimos fugiat cum eius recusandae esse amet!</p>
   </div>
   
+  
 
   <!-- 푸터 -->
-  <footer class="footer">
-    <h3>하단</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae officia ab nesciunt maiores voluptates, iure necessitatibus rem velit explicabo, neque, quam consequatur corporis dignissimos fugiat cum eius recusandae esse amet!</p>
+ <footer class="footer">
+  <div class="footer-columns">
+    <div class="footer-column">
+      <h4>제품</h4>
+      <ul>
+        <li><a href="#">갤럭시 스마트폰</a></li>
+        <li><a href="#">갤럭시 탭</a></li>
+        <li><a href="#">갤럭시 워치</a></li>
+        <li><a href="#">TV</a></li>
+        <li><a href="#">냉장고</a></li>
+        <!-- 필요시 추가 -->
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>기획전/혜택</h4>
+      <ul>
+        <li><a href="#">AI 구독클럽</a></li>
+        <li><a href="#">이벤트</a></li>
+        <li><a href="#">카드혜택</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>고객서비스</h4>
+      <ul>
+        <li><a href="#">삼성전자 멤버십</a></li>
+        <li><a href="#">서비스센터 찾기</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>지속가능경영</h4>
+      <ul>
+        <li><a href="#">환경</a></li>
+        <li><a href="#">접근성</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>회사소개</h4>
+      <ul>
+        <li><a href="#">기업정보</a></li>
+        <li><a href="#">채용</a></li>
+        <li><a href="#">뉴스룸</a></li>
+      </ul>
+    </div>
   </div>
-  </footer>
 
-  <script src="js/s_script.js"></script>
+  <div class="footer-bottom">
+    <p>삼성전자 주식회사 대표이사 : 전영현 ｜ 사업자등록번호 : 124-81-00998</p>
+    <p>주소 : 경기도 수원시 영통구 삼성로 129 (매탄동) ｜ 통신판매업 신고 : 2000-경기수원-0515</p>
+    <p>고객센터: 1588-3366 ｜ © 2025 Samsung Electronics Co., Ltd. All rights reserved.</p>
+  </div>
+</footer>
+<script src="/js/s_script.js"></script>
 </body>
 </html>
