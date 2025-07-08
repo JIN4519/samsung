@@ -1,332 +1,477 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>진성 웹페이지</title>
-  <link rel="stylesheet" href="css/s_css.css">
-</head>
-<body>
-  <!-- 팝업 -->
-  <div class="popup">
-    해당 사이트는 학습용으로 제작되었으며 삼성홈페이지와 무관합니다.
-    구직용 포트폴리오로 상업적 목적이 없음을 알립니다.
-    <button>닫기</button>
-  </div>
-  <div class="wrap">
-
-  <!-- 배경 영상 -->
-  <div class="video-container" id="videoSection">
-    <video autoplay muted loop playsinline>
-      <source src="image/main_visual.mp4" type="video/mp4">
-      브라우저가 비디오를 지원하지 않습니다.
-    </video>
-    <div class="video-overlay">
-      <h1 class="video-title">갤럭시와 Ai가 결합하다</h1>
-      <p class="video-subtitle">구매특전</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>진성 웹페이지</title>
+    <link rel="stylesheet" href="css/s_css.css" />
+  </head>
+  <body>
+    <!-- 팝업 -->
+    <div class="popup">
+      해당 사이트는 학습용으로 제작되었으며 삼성홈페이지와 무관합니다. 구직용
+      포트폴리오로 상업적 목적이 없음을 알립니다.
+      <button>닫기</button>
     </div>
-  </div>
-
-  <!-- 상단 서브 메뉴 -->
-  <div class="top-bar hide-on-mobile" id="topBar">
-    <a href="#">고객센터</a>
-    <a href="#">비즈니스</a>
-    <a href="#">삼성스토어</a>
-    <a href="#">지속가능경영</a>
-  </div>
-
-  <!-- 헤더 -->
- <header class="header" id="mainHeader">
-  <nav class="nav-menu">
-    <a href="#" id="logo">
-      <img src="image/logo_samsung_white.png" alt="삼성로고" id="logoImage">
-    </a>
-
-    <!-- ✅ 모바일에서는 숨겨야 하므로 class 수정 -->
-    <a href="#" id="menuToggle" class="menu-hide-on-mobile">전체메뉴</a>
-    <a href="#" class="menu-hide-on-mobile">기획전</a>
-    <a href="#" class="menu-hide-on-mobile">기업정보</a>
-    <a href="#" class="menu-hide-on-mobile">고객지원</a>
-
-    <div class="search-box menu-always">
-      <input type="text" class="search-input" placeholder="갤럭시 25 엣지">
-      <button class="search-btn">
-        <img src="image/Search1.png" alt="검색">
-      </button>
-    </div>
-
-    <!-- 데스크탑용 아이콘 -->
-    <div class="icon-group menu-hide-on-mobile">
-      <a href="#"><img id="loginImgDesktop" src="image/login_white.png" alt="로그인"></a>
-      <a href="#"><img id="cartImgDesktop" src="image/cart_white.png" alt="카트"></a>
-    </div>
-
-    <!-- 모바일용 아이콘 -->
-    <div class="icon-group menu-mobile-only">
-      <a href="#"><img id="loginImgMobile" src="image/login_white.png" alt="로그인"></a>
-      <a href="#"><img id="cartImgMobile" src="image/cart_white.png" alt="카트"></a>
-      <button id="menuToggleMobile">
-        <img src="image/s_m_h.jpg" alt="메뉴">
-      </button>
-    </div>
-  </nav>
-</header>
-
-
-  <div class="main-visual dropdown-content" id="dropdownPanel">
-  <div class="dropdown-inner">
-    <!-- 왼쪽 텍스트 메뉴 영역 -->
-    <div class="dropdown-category">
-      <div class="category">
-        <h4>모바일</h4>
-        <ul>
-          <li><a href="#">Galaxy S </a></li>
-          <li><a href="#">Galaxy Z </a></li>
-          <li><a href="#">Galaxy A </a></li>
-          <li><a href="#"> 태블릿 (Tab S/A)</a></li>
-          <li><a href="#">Galaxy Watch/Buds</a></li>
-          <li><a href="#">액세서리</a></li>
-        </ul>
+    <div class="wrap">
+      <!-- 배경 영상 -->
+      <div class="video-container" id="videosection">
+        <video autoplay muted loop playsinline>
+          <source src="image/main_visual.mp4" type="video/mp4" />
+          브라우저가 비디오를 지원하지 않습니다.
+        </video>
+        <div class="video-overlay">
+          <h1 class="video-title">갤럭시와 Ai가 결합하다</h1>
+          <p class="video-subtitle">구매특전</p>
+        </div>
       </div>
-      <div class="category">
-        <h4>TV/오디오</h4>
-        <ul>
-          <li><a href="#">Neo QLED / OLED / Crystal UHD</a></li>
-          <li><a href="#">라이프스타일 TV (The Frame 등)</a></li>
-          <li><a href="#">프로젝터 (The Freestyle 등)</a></li>
-          <li><a href="#">블루투스 해드폰 </a></li>
-          <li><a href="#">사운드바 </a></li>
-        </ul>
+
+      <!-- 상단 서브 메뉴 -->
+      <div class="top-bar hide-on-mobile" id="topbar">
+        <a href="#">고객센터</a>
+        <a href="#">비즈니스</a>
+        <a href="#">삼성스토어</a>
+        <a href="#">지속가능경영</a>
       </div>
-      <div class="category">
-        <h4>가전제품</h4>
-        <ul>
-          <li><a href="#">냉장고 / 김치냉장고 </a></li>
-          <li><a href="#">세탁기 / 건조기 / 스타일러</a></li>
-          <li><a href="#">에어컨 / 공기청정기</a></li>
-          <li><a href="#">청소기 (제트, 로봇청소기 등)</a></li>
-          <li><a href="#">전자레인지 / 오븐 / 식기세척기</a></li>
-        </ul>
+
+      <!-- 헤더 -->
+      <header class="header" id="mainheader">
+        <nav class="nav-menu">
+          <a href="#" id="logo">
+            <img
+              src="image/logo_samsung_white.png"
+              alt="삼성로고"
+              id="logoimage"
+            />
+          </a>
+
+          <!-- 모바일에서는 숨겨야 하므로 class 수정 -->
+          <a href="#" id="menutoggle" class="menu-hide-on-mobile">전체메뉴</a>
+          <a href="#" id="promotoggle" class="menu-hide-on-mobile">기획전</a>
+          <a href="#" class="menu-hide-on-mobile">기업정보</a>
+          <a href="#" class="menu-hide-on-mobile">고객지원</a>
+
+          <div class="search-box menu-always">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="갤럭시 25 엣지"
+            />
+            <button class="search-btn">
+              <img src="image/ssearch1.png" alt="검색" />
+            </button>
+          </div>
+
+          <!-- 데스크탑용 아이콘 -->
+          <div class="icon-group menu-hide-on-mobile">
+            <a href="#"
+              ><img
+                id="loginimgdesktop"
+                src="image/login_white.png"
+                alt="로그인"
+            /></a>
+            <a href="#"
+              ><img id="cartimgdesktop" src="image/cart_white.png" alt="카트"
+            /></a>
+          </div>
+
+          <!-- 모바일용 아이콘 -->
+          <div class="icon-group menu-mobile-only">
+            <a href="#"
+              ><img id="loginimgmobile" src="image/login_white.png" alt="로그인"/></a>
+            <a href="#"
+              ><img id="cartimgmobile" src="image/cart_white.png" alt="카트"
+            /></a>
+            <a href="#" id="menutogglemobile">
+              <img src="image/s_m_h.jpg" alt="메뉴" />
+            </a>
+          </div>
+        </nav>
+
+        <!-- 모바일 전용 메뉴 -->
+        <div class="mobile-menu-panel" id="mobilemenupanel">
+          <ul>
+            <li><a href="#">기업정보</a></li>
+            <li><a href="#">고객지원</a></li>
+            <li><a href="#">삼성스토어</a></li>
+            <li><a href="#">지속가능경영</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="main-visual dropdown-content" id="dropdownpanel">
+        <div class="dropdown-inner">
+          <!-- 왼쪽 텍스트 메뉴 영역 -->
+          <div class="dropdown-category">
+            <div class="category">
+              <h4>모바일</h4>
+              <ul>
+                <li><a href="#">Galaxy S </a></li>
+                <li><a href="#">Galaxy Z </a></li>
+                <li><a href="#">Galaxy A </a></li>
+                <li><a href="#"> 태블릿 (Tab S/A)</a></li>
+                <li><a href="#">Galaxy Watch/Buds</a></li>
+                <li><a href="#">액세서리</a></li>
+              </ul>
+            </div>
+            <div class="category">
+              <h4>TV/오디오</h4>
+              <ul>
+                <li><a href="#">Neo QLED / OLED / Crystal UHD</a></li>
+                <li><a href="#">라이프스타일 TV (The Frame 등)</a></li>
+                <li><a href="#">프로젝터 (The Freestyle 등)</a></li>
+                <li><a href="#">블루투스 해드폰 </a></li>
+                <li><a href="#">사운드바 </a></li>
+              </ul>
+            </div>
+            <div class="category">
+              <h4>가전제품</h4>
+              <ul>
+                <li><a href="#">냉장고 / 김치냉장고 </a></li>
+                <li><a href="#">세탁기 / 건조기 / 스타일러</a></li>
+                <li><a href="#">에어컨 / 공기청정기</a></li>
+                <li><a href="#">청소기 (제트, 로봇청소기 등)</a></li>
+                <li><a href="#">전자레인지 / 오븐 / 식기세척기</a></li>
+              </ul>
+            </div>
+            <div class="category">
+              <h4>PC/모니터</h4>
+              <ul>
+                <li><a href="#">Galaxy Book 시리즈</a></li>
+                <li><a href="#">스마트 모니터 / 게이밍 모니터</a></li>
+                <li><a href="#">데스크탑 액세서리 (마우스, 허브 등)</a></li>
+              </ul>
+            </div>
+            <div class="category">
+              <h4>스토리지/카메라</h4>
+              <ul>
+                <li><a href="#">외장 SSD</a></li>
+                <li><a href="#">NVMe</a></li>
+                <li><a href="#">microSD 카드</a></li>
+                <li><a href="#">스마트카메라/링카 등</a></li>
+              </ul>
+            </div>
+
+            <div class="category">
+              <h4>스마트 서비스/앱</h4>
+              <ul>
+                <li><a href="#">SmartThings</a></li>
+                <li><a href="#">Samsung Members/Samsung Pay</a></li>
+                <li><a href="#">삼성 케어플러스</a></li>
+                <li><a href="#">삼성닷컴 정품 등록</a></li>
+              </ul>
+            </div>
+            <div class="category">
+              <h4>온라인 전용 제품 / 혜택</h4>
+              <ul>
+                <li><a href="#">단독 혜택 제품</a></li>
+                <li><a href="#">사전예약 / 프로모션 / 럭키박스</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 오른쪽 이미지 카드 영역 -->
+          <div class="dropdown-visual grid-style">
+            <div class="grid-card">
+              <img src="image/s_r_galaxi_ai.webp" alt="갤럭시 AI" />
+              <p>갤럭시 AI</p>
+            </div>
+            <div class="grid-card">
+              <img src="image/s_r_one_ui.webp" alt="One UI" />
+              <p>One UI</p>
+            </div>
+            <div class="grid-card">
+              <img src="image/s_r_watch_health.webp" alt="삼성 헬스" />
+              <p>삼성 헬스</p>
+            </div>
+            <div class="grid-card">
+              <img src="image/s_r_vision_ai.webp" alt="삼성비전" />
+              <p>삼성 Vision Ai</p>
+            </div>
+            <div class="grid-card">
+              <img src="image/s_r_tv_all.webp" alt="삼성 티비 올올" />
+              <p>삼성TV의 모든 것</p>
+            </div>
+            <div class="grid-card">
+              <img src="image/s_r_bespoke_ai.webp" alt="BEsopke ai" />
+              <p>Bespoke Ai의 기술</p>
+            </div>
+            <div class="grid-card">
+              <img src="image/s_r_setupguide_ai.webp" alt="설치가이드" />
+              <p>설치가이드</p>
+            </div>
+            <div class="grid-card">
+              <img src="image/s_r_galaxy_sp.webp" alt="갤럭시의 특별함" />
+              <p>갤럭시의 특별함</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="category">
-        <h4>PC/모니터</h4>
-        <ul>
-          <li><a href="#">Galaxy Book 시리즈</a></li>
-          <li><a href="#">스마트 모니터 / 게이밍 모니터</a></li>
-          <li><a href="#">데스크탑 액세서리 (마우스, 허브 등)</a></li>
-        </ul>
+      <div class="main-visual dropdown-content" id="promopanel">
+        <div class="dropdown-inner">
+          <!-- 왼쪽 텍스트 메뉴 영역 -->
+          <div class="dropdown-category">
+            <div class="category">
+              <h4>모바일 기획전</h4>
+              <ul>
+                <li><a href="#"><img src="image/s_mobile1.webp" alt="모바일 기획전"></a></li>
+                <li><a href="#">갤럭시의 특가를 확인하세요! </a></li>
+              </ul>
+            </div>
+            <div class="category">
+              <h4>TV/오디오 기획전</h4>
+              <ul>
+                 <li><a href="#"><img src="image/s_neo_qled.webp" alt="TV/오디오 기획전"></a></li>
+                <li><a href="#">QLED의 대폭 할인 이벤트! </a></li>
+              </ul>
+            </div>
+            <div class="category">
+              <h4>가전제품 기획전</h4>
+               <ul>
+                 <li><a href="#"><img src="image/s_freeze1.webp" alt="가전제품 기획전"></a></li>
+                <li><a href="#">여름을 맞아 냉장고 대폭 할인 이벤트! </a></li>
+              </ul>
+            </div>
+            <div class="category">
+              <h4>PC/모니터 기획전</h4>
+               <ul>
+                 <li><a href="#"><img src="image/s_laptop.webp" alt="PC/모니터 기획전"></a></li>
+                <li><a href="#">데스크탑 및 모니터 20% 할인!</a></li>
+              </ul>
+            </div>
+            <div class="category">
+              <h4>스토리지/카메라 기획전</h4>
+              <ul>
+                <li><a href="#">외장 SSD 10% 할인 이벤트!</a></li>
+                <li><a href="#">NVMe 10% 할인 이벤트!</a></li>
+                <li><a href="#">microSD 카드 학생 할인 이벤트!</a></li>
+              </ul>
+            </div>
+
+            <div class="category">
+              <h4>스마트 서비스/앱 기획전</h4>
+              <ul>
+                <li><a href="#">SmartThings 할인!</a></li>
+                <li><a href="#">S Members/Pay 2년 무상 이벤트!</a></li>
+                <li><a href="#">삼성 케어플러스 1년 무료!</a></li>
+                <li><a href="#">삼성닷컴 정품 등록시 사은품 증정!</a></li>
+              </ul>
+            </div>
+            <div class="category">
+              <h4>온라인 전용 제품 / 혜택 / 할인 이벤트</h4>
+              <ul>
+                <li><a href="#">단독 혜택 제품</a></li>
+                <li><a href="#">사전예약 / 프로모션 / 럭키박스</a></li>
+                <li><a href="#">AI 구독 클럽/ 3개 이상 구독 시 할인!</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 오른쪽 이미지 카드 영역 -->
+          <div class="dropdown-visual grid-style">
+            <div class="grid-card">
+              <img src="image/s_r_galaxi_ai.webp" alt="갤럭시 AI" />
+              <p>갤럭시 AI</p>
+            </div>
+            <div class="grid-card">
+              <img src="image/s_r_one_ui.webp" alt="One UI" />
+              <p>One UI</p>
+            </div>
+            <div class="grid-card">
+              <img src="image/s_r_watch_health.webp" alt="삼성 헬스" />
+              <p>삼성 헬스</p>
+            </div>
+            <div class="grid-card">
+              <img src="image/s_r_vision_ai.webp" alt="삼성비전" />
+              <p>삼성 Vision Ai</p>
+            </div>
+            <div class="grid-card">
+              <img src="image/s_r_tv_all.webp" alt="삼성 티비 올올" />
+              <p>삼성TV의 모든 것</p>
+            </div>
+            <div class="grid-card">
+              <img src="image/s_r_bespoke_ai.webp" alt="BEsopke ai" />
+              <p>Bespoke Ai의 기술</p>
+            </div>
+            <div class="grid-card">
+              <img src="image/s_r_setupguide_ai.webp" alt="설치가이드" />
+              <p>설치가이드</p>
+            </div>
+            <div class="grid-card">
+              <img src="image/s_r_galaxy_sp.webp" alt="갤럭시의 특별함" />
+              <p>갤럭시의 특별함</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="category">
-        <h4>스토리지/카메라</h4>
-        <ul>
-          <li><a href="#">외장 SSD</a></li>
-          <li><a href="#">NVMe</a></li>
-          <li><a href="#">microSD 카드</a></li>
-          <li><a href="#">스마트카메라/링카 등</a></li>
-        </ul>
-      </div>
-      
-       <div class="category">
-        <h4>스마트 서비스/앱</h4>
-        <ul>
-          <li><a href="#">SmartThings</a></li>
-          <li><a href="#">Samsung Members/Samsung Pay</a></li>
-          <li><a href="#">삼성 케어플러스</a></li>
-          <li><a href="#">삼성닷컴 정품 등록</a></li>
-        </ul>
-      </div>
-       <div class="category">
-        <h4>온라인 전용 제품 / 혜택</h4>
-        <ul>
-          <li><a href="#">단독 혜택 제품</a></li>
-          <li><a href="#">사전예약 / 프로모션 / 럭키박스</a></li>
-        </ul>
-      </div>
-      
     </div>
 
-    <!-- 오른쪽 이미지 카드 영역 -->
-    <div class="dropdown-visual grid-style">
-  <div class="grid-card">
-    <img src="image/s_r_galaxi_ai.webp" alt="갤럭시 AI">
-    <p>갤럭시 AI</p>
-  </div>
-  <div class="grid-card">
-    <img src="image/s_r_one_ui.webp" alt="One UI">
-    <p>One UI</p>
-  </div>
-  <div class="grid-card">
-    <img src="image/s_r_watch_health.webp" alt="삼성 헬스">
-    <p>삼성 헬스</p>
-  </div>
-  <div class="grid-card">
-    <img src="image/s_r_vision_ai.webp" alt="삼성비전">
-    <p>삼성 Vision Ai</p>
-  </div>
-  <div class="grid-card">
-    <img src="image/s_r_tv_all.webp" alt="삼성 티비 올올">
-    <p>삼성TV의 모든 것</p>
-  </div>
-  <div class="grid-card">
-    <img src="image/s_r_bespoke_ai.webp" alt="BEsopke ai">
-    <p>Bespoke Ai의 기술</p>
-  </div>
-  <div class="grid-card">
-    <img src="image/s_r_setupguide_ai.webp" alt="설치가이드">
-    <p>설치가이드</p>
-  </div>
-  <div class="grid-card">
-    <img src="image/s_r_galaxy_sp.webp" alt="갤럭시의 특별함">
-    <p>갤럭시의 특별함</p>
-  </div>
-</div>
-      
-    </div>
-  </div>
-</div>
-
-  <!-- 콘텐츠 -->
-  <div class="content-wrapper">
-    <div class="content-box">
-      <div class="thumb"><img src="image/s_c_galaxy1.jpg" alt=""></div>
-      <h4>겔럭시 울트라 25 엣지</h4>
-      <p>
-        New 갤럭시 AI 구독클럽 월 5,900원으로 받아가는 다양한 혜택!
-      </p>
-    </div>
-  <div class="content-box">
-      <div class="thumb"><img src="image/s_c_galaxy2.jpg" alt=""></div>
-      <h4>BESPOKE AI 냉장고</h4>
-      <p>
-        삼성전자가 3일(현지시간) 멕시코 엑스포시티에서 2025년형 ‘비스포크 AI 가전’의 혁신 기술과 서비스를 소개하는 ‘2025년 홈라이프 테크 세미나’를 개최했다.
-      </p>
-    </div>
-    <div class="content-box">
-      <div class="thumb"><img src="image/s_c_galaxy3.jpg" alt=""></div>
-      <h4>BESPOKE AI 냉장고</h4>
-      <p>
-        삼성전자가 3일(현지시간) 멕시코 엑스포시티에서 2025년형 ‘비스포크 AI 가전’의 혁신 기술과 서비스를 소개하는 ‘2025년 홈라이프 테크 세미나’를 개최했다.
-      </p>
-    </div>
-    <div class="content-box">
-      <div class="thumb"><img src="image/s_c_galaxy4.jpg" alt=""></div>
-      <h4>BESPOKE AI 냉장고</h4>
-      <p>
-        삼성전자가 3일(현지시간) 멕시코 엑스포시티에서 2025년형 ‘비스포크 AI 가전’의 혁신 기술과 서비스를 소개하는 ‘2025년 홈라이프 테크 세미나’를 개최했다.
-      </p>
-    </div>
-  </div>
-
-  <!-- 콘텐츠 확장 영역 -->
-  <div class="content2">
-  <div class="highlight-banner">
-    <div class="highlight-text">
-      <h2>Galaxy S25 <span>|</span> S25+</h2>
-      <h3>Galaxy AI ✨</h3>
-      <div class="highlight-buttons">
-        <a href="#" class="btn-learn">더 알아보기</a>
-        <a href="#" class="btn-benefit">구매 혜택 보기</a>
+    <!-- 콘텐츠 -->
+    <div class="content-wrapper">
+      <div class="content-box">
+        <div class="thumb"><img src="image/s_c_galaxy1.jpg" alt="" /></div>
+        <h4>겔럭시 울트라 25 엣지</h4>
+        <p>New 갤럭시 AI 구독클럽 월 5,900원으로 받아가는 다양한 혜택!</p>
+      </div>
+      <div class="content-box">
+        <div class="thumb"><img src="image/s_c_galaxy2.jpg" alt="" /></div>
+        <h4>BESPOKE AI 냉장고</h4>
+        <p>
+          삼성전자가 3일(현지시간) 멕시코 엑스포시티에서 2025년형 ‘비스포크 AI
+          가전’의 혁신 기술과 서비스를 소개하는 ‘2025년 홈라이프 테크 세미나’를
+          개최했다.
+        </p>
+      </div>
+      <div class="content-box">
+        <div class="thumb"><img src="image/s_c_galaxy3.jpg" alt="" /></div>
+        <h4>BESPOKE AI 냉장고</h4>
+        <p>
+          삼성전자가 3일(현지시간) 멕시코 엑스포시티에서 2025년형 ‘비스포크 AI
+          가전’의 혁신 기술과 서비스를 소개하는 ‘2025년 홈라이프 테크 세미나’를
+          개최했다.
+        </p>
+      </div>
+      <div class="content-box">
+        <div class="thumb"><img src="image/s_c_galaxy4.jpg" alt="" /></div>
+        <h4>BESPOKE AI 냉장고</h4>
+        <p>
+          삼성전자가 3일(현지시간) 멕시코 엑스포시티에서 2025년형 ‘비스포크 AI
+          가전’의 혁신 기술과 서비스를 소개하는 ‘2025년 홈라이프 테크 세미나’를
+          개최했다.
+        </p>
       </div>
     </div>
-    <div class="highlight-image">
-      <img src="image/s_m_event2.jpg" alt="Galaxy S25 제품 이미지">
+
+    <!-- 콘텐츠 확장 영역 -->
+    <div class="content2">
+      <div class="highlight-banner">
+        <div class="highlight-text">
+          <h2>Galaxy S25 <span>|</span> S25+</h2>
+          <h3>Galaxy AI ✨</h3>
+          <div class="highlight-buttons">
+            <a href="#" class="btn-learn">더 알아보기</a>
+            <a href="#" class="btn-benefit">구매 혜택 보기</a>
+          </div>
+        </div>
+        <div class="highlight-image">
+          <img src="image/s_m_event2.jpg" alt="Galaxy S25 제품 이미지" />
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-  <!-- 슬라이드 콘텐츠 영역 -->
-<div class="slider-content">
-  <div class="slider-item">
-    <img src="image/s_c_galaxy1.jpg" alt="Galaxy S25 Ultra">
-    <h4>Galaxy S25 Ultra</h4>
-  </div>
-  <div class="slider-item">
-    <img src="image/s_c_galaxy2.jpg" alt="Galaxy S25 Edge">
-    <h4>Galaxy S25 Edge</h4>
-  </div>
-  <div class="slider-item">
-    <img src="image/s_c_galaxy3.jpg" alt="Galaxy Tab S10 Ultra">
-    <h4>Galaxy Tab S10 Ultra</h4>
-  </div>
-  <div class="slider-item">
-    <img src="image/s_c_galaxy4.jpg" alt="Galaxy Watch7">
-    <h4>Galaxy Watch7</h4>
-  </div>
-</div>
-   <div class="content3">
-    <h3>컨텐츠3</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae officia ab nesciunt maiores voluptates, iure necessitatibus rem velit explicabo, neque, quam consequatur corporis dignissimos fugiat cum eius recusandae esse amet!</p>
-  </div>
+    <!-- 슬라이드 콘텐츠 영역 -->
+    <div class="slider-content">
+      <div class="slider-item">
+        <img src="image/s_c_galaxy1.jpg" alt="Galaxy S25 Ultra" />
+        <h4>Galaxy S25 Ultra</h4>
+      </div>
+      <div class="slider-item">
+        <img src="image/s_c_galaxy2.jpg" alt="Galaxy S25 Edge" />
+        <h4>Galaxy S25 Edge</h4>
+      </div>
+      <div class="slider-item">
+        <img src="image/s_c_galaxy3.jpg" alt="Galaxy Tab S10 Ultra" />
+        <h4>Galaxy Tab S10 Ultra</h4>
+      </div>
+      <div class="slider-item">
+        <img src="image/s_c_galaxy4.jpg" alt="Galaxy Watch7" />
+        <h4>Galaxy Watch7</h4>
+      </div>
+    </div>
     <div class="content3">
-    <h3>컨텐츠2</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae officia ab nesciunt maiores voluptates, iure necessitatibus rem velit explicabo, neque, quam consequatur corporis dignissimos fugiat cum eius recusandae esse amet!</p>
-  </div>
+      <h3>컨텐츠3</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+        officia ab nesciunt maiores voluptates, iure necessitatibus rem velit
+        explicabo, neque, quam consequatur corporis dignissimos fugiat cum eius
+        recusandae esse amet!
+      </p>
+    </div>
     <div class="content3">
-    <h3>컨텐츠2</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae officia ab nesciunt maiores voluptates, iure necessitatibus rem velit explicabo, neque, quam consequatur corporis dignissimos fugiat cum eius recusandae esse amet!</p>
-  </div>
-  
-  
+      <h3>컨텐츠2</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+        officia ab nesciunt maiores voluptates, iure necessitatibus rem velit
+        explicabo, neque, quam consequatur corporis dignissimos fugiat cum eius
+        recusandae esse amet!
+      </p>
+    </div>
+    <div class="content3">
+      <h3>컨텐츠2</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+        officia ab nesciunt maiores voluptates, iure necessitatibus rem velit
+        explicabo, neque, quam consequatur corporis dignissimos fugiat cum eius
+        recusandae esse amet!
+      </p>
+    </div>
 
-  <!-- 푸터 -->
- <footer class="footer">
-  <div class="footer-columns">
-    <div class="footer-column">
-      <h4>제품</h4>
-      <ul>
-        <li><a href="#">갤럭시 스마트폰</a></li>
-        <li><a href="#">갤럭시 탭</a></li>
-        <li><a href="#">갤럭시 워치</a></li>
-        <li><a href="#">TV</a></li>
-        <li><a href="#">냉장고</a></li>
-        <li><a href="#">냉장고</a></li>
-        <li><a href="#">냉장고</a></li>
-        <li><a href="#">냉장고</a></li>
-        <li><a href="#">냉장고</a></li>
-        <li><a href="#">냉장고</a></li>
-        <li><a href="#">냉장고</a></li>
-        <li><a href="#">냉장고</a></li>
-        <!-- 필요시 추가 -->
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>기획전/혜택</h4>
-      <ul>
-        <li><a href="#">AI 구독클럽</a></li>
-        <li><a href="#">이벤트</a></li>
-        <li><a href="#">카드혜택</a></li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>고객서비스</h4>
-      <ul>
-        <li><a href="#">삼성전자 멤버십</a></li>
-        <li><a href="#">서비스센터 찾기</a></li>
-        <li><a href="#">FAQ</a></li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>지속가능경영</h4>
-      <ul>
-        <li><a href="#">환경</a></li>
-        <li><a href="#">접근성</a></li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>회사소개</h4>
-      <ul>
-        <li><a href="#">기업정보</a></li>
-        <li><a href="#">채용</a></li>
-        <li><a href="#">뉴스룸</a></li>
-      </ul>
-    </div>
-  </div>
+    <!-- 푸터 -->
+    <footer class="footer">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>제품</h4>
+          <ul>
+            <li><a href="#">갤럭시 스마트폰</a></li>
+            <li><a href="#">갤럭시 탭</a></li>
+            <li><a href="#">갤럭시 워치</a></li>
+            <li><a href="#">TV</a></li>
+            <li><a href="#">냉장고</a></li>
+            <li><a href="#">냉장고</a></li>
+            <li><a href="#">냉장고</a></li>
+            <li><a href="#">냉장고</a></li>
+            <li><a href="#">냉장고</a></li>
+            <li><a href="#">냉장고</a></li>
+            <li><a href="#">냉장고</a></li>
+            <li><a href="#">냉장고</a></li>
+            <!-- 필요시 추가 -->
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>기획전/혜택</h4>
+          <ul>
+            <li><a href="#">AI 구독클럽</a></li>
+            <li><a href="#">이벤트</a></li>
+            <li><a href="#">카드혜택</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>고객서비스</h4>
+          <ul>
+            <li><a href="#">삼성전자 멤버십</a></li>
+            <li><a href="#">서비스센터 찾기</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>지속가능경영</h4>
+          <ul>
+            <li><a href="#">환경</a></li>
+            <li><a href="#">접근성</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>회사소개</h4>
+          <ul>
+            <li><a href="#">기업정보</a></li>
+            <li><a href="#">채용</a></li>
+            <li><a href="#">뉴스룸</a></li>
+          </ul>
+        </div>
+      </div>
 
-  <div class="footer-bottom">
-    <p>진성전자 주식회사 대표이사 : 양진섭 ｜ 사업자등록번호 : 000-00-00000</p>
-    <p>주소 : 화성구 화성시 화성리 화성이 000 (화성동) ｜ 통신판매업 신고 : 0000-화성-0000</p>
-    <p>고객센터: 000-0000 ｜ © 2025 Jinsung Electronics Co., Ltd. All rights reserved.</p>
-  </div>
-</footer>
-<script src="js/s_script.js"></script>
-</body>
+      <div class="footer-bottom">
+        <p>
+          진성전자 주식회사 대표이사 : 양진섭 ｜ 사업자등록번호 : 000-00-00000
+        </p>
+        <p>
+          주소 : 화성구 화성시 화성리 화성이 000 (화성동) ｜ 통신판매업 신고 :
+          0000-화성-0000
+        </p>
+        <p>
+          고객센터: 000-0000 ｜ © 2025 Jinsung Electronics Co., Ltd. All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+    <script src="js/s_script.js"></script>
+  </body>
 </html>
