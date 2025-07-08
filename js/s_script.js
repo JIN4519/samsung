@@ -219,8 +219,8 @@ window.addEventListener("scroll", () => {
     videoContainer.style.width = "80%";
     videoContainer.style.maxWidth = "100%";
   } else if (scrollTop < 400) {
-    videoContainer.style.width = "67%";
-    videoContainer.style.maxWidth = "67%";
+    videoContainer.style.width = "75%";
+    videoContainer.style.maxWidth = "75%";
   } else {
     // ✅ 삼성 방식처럼, 비율에 따라 줄이되 최소 1280px은 보장
     const calcWidth = Math.max(screenW * 0.8, minWidth);

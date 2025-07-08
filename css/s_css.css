@@ -1,3 +1,9 @@
+/* ===================== 기본 초기화 ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 /* 팝업 */
 
 .popup {
@@ -275,13 +281,6 @@ button {
   transform: translateY(0);
 }
 
-/* ===================== 기본 초기화 ===================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* ===================== 영상 배경 ===================== */
 .video-container {
   position: relative;
@@ -293,19 +292,19 @@ button {
   overflow: hidden;
 }
 
-/* .video-container.shrink {
+/*.video-container.shrink {
   height: 40vh;
   max-width: 1280px;        
   margin: 0 auto;           
   border-radius: 16px;    
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-} */
+} 기존에 적용했던 영상 효과 사라지는거 */
 
 /* .video-container.shrink {
   transform: scale(0.92);
   opacity: 0;
   pointer-events: none;
-} */
+} 기존에 적용했던 영상 효과 사라지는거 */
 
 .video-container video {
   width: 100%;
@@ -331,7 +330,6 @@ button {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  
 }
 
 .video-subtitle {
@@ -411,6 +409,46 @@ button {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
+/* 메뉴 하나로 묶음 기존 메뉴와 같은 정렬 유지 */
+ul.gnb {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+  gap: 100px;
+  list-style: none;
+  padding: 0;
+}
+
+/* 메뉴 항목 링크 스타일 */
+ul.gnb li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
+  padding: 4px 6px;
+  transition: color 0.3s;
+}
+
+/* 스크롤/활성화 시 색상 전환 */
+.header.scrolled ul.gnb li a,
+.header.active ul.gnb li a {
+  color: black;
+}
+
+/* 전체메뉴 / 기획전 활성화 시 강조 효과 유지 */
+#menutoggle.active,
+#promotoggle.active {
+  font-weight: bold;
+  border-bottom: 2px solid #007aff;
+  color: #007aff;
+}
+
+#logo-heading {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
@@ -434,7 +472,7 @@ button {
   color: black;
 }
 
-/* ✅ 모바일 메뉴 CSS 추가 */
+/* 모바일 메뉴 CSS 추가 */
 .mobile-menu-panel {
   display: none;
   background: white;
@@ -812,6 +850,63 @@ button {
   color: #111;
 }
 
+/* ===================== 반응형 ===================== */
+@media screen and (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  .menu-hide-on-mobile {
+    display: none !important;
+  }
+
+  .menu-always {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-mobile-only {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .search-box {
+    flex: 1 1 auto;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 8px;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 8px 36px 8px 12px;
+    font-size: 14px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+  }
+
+  .search-btn {
+    position: absolute;
+    right: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .icon-group {
+    gap: 8px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search-box {
+    display: none !important;
+  }
+}
+
 /* ✅ 반응형 처리 */
 @media (max-width: 1024px) {
   .slider-content {
@@ -887,59 +982,3 @@ button {
   text-align: center;
 }
 
-/* ===================== 반응형 ===================== */
-@media screen and (max-width: 768px) {
-  .hide-on-mobile {
-    display: none !important;
-  }
-
-  .menu-hide-on-mobile {
-    display: none !important;
-  }
-
-  .menu-always {
-    display: flex;
-    align-items: center;
-  }
-
-  .menu-mobile-only {
-    display: flex !important;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .search-box {
-    flex: 1 1 auto;
-    max-width: 300px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin-right: 8px;
-  }
-
-  .search-input {
-    width: 100%;
-    padding: 8px 36px 8px 12px;
-    font-size: 14px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-  }
-
-  .search-btn {
-    position: absolute;
-    right: 8px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  .icon-group {
-    gap: 8px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .search-box {
-    display: none !important;
-  }
-}
