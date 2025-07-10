@@ -437,7 +437,9 @@ ul.gnb li a {
 
 /* 전체메뉴 / 기획전 활성화 시 강조 효과 유지 */
 #menutoggle.active,
-#promotoggle.active {
+#promotoggle.active,
+#aitoggle.active,
+#customertoggle.active {
   font-weight: bold;
   border-bottom: 2px solid #007aff;
   color: #007aff;
@@ -561,6 +563,7 @@ ul.gnb li a {
   color: #333;
 }
 
+
 /* ===================== 아이콘 그룹 ===================== */
 .icon-group {
   display: flex;
@@ -618,11 +621,6 @@ ul.gnb li a {
   opacity: 1;
 }
 
-#menutoggle.active {
-  font-weight: bold;
-  border-bottom: 2px solid #007aff;
-  color: #007aff;
-}
 
 .dropdown-inner {
   display: flex;
@@ -785,12 +783,38 @@ ul.gnb li a {
   transition: all 0.3s ease;
 }
 
+.highlight-buttons-small {
+  margin-top:10px;
+  margin-left: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.highlight-buttons-small a {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+
 /* 더 알아보기 버튼 */
 .btn-learn {
   border: 1px solid #000;
   background-color: #fff;
   color: #000;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
+
 .btn-learn:hover {
   transform: scale(1.05);
 }
@@ -800,17 +824,55 @@ ul.gnb li a {
   border: 1px solid #000;
   background-color: #000;
   color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
+
 .btn-benefit:hover {
   background-color: #fff;
   color: #000;
 }
 
+.btn-benefit-small {
+  font-size: 10px;
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff;
+}
+.btn-benefit-small:hover {
+  font-size: 10px;
+  background-color: #fff;
+  color: #000;
+}
+
+
+
+.highlight-image {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
 .highlight-image img {
-  width: auto;
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
+}
+
+/* ✅ 버튼을 이미지 위에 겹쳐서 띄움 */
+.highlight-overlay-buttons {
+  position: absolute;
+  bottom: 270px;  /* 이미지 하단에서 띄우기 */
+  left: 130px;    /* 왼쪽 여백 조정 */
+  display: flex;
+  gap: 12px;
+  z-index: 2;
 }
 
 /* ===================== 슬라이더 콘텐츠 (고정 4열) ===================== */
