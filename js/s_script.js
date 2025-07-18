@@ -18,18 +18,61 @@ document.addEventListener("DOMContentLoaded", function () {
   const topBar = document.getElementById("topbar");
   const videoSection = document.getElementById("videosection");
 
+  // ✅ 장바구니 패널 토글 (데스크탑/모바일)
+  const cartImgDesktop = document.getElementById("cartimgdesktop");
+  const cartImgMobile = document.getElementById("cartimgmobile");
+  const cartPanel = document.getElementById("cartpanel");
+  const cartCloseBtn = document.getElementById("cart-close-btn");
+
+  function closeCartPanel() {
+    cartPanel?.classList.remove("show");
+  }
+
+  function openCartPanel() {
+    cartPanel?.classList.add("show");
+  }
+
+  cartImgDesktop?.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    cartPanel.classList.toggle("show");
+    // cart 열 때 로그인 패널 닫기
+    const loginPanel = document.getElementById("loginpanel");
+    loginPanel?.classList.remove("open");
+  });
+  cartImgMobile?.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    cartPanel.classList.toggle("show");
+    // cart 열 때 로그인 패널 닫기 (모바일)
+    const loginPanel = document.getElementById("loginpanel");
+    loginPanel?.classList.remove("open");
+  });
+  cartCloseBtn?.addEventListener("click", function (e) {
+    e.preventDefault();
+    closeCartPanel();
+  });
+  // 외부 클릭 시 닫기
+  document.addEventListener("click", function (e) {
+    if (cartPanel && !cartPanel.contains(e.target) && e.target !== cartImgDesktop && e.target !== cartImgMobile) {
+      closeCartPanel();
+    }
+  });
+
   let lastScrollTop = 0;
   let ticking = false;
 
   // ✅ 모든 드롭다운 닫기
   function closeAll() {
-    [dropdown, promopanel, aipanel, customerPanel].forEach(panel => {
+    [dropdown, promopanel, aipanel, customerPanel].forEach((panel) => {
       if (panel) {
         panel.style.height = "0px";
         panel.classList.remove("open");
       }
     });
-    [toggleBtn, promoToggleBtn, aiToggleBtn, customerToggleBtn].forEach(btn => btn?.classList.remove("active"));
+    [toggleBtn, promoToggleBtn, aiToggleBtn, customerToggleBtn].forEach((btn) =>
+      btn?.classList.remove("active")
+    );
     header?.classList.remove("active");
     topBar?.classList.remove("active");
   }
@@ -47,28 +90,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ✅ 전체메뉴 토글
-  toggleBtn?.addEventListener("click", e => {
+  toggleBtn?.addEventListener("click", (e) => {
     e.preventDefault();
     const isOpen = dropdown.classList.contains("open");
     isOpen ? closeAll() : openPanel(dropdown, toggleBtn);
   });
 
   // ✅ 기획전 토글
-  promoToggleBtn?.addEventListener("click", e => {
+  promoToggleBtn?.addEventListener("click", (e) => {
     e.preventDefault();
     const isOpen = promopanel.classList.contains("open");
     isOpen ? closeAll() : openPanel(promopanel, promoToggleBtn);
   });
 
   // ✅ AI 구독 토글
-  aiToggleBtn?.addEventListener("click", e => {
+  aiToggleBtn?.addEventListener("click", (e) => {
     e.preventDefault();
     const isOpen = aipanel.classList.contains("open");
     isOpen ? closeAll() : openPanel(aipanel, aiToggleBtn);
   });
 
   // ✅ 고객지원 토글
-  customerToggleBtn?.addEventListener("click", e => {
+  customerToggleBtn?.addEventListener("click", (e) => {
     e.preventDefault();
     const isOpen = customerPanel.classList.contains("open");
     isOpen ? closeAll() : openPanel(customerPanel, customerToggleBtn);
@@ -94,6 +137,28 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleScroll() {
     const scrollTop = window.scrollY;
     const isScrolled = scrollTop > 80;
+
+    // 검색창 열려 있으면 스크롤 시 자동 닫기
+    if (searchPanel?.classList.contains("open")) {
+      searchPanel.classList.remove("open");
+      header?.classList.remove("active");
+      topBar?.classList.remove("active");
+      // 로고/아이콘 원래대로 복구
+      const logoImg = document.getElementById("logoimage");
+      if (logoImg) logoImg.src = "image/logo_samsung_white.png";
+      document
+        .getElementById("loginimgdesktop")
+        ?.setAttribute("src", "image/login_white.png");
+      document
+        .getElementById("cartimgdesktop")
+        ?.setAttribute("src", "image/cart_white.png");
+      document
+        .getElementById("loginimgmobile")
+        ?.setAttribute("src", "image/login_white.png");
+      document
+        .getElementById("cartimgmobile")
+        ?.setAttribute("src", "image/cart_white.png");
+    }
 
     if (scrollTop > lastScrollTop && scrollTop > 100) {
       header.classList.add("hide-on-scroll");
@@ -126,7 +191,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const whiteCart = "image/cart_white.png";
     const blackCart = "image/cart_black.png";
 
-    const shouldUseBlackIcons = isScrolled || header.classList.contains("active");
+    const shouldUseBlackIcons =
+      isScrolled || header.classList.contains("active");
 
     function updateIcon(imgEl, whiteSrc, blackSrc) {
       if (!imgEl) return;
@@ -209,4 +275,155 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  // ✅ 검색 메뉴 토글 (검색 버튼 클릭 시)
+  const searchBtn = document.querySelector(".search-btn");
+  const searchPanel = document.getElementById("searchpanel");
+  const searchCloseBtn = document.getElementById("search-close-btn");
+
+  function openSearchPanel() {
+  closeAll();
+  if (searchPanel) {
+    // 패널 높이 자동 설정 (전체메뉴처럼)
+    searchPanel.style.height = searchPanel.scrollHeight + 'px';
+    searchPanel.classList.add('open');
+    header?.classList.add('active');
+    topBar?.classList.add('active');
+
+    const logoImg = document.getElementById("logoimage");
+    if (logoImg) logoImg.src = "image/logo_samsung_black.png";
+    document.getElementById("loginimgdesktop")?.setAttribute("src", "image/login_black.png");
+    document.getElementById("cartimgdesktop")?.setAttribute("src", "image/cart_black.png");
+    document.getElementById("loginimgmobile")?.setAttribute("src", "image/login_black.png");
+    document.getElementById("cartimgmobile")?.setAttribute("src", "image/cart_black.png");
+  }
+}
+
+  function closeSearchPanel() {
+  if (searchPanel) {
+    searchPanel.style.height = '0px';  // ✅ 추가
+    searchPanel.classList.remove('open');
+    header?.classList.remove('active');
+    topBar?.classList.remove('active');
+    const logoImg = document.getElementById("logoimage");
+    if (logoImg) logoImg.src = "image/logo_samsung_white.png";
+    document.getElementById("loginimgdesktop")?.setAttribute("src", "image/login_white.png");
+    document.getElementById("cartimgdesktop")?.setAttribute("src", "image/cart_white.png");
+    document.getElementById("loginimgmobile")?.setAttribute("src", "image/login_white.png");
+    document.getElementById("cartimgmobile")?.setAttribute("src", "image/cart_white.png");
+  }
+}
+
+  // ✅ 검색 관련 요소
+  const searchInput = document.querySelector(".search-input");
+  const searchInputValue = document.getElementById("search-input-value");
+
+  // ✅ 검색 버튼 클릭 시 검색 패널 열기
+  searchBtn?.addEventListener("click", function (e) {
+    e.preventDefault();
+    const keyword = searchInput?.value?.trim();
+    if (keyword && searchPanel) {
+      closeAll();
+      searchInputValue.value = keyword;
+      searchPanel.classList.add("open");
+      // 헤더/로고/아이콘 색상 변경 제거
+      header?.classList.add("active");
+      topBar?.classList.add("active");
+      const logoImg = document.getElementById("logoimage");
+      if (logoImg) logoImg.src = "image/logo_samsung_black.png";
+
+      searchInput?.focus();
+    }
+  });
+
+  // ✅ 검색창 닫기
+  searchCloseBtn?.addEventListener("click", function () {
+    searchPanel?.classList.remove("open");
+    header?.classList.remove("active");
+    topBar?.classList.remove("active");
+    // 검색 input blur 처리
+    searchInput?.blur();
+  });
+
+  // ✅ 다른 메뉴 클릭 시 검색 패널 닫기
+  document.addEventListener("click", function (e) {
+    const insideSearch =
+      searchInput?.contains(e.target) ||
+      searchBtn?.contains(e.target) ||
+      searchPanel?.contains(e.target);
+    const otherMenus =
+      dropdown?.contains(e.target) ||
+      promopanel?.contains(e.target) ||
+      aipanel?.contains(e.target) ||
+      customerPanel?.contains(e.target) ||
+      toggleBtn?.contains(e.target) ||
+      promoToggleBtn?.contains(e.target) ||
+      aiToggleBtn?.contains(e.target) ||
+      customerToggleBtn?.contains(e.target);
+
+    if (
+      searchPanel?.classList.contains("open") &&
+      !insideSearch &&
+      otherMenus
+    ) {
+      searchPanel.classList.remove("open");
+      header?.classList.remove("active");
+      topBar?.classList.remove("active");
+    }
+  });
+
+  // ✅ 검색 input blur(포커스 해제) 시 원래대로 복구
+  searchInput?.addEventListener("blur", function () {
+    header?.classList.remove("active");
+    topBar?.classList.remove("active");
+    const logoImg = document.getElementById("logoimage");
+    if (logoImg) logoImg.src = "image/logo_samsung_white.png";
+    document
+      .getElementById("loginimgdesktop")
+      ?.setAttribute("src", "image/login_white.png");
+    document
+      .getElementById("cartimgdesktop")
+      ?.setAttribute("src", "image/cart_white.png");
+    document
+      .getElementById("loginimgmobile")
+      ?.setAttribute("src", "image/login_white.png");
+    document
+      .getElementById("cartimgmobile")
+      ?.setAttribute("src", "image/cart_white.png");
+  });
+
+  // ✅ 검색 input에서 엔터(Enter) 키로도 검색
+  searchInput?.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      searchBtn?.click();
+    }
+  });
+});
+
+/* 로그인 */
+const loginBtn = document.getElementById("loginimgdesktop"); // 또는 모바일용
+const loginPanel = document.getElementById("loginpanel");
+
+loginBtn?.addEventListener("click", function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+  loginPanel.classList.toggle("open");
+  // 로그인 열 때 카트 패널 닫기
+  const cartPanel = document.getElementById("cartpanel");
+  cartPanel?.classList.remove("show");
+});
+
+// 외부 클릭 시 닫기
+document.addEventListener("click", function (e) {
+  if (!loginPanel.contains(e.target) && !loginBtn.contains(e.target)) {
+    loginPanel.classList.remove("open");
+  }
+});
+
+// 모바일 로그인 버튼 클릭 시 카트 패널 닫기
+const loginImgMobile = document.getElementById("loginimgmobile");
+loginImgMobile?.addEventListener("click", function () {
+  const cartPanel = document.getElementById("cartpanel");
+  cartPanel?.classList.remove("show");
 });

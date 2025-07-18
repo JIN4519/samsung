@@ -1,3 +1,38 @@
+/* 장바구니 패널 */
+.cart-panel {
+  position: absolute;
+  top: 70px;
+  right: 100px;
+  width: 200px;
+  height: 100px; /* 높이 추가 */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  z-index: 9999;
+  padding: 14px 0 14px 0;
+  display: none;
+}
+.cart-panel.show {
+  display: block;
+}
+.cart-empty-message {
+  text-align: center;
+  font-size: 14px;
+  color: #222;
+}
+#cart-close-btn {
+  margin-top: 18px;
+  position: absolute;
+  right: 45px;
+  padding: 6px 18px;
+  background: #2186f5;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
 /* ===================== 기본 초기화 ===================== */
 * {
   margin: 0;
@@ -8,13 +43,13 @@
 
 .popup {
   position: fixed;
-  width: 420px;
-  height: 250px;
+  width: 300px;
+  height: 180px;
   background: white;
   border-radius: 20px;
   padding: 20px;
   box-sizing: border-box;
-  font-size: 24px;
+  font-size: 15px;
   z-index: 99999999999;
   left: 50%;
   transform: translateX(-50%);
@@ -122,13 +157,6 @@ button {
 #promopanel.open {
   max-height: 600px;
   opacity: 1;
-}
-
-#menutoggle.active,
-#promotoggle.active {
-  font-weight: bold;
-  border-bottom: 2px solid #007aff;
-  color: #007aff;
 }
 
 .promopanel-inner {
@@ -434,6 +462,29 @@ ul.gnb li a {
 .header.active ul.gnb li a {
   color: black;
 }
+.header.active .nav-menu a {
+  color: black !important;
+}
+.header.active ul.gnb li a {
+  color: black !important;
+}
+.header.active .icon-group img,
+.header.active .menu-hide-on-mobile img,
+.header.active .menu-mobile-only img {
+  filter: brightness(0) !important;
+}
+
+#mainheader.active,
+#topbar.active {
+  background-color: white !important;
+  color: black !important;
+  z-index: 9999;
+}
+
+#mainheader.active img,
+#topbar.active img {
+  filter: invert(0); /* 흰 배경에 검정 로고 */
+}
 
 /* 전체메뉴 / 기획전 활성화 시 강조 효과 유지 */
 #menutoggle.active,
@@ -718,9 +769,8 @@ ul.gnb li a {
 /* ===================== 콘텐츠 확장 ===================== */
 .content2,
 .content3 {
-  max-width: 1300px;
+  max-width: 1280px;
   margin: 60px auto;
-  padding: 20px 24px;
   background-color: #f7f7f7;
   font-size: 16px;
   line-height: 1.6;
@@ -801,9 +851,163 @@ ul.gnb li a {
   transition: all 0.3s ease;
 }
 
+/* 검색 결과 패널 */
+#searchpanel {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.4s ease;
+  z-index: 999;
+}
+
+#searchpanel.open {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+
+/* 검색 상단 영역 */
+.search-header {
+  display: flex;
+  justify-content: center; /* 가운데 정렬 */
+  padding: 10px 16px;
+  width: 100%;
+}
+
+/* 검색 입력 + 아이콘 정렬 */
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 720px; /* 검색창 너비 제한 */
+  gap: 50px;
+}
+
+/* 검색 input */
+#search-input-value {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* 돋보기 버튼 */
+.search-submit-icon {
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.search-submit-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+/* X 버튼 텍스트 사용 */
+.search-close-icon {
+  background: none;
+  border: none;
+  font-size: 22px;
+  padding: 6px 10px;
+  line-height: 1;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s;
+}
+
+.search-close-icon:hover {
+  color: #000;
+}
+
+/* 검색 결과 영역 (키워드 + 추천) */
+.search-content {
+ display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+  margin-top: 20px;
+  max-width: 1300px;   
+  margin-left: auto;   
+  margin-right: auto;
+  overflow: hidden;         
+  min-height: 200px; 
+  padding-bottom: 40px;
+}
+
+/* 인기 키워드 */
+.popular-keywords ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popular-keywords li {
+  font-size: 13px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+/* 추천 제품 영역 */
+.search-recommend {
+  flex: 1;
+}
+
+/* 제품 그리드 */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.product-card {
+  background-color: #f9f9f9;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+   margin-bottom: 20px; /* ✅ 아래 여백 추가 */
+}
+
+.product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.product-card .price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #007aff;
+}
+
+.search-panel-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #fff;
+  overflow: hidden;
+}
 
 /* 더 알아보기 버튼 */
-.btn-learn {
+.btn-learn,
+.btn-learn1 {
   border: 1px solid #000;
   background-color: #fff;
   color: #000;
@@ -813,14 +1017,17 @@ ul.gnb li a {
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
+  display: inline-block;
 }
 
-.btn-learn:hover {
+.btn-learn:hover,
+.btn-learn1:hover {
   transform: scale(1.05);
+  background-color: #f0f0f0;
 }
 
 /* 구매 혜택 보기 버튼 */
-.btn-benefit {
+.btn-benefit, .btn-benefit1 {
   border: 1px solid #000;
   background-color: #000;
   color: #fff;
@@ -832,10 +1039,11 @@ ul.gnb li a {
   transition: all 0.3s ease;
 }
 
-.btn-benefit:hover {
+.btn-benefit:hover, .btn-benefit1:hover {
   background-color: #fff;
   color: #000;
 }
+/* 작은 구매 혜택 보기 버튼 */
 
 .btn-benefit-small {
   font-size: 10px;
@@ -865,7 +1073,7 @@ ul.gnb li a {
   object-fit: cover;
 }
 
-/* ✅ 버튼을 이미지 위에 겹쳐서 띄움 */
+/* 하이라이트 버튼1 */
 .highlight-overlay-buttons {
   position: absolute;
   bottom: 270px;  /* 이미지 하단에서 띄우기 */
@@ -875,18 +1083,41 @@ ul.gnb li a {
   z-index: 2;
 }
 
+/* 하이라이트 버튼 2 */
+.highlight-overlay-buttons1 {
+  position: absolute;
+  bottom: 270px;  /* 이미지 하단에서 띄우기 */
+  left: 130px;    /* 왼쪽 여백 조정 */
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 2;
+}
+
+.highlight-overlay-buttons1 h1 {
+  font-size: 30px;
+  margin: 0;
+}
+
+.highlight-overlay-buttons1 p {
+  font-size: 20px;
+  margin: 0;
+}
+/* ===================== 하이라이트 버튼 ===================== */
+
 /* ===================== 슬라이더 콘텐츠 (고정 4열) ===================== */
 .slider-content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  max-width: 1320px;
-  margin: 60px auto;
+  max-width: 1300px;
+  margin: 20px auto;
   padding: 20px;
 }
 
 .slider-item {
-  background-color: #fff;
+  background-color: #f5f5f5;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   text-align: center;
@@ -910,6 +1141,54 @@ ul.gnb li a {
   font-size: 16px;
   font-weight: bold;
   color: #111;
+}
+/* search 버튼 */
+
+.search-input-container {
+  position: relative;
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* 입력창 */
+#search-input-value {
+  width: 100%;
+  padding: 12px 88px 12px 16px; /* 오른쪽 공간 확보 (검색+X버튼용) */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* 🔍 이미지 버튼 */
+.search-submit-icon {
+  position: absolute;
+  top: 50%;
+  right: 44px;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.search-submit-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ✕ 버튼 (글자) */
+.search-close-icon {
+  position: absolute;
+  color: #000;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px;
 }
 
 /* ===================== 반응형 ===================== */
@@ -962,6 +1241,62 @@ ul.gnb li a {
     gap: 8px;
   }
 }
+
+/* 로그인 */
+
+.login-panel {
+  position: absolute;
+  top: 70px;
+  right: 200px;
+  width: 250px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  z-index: 9999;
+  padding: 16px 0;
+  line-height: 0.5;
+  display: none; /* 기본은 닫힌 상태 */
+  * {
+  color: #000 !important;
+}
+}
+
+.login-panel.open {
+  display: block;
+}
+
+.login-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.login-menu li {
+  padding: 10px 20px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.login-menu li:hover {
+  background-color: #f5f5f5;
+}
+
+.login-menu .divider {
+  border-top: 1px solid #eee;
+  margin: 8px 0;
+  padding: 0;
+}
+
+.login-menu .arrow {
+  float: right;
+  font-size: 12px;
+}
+
+.loginb {
+  font-weight: 700;
+}
+/* ======================================================================== */
 
 @media screen and (max-width: 600px) {
   .search-box {
