@@ -81,13 +81,47 @@ document.addEventListener("DOMContentLoaded", function () {
   function openPanel(panel, button) {
     closeAll();
     if (panel && button) {
-      panel.style.height = panel.scrollHeight + "px";
-      panel.classList.add("open");
-      button.classList.add("active");
-      header?.classList.add("active");
-      topBar?.classList.add("active");
+      panel.style.height = 'auto'; // scrollHeight 대신 auto로 자연스럽게
+      panel.classList.add('open');
+      button.classList.add('active');
+      header?.classList.add('active');
+      topBar?.classList.add('active');
     }
   }
+
+  // ✅ 메뉴 hover 시 서브메뉴 열기 (클릭 이벤트와 중복 방지)
+  [
+    {btn: toggleBtn, panel: dropdown},
+    {btn: promoToggleBtn, panel: promopanel},
+    {btn: aiToggleBtn, panel: aipanel},
+    {btn: customerToggleBtn, panel: customerPanel}
+  ].forEach(({btn, panel}) => {
+    let isOverBtn = false;
+    let isOverPanel = false;
+    btn?.addEventListener('mouseenter', () => {
+      isOverBtn = true;
+      openPanel(panel, btn);
+    });
+    btn?.addEventListener('mouseleave', () => {
+      isOverBtn = false;
+      setTimeout(() => {
+        if (!isOverPanel && !isOverBtn) closeAll();
+      }, 80);
+    });
+    panel?.addEventListener('mouseenter', () => {
+      isOverPanel = true;
+    });
+    panel?.addEventListener('mouseleave', () => {
+      isOverPanel = false;
+      setTimeout(() => {
+        if (!isOverPanel && !isOverBtn) closeAll();
+      }, 80);
+    });
+    btn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      openPanel(panel, btn);
+    });
+  });
 
   // ✅ 전체메뉴 토글
   toggleBtn?.addEventListener("click", (e) => {
@@ -340,7 +374,34 @@ document.addEventListener("DOMContentLoaded", function () {
   searchCloseBtn?.addEventListener("click", function () {
     searchPanel?.classList.remove("open");
     header?.classList.remove("active");
-    topBar?.classList.remove("active");
+  // ✅ 전체메뉴, 기획전, AI 구독클럽, 고객지원: 마우스 오버 시 서브메뉴 열기
+  toggleBtn?.addEventListener("mouseenter", (e) => {
+    openPanel(dropdown, toggleBtn);
+  });
+  promoToggleBtn?.addEventListener("mouseenter", (e) => {
+    openPanel(promopanel, promoToggleBtn);
+  });
+  aiToggleBtn?.addEventListener("mouseenter", (e) => {
+    openPanel(aipanel, aiToggleBtn);
+  });
+  customerToggleBtn?.addEventListener("mouseenter", (e) => {
+    openPanel(customerPanel, customerToggleBtn);
+  });
+
+  // ✅ 메뉴에서 마우스가 벗어나면 닫기 (서브패널 포함)
+  [toggleBtn, dropdown].forEach(el => {
+    el?.addEventListener("mouseleave", () => closeAll());
+  });
+  [promoToggleBtn, promopanel].forEach(el => {
+    el?.addEventListener("mouseleave", () => closeAll());
+  });
+  [aiToggleBtn, aipanel].forEach(el => {
+    el?.addEventListener("mouseleave", () => closeAll());
+  });
+  [customerToggleBtn, customerPanel].forEach(el => {
+    el?.addEventListener("mouseleave", () => closeAll());
+  });
+
     // 검색 input blur 처리
     searchInput?.blur();
   });
