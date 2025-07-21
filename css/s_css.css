@@ -1460,7 +1460,105 @@ ul.gnb li a {
 }
 
 /* ✅ 추천 슬라이드 스타일 */
-.custom-recommend-wrapper {
+.custom-recommend-wrapper1 {
+  max-width: 1320px;
+  margin: 80px auto;
+  padding: 0 24px;
+  background: #fff;
+}
+.custom-recommend-title1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.custom-recommend-slider1 {
+  overflow: hidden;
+  position: relative;
+}
+.custom-recommend-track1 {
+  display: flex;
+  transition: transform 0.4s ease;
+  gap: 20px;
+}
+.custom-recommend-card1 {
+  flex: 0 0 auto;
+  width: 234px;
+  background: #f9f9f9;
+  border-radius: 0px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+.custom-recommend-card1 img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+.product-name1 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.product-price1 {
+  font-size: 13px;
+  color: #333;
+}
+.custom-recommend-controls1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  position: relative;
+}
+.custom-progress-bar1 {
+  flex: 1;
+  height: 2px;
+  background: #ddd;
+  margin-right: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.custom-progress-fill1 {
+  width: 0%;
+  height: 100%;
+  background-color: #000;
+  transition: width 0.3s ease;
+}
+.custom-recommend-arrows1 {
+  display: flex;
+  gap: 12px;
+}
+.custom-arrow-btn1 {
+  width: 36px;
+  height: 36px;
+  margin-top: 10px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #ccc;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.hover-btn1 {
+  opacity: 0;
+  transition: 0.3s;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 10px;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 20px;
+}
+.custom-recommend-card1:hover .hover-btn1 {
+  width: 100px;
+  opacity: 1;
+}
+.custom-recommend-wrapper,
+.custom-recommend-wrapper1 {
   max-width: 1320px;
   margin: 80px auto;
   padding: 0 24px;
@@ -1478,12 +1576,12 @@ ul.gnb li a {
   position: relative;
 }
 
-.custom-recommend-track {
+.custom-recommend-track,
+.custom-recommend-track1 {
   display: flex;
   transition: transform 0.4s ease;
   gap: 20px;
 }
-
 .custom-recommend-card {
   flex: 0 0 auto;
   width: 234px;
@@ -1501,6 +1599,9 @@ ul.gnb li a {
   object-fit: contain;
   margin-bottom: 10px;
 }
+/* 두 추천 슬라이더 모두 동일하게 적용 */
+
+
 
 .product-name {
   font-size: 14px;
