@@ -427,3 +427,99 @@ loginImgMobile?.addEventListener("click", function () {
   const cartPanel = document.getElementById("cartpanel");
   cartPanel?.classList.remove("show");
 });
+
+
+// --- Main Slider (slider-content) ---
+const slider = document.querySelector('.slider-content');
+const items = document.querySelectorAll('.slider-item');
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
+const visibleCount = 4;
+const totalPages = Math.ceil(items.length / visibleCount);
+let currentIndex = 0;
+
+function updateMainSlider() {
+  const translateX = -106.5 * currentIndex;
+  slider.style.transform = `translateX(${translateX}%)`;
+  // Always show both buttons
+  nextBtn.style.display = 'flex';
+  prevBtn.style.display = 'flex';
+  nextBtn.style.opacity = '1';
+  prevBtn.style.opacity = '1';
+  nextBtn.style.visibility = 'visible';
+  prevBtn.style.visibility = 'visible';
+  nextBtn.disabled = false;
+  prevBtn.disabled = false;
+  nextBtn.style.pointerEvents = 'auto';
+  prevBtn.style.pointerEvents = 'auto';
+}
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % totalPages;
+  updateMainSlider();
+});
+
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + totalPages) % totalPages;
+  updateMainSlider();
+});
+
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % totalPages;
+  updateMainSlider();
+}, 5000);
+
+
+// --- Custom Recommend Slider (HTML 기반) ---
+const track = document.getElementById('customTrack');
+const fill = document.getElementById('customProgressFill');
+const prev = document.getElementById('customPrevBtn');
+const next = document.getElementById('customNextBtn');
+
+let index = 0;
+const visible = 4;
+const cards = track.querySelectorAll('.custom-recommend-card');
+const cardWidth = cards.length > 0 ? cards[0].offsetWidth + 24 : 220; // 24px gap
+const maxIndex = cards.length - visible >= 0 ? cards.length - visible : 0;
+
+function updateCustomSlider() {
+  track.style.transform = `translateX(-${index * cardWidth}px)`;
+  fill.style.width = maxIndex === 0 ? '95%' : `${(index / maxIndex) * 95}%`;
+  prev.disabled = (index === 0);
+  next.disabled = (index === maxIndex);
+  prev.style.opacity = prev.disabled ? '0.3' : '1';
+  next.style.opacity = next.disabled ? '0.3' : '1';
+  prev.style.pointerEvents = prev.disabled ? 'none' : 'auto';
+  next.style.pointerEvents = next.disabled ? 'none' : 'auto';
+}
+
+prev.onclick = () => {
+  if (index > 0) {
+    index--;
+    updateCustomSlider();
+  }
+};
+
+next.onclick = () => {
+  if (index < maxIndex) {
+    index++;
+    updateCustomSlider();
+  }
+};
+
+let autoSlide = setInterval(() => {
+  index = index < maxIndex ? index + 1 : 0;
+  updateCustomSlider();
+}, 4000);
+
+document.getElementById('customSlider').addEventListener('mouseenter', () => clearInterval(autoSlide));
+document.getElementById('customSlider').addEventListener('mouseleave', () => {
+  autoSlide = setInterval(() => {
+    index = index < maxIndex ? index + 1 : 0;
+    updateCustomSlider();
+  }, 4000);
+});
+
+// Initial update for both sliders
+updateMainSlider();
+updateCustomSlider();

@@ -1,3 +1,10 @@
+/* --- Slider Navigation Buttons --- */
+/* Always show slider navigation buttons */
+.slider-btn, .prev-btn, .next-btn {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
 /* 장바구니 패널 */
 .cart-panel {
   position: absolute;
@@ -128,7 +135,7 @@ button {
 
   .search-btn {
     position: absolute;
-    right: 8px;
+    right: -7px;
     background: none;
     border: none;
     cursor: pointer;
@@ -773,7 +780,7 @@ ul.gnb li a {
   margin: 60px auto;
   background-color: #f7f7f7;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.1;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
@@ -845,7 +852,7 @@ ul.gnb li a {
   display: inline-block;
   padding: 6px 10px;
   border-radius: 20px;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -1039,6 +1046,13 @@ ul.gnb li a {
   transition: all 0.3s ease;
 }
 
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
 .btn-benefit:hover, .btn-benefit1:hover {
   background-color: #fff;
   color: #000;
@@ -1046,13 +1060,13 @@ ul.gnb li a {
 /* 작은 구매 혜택 보기 버튼 */
 
 .btn-benefit-small {
-  font-size: 10px;
+  font-size: 13px;
   border: 1px solid #000;
   background-color: #000;
   color: #fff;
 }
 .btn-benefit-small:hover {
-  font-size: 10px;
+  font-size: 13px;
   background-color: #fff;
   color: #000;
 }
@@ -1087,34 +1101,80 @@ ul.gnb li a {
 .highlight-overlay-buttons1 {
   position: absolute;
   bottom: 270px;  /* 이미지 하단에서 띄우기 */
-  left: 130px;    /* 왼쪽 여백 조정 */
+  left: 50px;    /* 왼쪽 여백 조정 */
   z-index: 10;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   z-index: 2;
 }
 
 .highlight-overlay-buttons1 h1 {
-  font-size: 30px;
+  font-size: 3em;
   margin: 0;
 }
 
 .highlight-overlay-buttons1 p {
-  font-size: 20px;
+  font-size: 1.2em;
   margin: 0;
 }
 /* ===================== 하이라이트 버튼 ===================== */
 
 /* ===================== 슬라이더 콘텐츠 (고정 4열) ===================== */
-.slider-content {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
   max-width: 1300px;
-  margin: 20px auto;
-  padding: 20px;
+  margin: auto;
 }
+
+.slider-content {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+  width: 1230px; /* 슬라이더 너비 고정 */
+}
+
+.slider-item {
+  min-width: 25%; /* 4개씩 보이기 */
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+
+
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  color: #111;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+}
+.prev-btn {
+  left: 30px; /* 원하는 위치로 조정 */
+}
+.next-btn {
+  right: 40px; /* 원하는 위치로 조정 */
+}
+.slider-btn:hover {
+  color: #007aff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* 인디케이터 */
+
+/* dot 관련 CSS 제거 */
 
 .slider-item {
   background-color: #f5f5f5;
@@ -1231,7 +1291,7 @@ ul.gnb li a {
 
   .search-btn {
     position: absolute;
-    right: 8px;
+    right: -7px;
     background: none;
     border: none;
     cursor: pointer;
@@ -1316,6 +1376,117 @@ ul.gnb li a {
     grid-template-columns: 1fr;
   }
 }
+/* ✅ 추천 슬라이드 스타일 */
+ .custom-recommend-wrapper {
+    max-width: 1320px;
+    margin: 80px auto;
+    padding: 0 24px;
+    background: #fff;
+  }
+  .custom-recommend-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .custom-recommend-slider {
+    overflow: hidden;
+    position: relative;
+  }
+  .custom-recommend-track {
+    display: flex;
+    transition: transform 0.4s ease;
+    gap: 20px;
+  }
+  .custom-recommend-card {
+    flex: 0 0 auto;
+    width: 234px;
+    background: #f9f9f9;
+    border-radius: 0px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    position: relative;
+  }
+  .custom-recommend-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+  .product-name {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  .product-price {
+    font-size: 13px;
+    color: #333;
+  }
+  .custom-recommend-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    position: relative;
+  }
+  .custom-progress-bar {
+    flex: 1;
+    height: 2px;
+    background: #ddd;
+    margin-right: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .custom-progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: #000;
+    transition: width 0.3s ease;
+  }
+  .custom-recommend-arrows {
+    display: flex;
+    gap: 12px;
+  }
+  .custom-arrow-btn {
+    width: 36px;
+    height: 36px;
+    margin-top: 10px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #ccc;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  /* Hover effect */
+  .custom-recommend-card .hover-btn {
+    opacity: 0;
+    transition: 0.3s;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 10px;
+    background: #000;
+    color: #fff;
+    font-size: 10px;
+    border-radius: 20px;
+  }
+  .custom-recommend-card:hover .hover-btn {
+    opacity: 1;
+  }
+  @media (max-width: 1024px) {
+    .custom-recommend-card {
+      width: 200px;
+    }
+  }
+  @media (max-width: 768px) {
+    .custom-recommend-card {
+      width: 160px;
+    }
+  }
+
 
 /* ===================== 푸터 ===================== */
 
