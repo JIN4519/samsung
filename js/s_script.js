@@ -154,6 +154,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let isOverPanel = false;
     btn?.addEventListener('mouseenter', () => {
       isOverBtn = true;
+      // 헤더가 hide-on-scroll 상태면 hover로 메뉴를 열지 않음
+      if (header && header.classList.contains('hide-on-scroll')) return;
       openPanel(panel, btn);
     });
     btn?.addEventListener('mouseleave', () => {
@@ -743,26 +745,25 @@ function handleFadeInOnScroll() {
 window.addEventListener('scroll', handleFadeInOnScroll);
 window.addEventListener('DOMContentLoaded', handleFadeInOnScroll);
 
-// 메뉴 그룹(ul.gnb) 전체에 hover 효과 유지
+// 메뉴 hover-out 딜레이 적용
 (function() {
-  const gnb = document.querySelector('.gnb');
   const menuItems = document.querySelectorAll('.gnb > li');
   const dropdownPanel = document.getElementById('dropdownpanel');
   let menuTimeout;
 
-  if (gnb) {
-    gnb.addEventListener('mouseenter', function() {
+  menuItems.forEach(function(item) {
+    item.addEventListener('mouseenter', function() {
       clearTimeout(menuTimeout);
-      menuItems.forEach(item => item.classList.add('active'));
+      item.classList.add('active');
       if(dropdownPanel) dropdownPanel.classList.add('active');
     });
-    gnb.addEventListener('mouseleave', function() {
+    item.addEventListener('mouseleave', function() {
       menuTimeout = setTimeout(function() {
-        menuItems.forEach(item => item.classList.remove('active'));
+        item.classList.remove('active');
         if(dropdownPanel) dropdownPanel.classList.remove('active');
-      }, 15000);
+      }, 200);
     });
-  }
+  });
 
   if(dropdownPanel) {
     dropdownPanel.addEventListener('mouseenter', function() {
@@ -774,7 +775,8 @@ window.addEventListener('DOMContentLoaded', handleFadeInOnScroll);
       menuTimeout = setTimeout(function() {
         menuItems.forEach(item => item.classList.remove('active'));
         dropdownPanel.classList.remove('active');
-      }, 15000);
+      }, 500);
     });
   }
 })();
+
