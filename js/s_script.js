@@ -154,8 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let isOverPanel = false;
     btn?.addEventListener('mouseenter', () => {
       isOverBtn = true;
-      // 헤더가 hide-on-scroll 상태면 hover로 메뉴를 열지 않음
-      if (header && header.classList.contains('hide-on-scroll')) return;
       openPanel(panel, btn);
     });
     btn?.addEventListener('mouseleave', () => {
@@ -780,4 +778,3 @@ window.addEventListener('DOMContentLoaded', handleFadeInOnScroll);
     });
   }
 })();
-
