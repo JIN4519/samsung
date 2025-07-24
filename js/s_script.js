@@ -774,7 +774,7 @@ window.addEventListener('DOMContentLoaded', handleFadeInOnScroll);
       menuTimeout = setTimeout(function() {
         menuItems.forEach(item => item.classList.remove('active'));
         dropdownPanel.classList.remove('active');
-      }, 200);
+      }, 15000);
     });
   }
 })();
