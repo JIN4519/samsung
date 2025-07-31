@@ -116,6 +116,15 @@ document.addEventListener("DOMContentLoaded", function () {
   let lastScrollTop = 0;
   let ticking = false;
 
+  let closeMenuTimeout = null;
+
+  function scheduleCloseAll() {
+    if (closeMenuTimeout) clearTimeout(closeMenuTimeout);
+    closeMenuTimeout = setTimeout(() => {
+      if (!isOverBtn && !isOverPanel && !isOverHoverzone) closeAll();
+    }, 200);
+  }
+
   // ✅ 모든 드롭다운 닫기
   function closeAll() {
     [dropdown, promopanel, aipanel, customerPanel].forEach((panel) => {
@@ -129,6 +138,8 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     header?.classList.remove("active");
     topBar?.classList.remove("active");
+    // 호버존 숨기기
+    if (hoverzone) hoverzone.style.display = "none";
   }
 
   // ✅ 특정 패널 열기 함수 (닫기 → 열기 순서)
@@ -140,7 +151,38 @@ document.addEventListener("DOMContentLoaded", function () {
       button.classList.add('active');
       header?.classList.add('active');
       topBar?.classList.add('active');
+      // 호버존 위치 및 표시 (모든 메뉴 동일 여유값 방식)
+      if (hoverzone && (
+        (button === toggleBtn && panel === dropdown) ||
+        (button === promoToggleBtn && panel === promopanel) ||
+        (button === aiToggleBtn && panel === aipanel) ||
+        (button === customerToggleBtn && panel === customerPanel)
+      )) {
+        // 각 버튼/패널에 맞게 위치 계산
+        const btnRect = button.getBoundingClientRect();
+        const panelRect = panel.getBoundingClientRect();
+        const extraTop = 20;
+        const extraBottom = 40;
+        const extraLeft = 20;
+        const extraRight = 20;
+        hoverzone.style.top = (btnRect.bottom + window.scrollY - extraTop) + 'px';
+        hoverzone.style.left = (btnRect.left - extraLeft) + 'px';
+        hoverzone.style.width = (btnRect.width + extraLeft + extraRight) + 'px';
+        hoverzone.style.height = (panelRect.top - btnRect.bottom + extraTop + extraBottom) + 'px';
+        hoverzone.style.display = 'block';
+      }
     }
+  }
+
+  // ✅ 호버존 이벤트 처리
+  const hoverzone = document.getElementById("hoverzone");
+  let isOverHoverzone = false;
+  if (hoverzone) {
+    hoverzone.addEventListener('mouseenter', () => {
+      isOverHoverzone = true;
+      if (closeMenuTimeout) clearTimeout(closeMenuTimeout);
+    });
+    hoverzone.addEventListener('mouseleave', scheduleCloseAll);
   }
 
   // ✅ 메뉴 hover 시 서브메뉴 열기 (클릭 이벤트와 중복 방지)
@@ -154,41 +196,38 @@ document.addEventListener("DOMContentLoaded", function () {
     let isOverPanel = false;
     btn?.addEventListener('mouseenter', () => {
       isOverBtn = true;
+      if (closeMenuTimeout) clearTimeout(closeMenuTimeout);
       // 헤더가 hide-on-scroll 상태면 hover로 메뉴를 열지 않음
       if (header && header.classList.contains('hide-on-scroll')) return;
       openPanel(panel, btn);
     });
-    btn?.addEventListener('mouseleave', () => {
-      isOverBtn = false;
-      setTimeout(() => {
-        if (!isOverPanel && !isOverBtn) closeAll();
-      }, 80);
-    });
+    btn?.addEventListener('mouseleave', scheduleCloseAll);
     panel?.addEventListener('mouseenter', () => {
       isOverPanel = true;
+      if (closeMenuTimeout) clearTimeout(closeMenuTimeout);
     });
-    panel?.addEventListener('mouseleave', () => {
-      isOverPanel = false;
-      setTimeout(() => {
-        if (!isOverPanel && !isOverBtn) closeAll();
-      }, 80);
-    });
-    btn?.addEventListener('click', (e) => {
-      e.preventDefault();
-      openPanel(panel, btn);
-    });
+    panel?.addEventListener('mouseleave', scheduleCloseAll);
+    // preventDefault 제거 (전체메뉴, 기획전만)
+    if (btn === toggleBtn || btn === promoToggleBtn) {
+      btn?.addEventListener('click', (e) => {
+        openPanel(panel, btn);
+      });
+    } else {
+      btn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        openPanel(panel, btn);
+      });
+    }
   });
 
   // ✅ 전체메뉴 토글
   toggleBtn?.addEventListener("click", (e) => {
-    e.preventDefault();
     const isOpen = dropdown.classList.contains("open");
     isOpen ? closeAll() : openPanel(dropdown, toggleBtn);
   });
 
   // ✅ 기획전 토글
   promoToggleBtn?.addEventListener("click", (e) => {
-    e.preventDefault();
     const isOpen = promopanel.classList.contains("open");
     isOpen ? closeAll() : openPanel(promopanel, promoToggleBtn);
   });
@@ -745,6 +784,29 @@ function handleFadeInOnScroll() {
 window.addEventListener('scroll', handleFadeInOnScroll);
 window.addEventListener('DOMContentLoaded', handleFadeInOnScroll);
 
+// Fade-in 애니메이션 효과 (데스크탑 전용)
+(function() {
+  function isDesktop() {
+    return window.innerWidth > 768;
+  }
+  function handleFadeInOnScroll() {
+    if (!isDesktop()) return;
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const windowH = window.innerHeight;
+    fadeEls.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < windowH - 60) {
+        el.classList.add('visible');
+      } else {
+        el.classList.remove('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', handleFadeInOnScroll);
+  window.addEventListener('resize', handleFadeInOnScroll);
+  document.addEventListener('DOMContentLoaded', handleFadeInOnScroll);
+})();
+
 // 메뉴 hover-out 딜레이 적용
 (function() {
   const menuItems = document.querySelectorAll('.gnb > li');
@@ -761,7 +823,7 @@ window.addEventListener('DOMContentLoaded', handleFadeInOnScroll);
       menuTimeout = setTimeout(function() {
         item.classList.remove('active');
         if(dropdownPanel) dropdownPanel.classList.remove('active');
-      }, 200);
+      }, 500);
     });
   });
 
@@ -778,5 +840,61 @@ window.addEventListener('DOMContentLoaded', handleFadeInOnScroll);
       }, 500);
     });
   }
+})();
+
+// 모바일 스티키 헤더 효과
+function handleMobileStickyHeader() {
+  const header = document.querySelector('.header');
+  if (!header || window.innerWidth > 768) return;
+
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+  if (scrollTop > 10) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+}
+
+// 스크롤 이벤트에 모바일 스티키 헤더 추가
+window.addEventListener('scroll', () => {
+  handleScroll();
+  handleMobileStickyHeader();
+});
+
+// 리사이즈 시에도 적용
+window.addEventListener('resize', handleMobileStickyHeader);
+
+// 위로가기 버튼 기능
+(function() {
+  const btn = document.getElementById('scrollToTopBtn');
+  if (!btn) return;
+
+  function checkScrollForTopBtn() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    const windowH = window.innerHeight;
+    const docH = document.documentElement.scrollHeight;
+    
+    // 스크롤이 300px 이상일 때 표시 (항상 따라다님)
+    if (scrollY > 300) {
+      btn.style.display = 'block';
+      btn.style.opacity = '0.85';
+    } else {
+      btn.style.display = 'none';
+    }
+    
+    // 맨 아래 근처에서는 더 진하게 표시
+    if (scrollY + windowH >= docH - 120) {
+      btn.style.opacity = '1';
+    }
+  }
+
+  window.addEventListener('scroll', checkScrollForTopBtn);
+  window.addEventListener('resize', checkScrollForTopBtn);
+  document.addEventListener('DOMContentLoaded', checkScrollForTopBtn);
+
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 })();
 

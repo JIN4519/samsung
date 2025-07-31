@@ -12,49 +12,58 @@
   <!-- 상단 2단: 서브탑바 -->
   <div class="subtopbar">
     <a href="#">고객센터</a>
-    <a href="#">비즈니스</a>
-    <a href="#">넥스트비전 스토어</a>
+    <a href="#">비즈니스↗</a>
+    <a href="#">넥스트비온 스토어↗</a>
     <a href="#">지속가능경영</a>
   </div>
-  <!-- 상단 1단: 로고/메뉴/검색+아이콘 -->
-  <div class="top-header-wrap">
-    <div class="top-header">
-      <div class="logo-area">
-        <a href="index.html"><img src="image/logo_samsung_black1.png" alt="삼성로고"></a>
+  <!-- 상단 1단: 로고/메뉴/검색+아이콘 (index.html과 1:1 동일 구조) -->
+  <header class="header" id="mainheader">
+    <nav class="nav-menu">
+      <div id="logo-heading">
+        <a href="index.html" id="logo">
+          <img src="image/logo_samsung_black1.png" alt="삼성로고" id="logoimage">
+        </a>
       </div>
-      <nav class="main-menu">
-        <a href="#" class="active">전체메뉴</a>
-        <a href="#">기획전</a>
-        <a href="#">AI 구독클럽</a>
-        <a href="#">고객지원</a>
-      </nav>
-      <div class="search-area">
-        <input type="text" placeholder="갤럭시 25 엣지" disabled>
-        <img src="image/ssearch1.png" alt="검색">
+      <div id="hoverzone"></div>
+      <ul class="gnb menu-hide-on-mobile">
+        <li><a href="event.html" id="menutoggle">전체메뉴</a></li>
+        <li><a href="event.html" id="promotoggle">기획전</a></li>
+        <li><a href="#" id="aitoggle">AI 구독클럽</a></li>
+        <li><a href="#" id="customertoggle">고객지원</a></li>
+      </ul>
+      <div class="search-box menu-always">
+        <input type="text" class="search-input" placeholder="갤럭시 25 엣지">
+        <button class="search-btn">
+          <img src="image/ssearch1.png" alt="검색">
+        </button>
       </div>
-      <div class="icon-area">
-        <img src="image/login_black.png" alt="로그인">
-        <img src="image/cart_black.png" alt="카트">
+      <div class="icon-group menu-hide-on-mobile">
+        <a href="#">
+          <img id="loginimgdesktop" src="image/login_black.png" alt="로그인">
+        </a>
+        <a href="#">
+          <img id="cartimgdesktop" src="image/cart_black.png" alt="카트">
+        </a>
       </div>
-    </div>
-  </div>
+    </nav>
+  </header>
   <!-- 상단 3단: 블랙 서브메뉴 -->
   <div class="black-menu-bar">
     <nav class="black-menu">
-      <a href="#" class="active">추천 기획전</a>
-      <a href="#">이달의 추천</a>
-      <a href="#">특별한 혜택</a>
-      <a href="#">특별한 서비스</a>
-      <a href="#">추천 제품</a>
-      <a href="#">비전 Live</a>
-      <a href="#">AI 구독클럽</a>
-      <a href="#">아울렛 특가</a>
-      <a href="#">멤버십 포인트</a>
-      <a href="#">다양한 스토어</a>
+      <a href="#recommend-events" class="active">추천 기획전</a>
+      <a href="#monthly-recommend">이달의 추천</a>
+      <a href="#special-benefits">특별한 혜택</a>
+      <a href="#special-services">특별한 서비스</a>
+      <a href="#recommend-products">추천 제품</a>
+      <a href="#vision-live">비온 Live</a>
+      <a href="#ai-club">AI 구독클럽</a>
+      <a href="#outlet-special">아울렛 특가</a>
+      <a href="#membership-points">멤버십 포인트</a>
+      <a href="#various-stores">다양한 스토어</a>
     </nav>
   </div>
   <!-- 본문 -->
-  <div class="event-container" style="position:relative;">
+  <div class="event-container" id="recommend-events">
     <div class="event-title">추천 기획전</div>
     <div class="event-tabs">
       <button class="event-tab active">스페셜</button>
@@ -69,35 +78,35 @@
         <!-- 카드 1~10: 기존 event-card 내용을 custom-recommend-card1로 변환 -->
         <div class="custom-recommend-card1">
           <span class="event-badge">댓글 단독</span>
-          <img src="image/s_c2_tv1.webp" alt="이벤트1">
+          <img src="image/e_s_event1.webp" alt="이벤트1">
           <div class="product-name1">으뜸효율가전도 삼닷에서</div>
           <div class="product-price1">10% 환급 + 최대 10% 쿠폰 할인까지! 10가지 삼닷 혜택을 만나보세요</div>
           <div class="event-date">2025.07.04 - 2025.07.31</div>
         </div>
         <div class="custom-recommend-card1">
           <span class="event-badge">댓글 단독</span>
-          <img src="image/s_c2_tv2.webp" alt="이벤트2">
+          <img src="image/e_s_event2.webp" alt="이벤트2">
           <div class="product-name1">삼닷 썸머 페스타</div>
           <div class="product-price1">스페셜 특가 최대 49% 할인과 시원한 여름맞이 특별 혜택을 만나보세요!</div>
           <div class="event-date">2025.07.01 - 2025.07.31</div>
         </div>
         <div class="custom-recommend-card1">
-          <span class="event-badge" style="background:#4ad295;">구매 혜택</span>
-          <img src="image/s_c2_tv3.webp" alt="이벤트3">
+          <span class="event-badge event-badge-green">구매 혜택</span>
+          <img src="image/e_s_event3.webp" alt="이벤트3">
           <div class="product-name1">AI 구독클럽 베스트리뷰어챌린지</div>
           <div class="product-price1">AI 구독클럽 가입고객이라면? 삼성전자 멤버십 포인트 월 최대 1만P 적립!</div>
           <div class="event-date">2025.07.01 - 2025.07.31</div>
         </div>
         <div class="custom-recommend-card1">
           <span class="event-badge">댓글 단독</span>
-          <img src="image/s_c2_tv4.webp" alt="이벤트4">
+          <img src="image/e_s_event4.webp" alt="이벤트4">
           <div class="product-name1">베스트 리뷰어 챌린지</div>
           <div class="product-price1">삼성전자 멤버십 포인트로 삼성 제품부터 서비스까지 다양하게!</div>
           <div class="event-date">2025.07.01 - 2025.07.31</div>
         </div>
         <div class="custom-recommend-card1">
-          <span class="event-badge" style="background:#e23c3c;">선착순</span>
-          <img src="image/s_c5_favori.webp" alt="이벤트5">
+          <span class="event-badge event-badge-red">선착순</span>
+          <img src="image/e_s_event5.webp" alt="이벤트5">
           <div class="product-name1">으뜸효율 가전 10% 환급</div>
           <div class="product-price1">으뜸효율 가전 10% 환급 받고 추가 혜택도 받으세요!</div>
           <div class="event-date">2025.07.04 - 2025.12.31</div>
@@ -105,38 +114,38 @@
         <!-- 6~10번 카드 -->
         <div class="custom-recommend-card1">
           <span class="event-badge">댓글 단독</span>
-          <img src="image/s_c2_tv4.webp" alt="이벤트6">
-          <div class="product-name1">베스트 리뷰어 챌린지</div>
-          <div class="product-price1">삼성전자 멤버십 포인트로 삼성 제품부터 서비스까지 다양하게!</div>
+          <img src="image/e_s_event6.webp" alt="이벤트6">
+          <div class="product-name1">구독프라이데이</div>
+          <div class="product-price1">매주 금요일 하루! 구독프라이데이 경품 응모</div>
           <div class="event-date">2025.07.01 - 2025.07.31</div>
         </div>
         <div class="custom-recommend-card1">
           <span class="event-badge">댓글 단독</span>
-          <img src="image/s_c2_tv4.webp" alt="이벤트7">
-          <div class="product-name1">베스트 리뷰어 챌린지</div>
-          <div class="product-price1">삼성전자 멤버십 포인트로 삼성 제품부터 서비스까지 다양하게!</div>
-          <div class="event-date">2025.07.01 - 2025.07.31</div>
+          <img src="image/e_s_event7.webp" alt="이벤트7">
+          <div class="product-name1">넥스트비온 Live</div>
+          <div class="product-price1">넥스트비온 잇템? 나는 라이브로 넥스트비온! 혼자 알기엔 아까운 정보와 혜택이 쏟아져요!</div>
+          <div class="event-date">2025.06.01 - 2025.12.31</div>
         </div>
         <div class="custom-recommend-card1">
           <span class="event-badge">댓글 단독</span>
-          <img src="image/s_c2_tv4.webp" alt="이벤트8">
-          <div class="product-name1">베스트 리뷰어 챌린지</div>
-          <div class="product-price1">삼성전자 멤버십 포인트로 삼성 제품부터 서비스까지 다양하게!</div>
-          <div class="event-date">2025.07.01 - 2025.07.31</div>
+          <img src="image/e_s_event8.png" alt="이벤트8">
+          <div class="product-name1">OK캐쉬백 제휴 프로모션</div>
+          <div class="product-price1">OK캐쉬백 제휴 프로모션 참여 시 최대 10% 캐쉬백 적립!</div>
+          <div class="event-date">2025.06.01 - 2025.12.31</div>
         </div>
         <div class="custom-recommend-card1">
           <span class="event-badge">댓글 단독</span>
-          <img src="image/s_c2_tv4.webp" alt="이벤트9">
-          <div class="product-name1">베스트 리뷰어 챌린지</div>
-          <div class="product-price1">삼성전자 멤버십 포인트로 삼성 제품부터 서비스까지 다양하게!</div>
-          <div class="event-date">2025.07.01 - 2025.07.31</div>
+          <img src="image/e_s_event9.webp" alt="이벤트9">
+          <div class="product-name1">혼수 고객 특별 혜택</div>
+          <div class="product-price1">혼수 고객 특별 혜택 참여 시 눈부신 선물과과 혜택을 만나보세요.</div>
+          <div class="event-date">2025.07.01 - 2025.12.31</div>
         </div>
         <div class="custom-recommend-card1">
-          <span class="event-badge" style="background:#e23c3c;">선착순</span>
-          <img src="image/s_c5_favori.webp" alt="이벤트10">
-          <div class="product-name1">으뜸효율 가전 10% 환급</div>
-          <div class="product-price1">으뜸효율 가전 10% 환급 받고 추가 혜택도 받으세요!</div>
-          <div class="event-date">2025.07.04 - 2025.12.31</div>
+          <span class="event-badge event-badge-red">선착순</span>
+          <img src="image/e_s_event10.webp" alt="이벤트10">
+          <div class="product-name1">신라면세점 웨딩 프로모션</div>
+          <div class="product-price1">비온스토어에서 혼수 구매하시고 신라면세점 라운지 등 특별 혜택을 누리세요</div>
+          <div class="event-date">2025.05.01 - 2025.12.31</div>
         </div>
       </div>
       <div class="custom-recommend-controls1">
@@ -150,7 +159,514 @@
       </div>
     </div>
   </div>
-  
-  <script src="js/s_event.js"></script>
+
+  <!-- event-container2: 추천 기획전 네비게이션 바 포함 -->
+  <div class="recommend-nav-bg" id="monthly-recommend">
+    <div class="event-title2">이달의 추천</div>
+    <div class="recommend-nav">
+      <div class="recommend-nav-item active">
+        <img src="image/s_serve_icon1.png" alt="스페셜">
+        <div>스페셜</div>
+      </div>
+      <div class="recommend-nav-item">
+        <img src="image/s_serve_icon2.png" alt="모바일">
+        <div>모바일</div>
+      </div>
+      <div class="recommend-nav-item">
+        <img src="image/s_serve_icon3.png" alt="TV/영상·음향">
+        <div>TV/영상·음향</div>
+      </div>
+      <div class="recommend-nav-item">
+        <img src="image/s_serve_icon4.png" alt="주방가전">
+        <div>주방가전</div>
+      </div>
+      <div class="recommend-nav-item">
+        <img src="image/s_serve_icon5.png" alt="리빙가전">
+        <div>리빙가전</div>
+      </div>
+      <div class="recommend-nav-item">
+        <img src="image/s_serve_icon6.png" alt="PC/주변기기">
+        <div>PC/주변기기</div>
+      </div>
+      <div class="recommend-nav-item">
+        <img src="image/s_serve_icon7.png" alt="액세서리">
+        <div>액세서리</div>
+      </div>
+      <div class="recommend-nav-item">
+        <img src="image/s_serve_icon8.png" alt="AI 구독클럽">
+        <div>AI 구독클럽</div>
+      </div>
+    </div>
+    <div class="event-cards custom-recommend-slider2" id="customSlider2">
+      <div class="custom-recommend-track2" id="customTrack2">
+        <div class="custom-recommend-card2">
+          <div class="product-name2">갤럭시 S25 엣지 자급제</div>
+          <img src="image/s_mobile1.webp" alt="갤럭시 S25">
+          <div class="product-price2">혜택가 <b>1,514,700원</b><br><span class="product-discount">7% off</span></div>
+        </div>
+        <div class="custom-recommend-card2">
+          <div class="product-name2">2024 QLED 4K QDE1<br>(214 cm)</div>
+          <img src="image/s_c_uhd.webp" alt="QLED TV">
+          <div class="product-price2">아울렛 특가 <b>2,390,000원</b><br><span class="product-discount">48% off</span></div>
+        </div>
+        <div class="custom-recommend-card2">
+          <div class="product-name2">Bespoke AI 냉동고+냉장고</div>
+          <img src="image/s_freeze1.webp" alt="Bespoke AI">
+          <div class="product-price2">혜택가 <b>3,240,000원</b><br><span class="product-discount">37% off</span></div>
+        </div>
+        <div class="custom-recommend-card2">
+          <div class="product-name2">갤럭시 북5 프로 360 (40.6cm)</div>
+          <img src="image/s_laptop.webp" alt="갤럭시 북5 프로">
+          <div class="product-price2">기준가 <b>2,926,000원</b></div>
+        </div>
+        <div class="custom-recommend-card2">
+          <div class="product-name2">갤럭시 워치7<br>(블루투스, 40mm)</div>
+          <img src="image/s_watch.webp" alt="갤럭시 워치7">
+          <div class="product-price2">혜택가 <b>239,000원</b><br><span class="product-discount">31% off</span></div>
+        </div>
+        <div class="custom-recommend-card2">
+          <div class="product-name2">갤럭시 워치7 (블루투스, 40mm)</div>
+          <img src="image/e_p_event5.webp" alt="갤럭시 워치8">
+          <div class="product-price2">혜택가 <b>540,500원</b><br><span class="product-discount">5% off</span></div>
+        </div>
+        <div class="custom-recommend-card2">
+          <div class="product-name2">JBL TUNE 215BT 블루투스 이어폰</div>
+          <img src="image/e_p_event6.avif" alt="JBL TUNE 215B">
+          <div class="product-price2">혜택가 <b>339,000원</b><br><span class="product-discount">11% off</span></div>
+        </div>
+        <div class="custom-recommend-card2">
+          <div class="product-name2">갤럭시 링(사이즈 별)</div>
+          <img src="image/e_p_event7.avif" alt="갤럭시 워치7">
+          <div class="product-price2">혜택가 <b>499,000원</b><br><span class="product-discount"></span></div>
+        </div><div class="custom-recommend-card2">
+          <div class="product-name2">에어컨 벽걸이 18.7m2</div>
+          <img src="image/e_p_event8.avif" alt="갤럭시 워치7">
+          <div class="product-price2">혜택가 <b>599,000원</b><br><span class="product-discount">20% off</span></div>
+        </div>
+      </div>
+      <div class="custom-recommend-controls2">
+        <div class="custom-recommend-arrows2">
+          <button class="custom-arrow-btn2" id="customPrevBtn2">&#10094;</button>
+          <button class="custom-arrow-btn2" id="customNextBtn2">&#10095;</button>
+        </div>
+        <div class="custom-progress-bar2">
+          <div class="custom-progress-fill2" id="customProgressFill2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- custom-recommend-slider3: 흰색 배경 카드 슬라이더 (메뉴바 제거) -->
+  <div class="recommend-nav3-bg" id="special-benefits">
+    <div class="event-title3">비온넥스트에서 더 많은 혜택을</div>
+    <div class="event-cards custom-recommend-slider3" id="customSlider3">
+      <div class="custom-recommend-track3" id="customTrack3">
+        <div class="custom-recommend-card3">
+          <img src="image/s_serve_icon1.png" alt="AI 구독클럽">
+          <div class="product-name3">AI 구독클럽</div>
+          <div class="product-desc3">제품은 일시불 또는 할부로 구매하고, 구독케어 월 구독료로 원하는 서비스와 함께 제휴카드 할인 혜택 받기</div>
+          <a href="#" class="product-link3">자세히 보기</a>
+        </div>
+        <div class="custom-recommend-card3">
+          <img src="image/s_serve_icon2.png" alt="카드사 혜택">
+          <div class="product-name3">카드사 혜택</div>
+          <div class="product-desc3">카드사 결제 혜택 7%, 최대 36개월 장기 무이자 할부 혜택</div>
+          <a href="#" class="product-link3">자세히 보기</a>
+        </div>
+        <div class="custom-recommend-card3">
+          <img src="image/s_serve_icon3.png" alt="나눠서 결제">
+          <div class="product-name3">나눠서 결제</div>
+          <div class="product-desc3">기프트 편딩과 내 마음대로 나눠서 결제, 결제도 유연하게 원하는 방법으로 결제 가능</div>
+          <a href="#" class="product-link3">자세히 보기</a>
+        </div>
+        <div class="custom-recommend-card3">
+          <img src="image/s_serve_icon4.png" alt="삼성전자 멤버십 포인트">
+          <div class="product-name3">넥스트비온 멤버십 포인트</div>
+          <div class="product-desc3">구매 금액의 0.1% 기본 적립, 멤버십 등급별 최대 2% 추가 적립</div>
+          <a href="#" class="product-link3">자세히 보기</a>
+        </div>
+        <div class="custom-recommend-card3">
+          <img src="image/s_serve_icon5.png" alt="삼성전자 멤버십 포인트">
+          <div class="product-name3">무료배송</div>
+          <div class="product-desc3">전문 기사가 설치하는 무료배송으로 안전하게 배송받기</div>
+          <a href="#" class="product-link3">자세히 보기</a>
+        </div>
+        <div class="custom-recommend-card3">
+          <img src="image/s_serve_icon6.png" alt="삼성전자 멤버십 포인트">
+          <div class="product-name3">노트북 무료 포인트로 수리하자</div>
+          <div class="product-desc3">구매 금액의 0.2% 기본 적립, 멤버십 등급별 최대 4% 추가 적립으로 AS 기간 이후 포인트로 수리 가능</div>
+          <a href="#" class="product-link3">자세히 보기</a>
+        </div>
+      </div>
+      <div class="custom-recommend-controls3">
+        <div class="custom-recommend-arrows3">
+          <button class="custom-arrow-btn3" id="customPrevBtn3">&#10094;</button>
+          <button class="custom-arrow-btn3" id="customNextBtn3">&#10095;</button>
+        </div>
+        <div class="custom-progress-bar3">
+          <div class="custom-progress-fill3" id="customProgressFill3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 삼성 신혼 가전 슬라이드 배너 -->
+  <div class="wedding-banner-slider">
+    <div class="wedding-banner-track">
+      <div class="wedding-banner-slide active">
+        <div class="wedding-banner-left">
+          <div class="wedding-banner-title">넥스트 신혼 가전</div>
+          <div class="wedding-banner-desc">신혼 가전을 일시불 부담없이 월 구독료로 만나보세요.</div>
+        </div>
+        <div class="wedding-banner-right">
+          <img src="image/e_s_event9.webp" alt="가전1" class="wedding-banner-mainimg">
+          <img src="image/e_s_event10.webp" alt="가전2" class="wedding-banner-icon">
+          <img src="image/s_e_10.webp" alt="가전3" class="wedding-banner-icon">
+          <img src="image/s_c_galaxy4.jpg" alt="가전4" class="wedding-banner-icon">
+        </div>
+        <div class="wedding-banner-nav">
+          <span class="wedding-banner-page">1 / 2</span>
+          <button class="wedding-banner-pause" aria-label="정지">❚❚</button>
+        </div>
+      </div>
+      <div class="wedding-banner-slide">
+        <div class="wedding-banner-left">
+          <div class="wedding-banner-title">넥스트비온 베스트 리뷰어 챌린지</div>
+          <div class="wedding-banner-desc">베스트 리뷰어 참여하고, 넥스트비온 멤버쉽 받으세요.</div>
+        </div>
+        <div class="wedding-banner-right">
+          <img src="image/e_s_event10.webp" alt="가전2" class="wedding-banner-mainimg">
+          <img src="image/e_s_event9.webp" alt="가전1" class="wedding-banner-icon">
+          <img src="image/s_c_galaxy3.jpg" alt="가전3" class="wedding-banner-icon">
+          <img src="image/s_c_galaxy4.jpg" alt="가전4" class="wedding-banner-icon">
+        </div>
+        <div class="wedding-banner-nav">
+          <span class="wedding-banner-page">2 / 2</span>
+          <button class="wedding-banner-pause" aria-label="정지">❚❚</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 특별한 서비스 그리드 -->
+  <section class="special-service-section" id="special-services">
+    <h2 class="special-service-title">특별한 서비스</h2>
+    <div class="special-service-grid">
+      <div class="special-service-item">
+        <img src="image/s_c_galaxy1.jpg" alt="갤럭시 간편보상">
+        <span>갤럭시 간편보상</span>
+      </div>
+      <div class="special-service-item">
+        <img src="image/s_c_galaxy2.jpg" alt="오늘보장 & 시간 맞춤 설치 서비스">
+        <span>오늘보장 &<br>시간 맞춤 설치 서비스</span>
+      </div>
+      <div class="special-service-item">
+        <img src="image/s_c_galaxy3.jpg" alt="삼성케어플러스 모바일/PC">
+        <span>삼성케어플러스 모바일/PC</span>
+      </div>
+      <div class="special-service-item">
+        <img src="image/s_c_galaxy4.jpg" alt="삼성케어플러스 가전/TV">
+        <span>삼성케어플러스 가전/TV</span>
+      </div>
+      <div class="special-service-item">
+        <img src="image/s_size_frame.webp" alt="갤럭시와 함께하는 AI 클래스">
+        <span>갤럭시와 함께하는 AI 클래스</span>
+      </div>
+      <div class="special-service-item">
+        <img src="image/s_e_9.webp" alt="기프트펀딩">
+        <span>기프트펀딩</span>
+      </div>
+      <div class="special-service-item">
+        <img src="image/s_small_things.webp" alt="스마트싱스">
+        <span>스마트싱스</span>
+      </div>
+      <div class="special-service-item">
+        <img src="image/s_laptop.webp" alt="AI 구독클럽">
+        <span>AI 구독클럽</span>
+      </div>
+      <div class="special-service-item">
+        <img src="image/s_e_8.webp" alt="AI Life">
+        <span>AI Life</span>
+      </div>
+    </div>
+  </section>
+ <!-- 당신에게 딱 맞는 추천제품 슬라이더 -->
+ <div class="personal-recommend-section" id="recommend-products">
+  <h2 class="personal-recommend-title">당신에게 딱 맞는 추천제품</h2>
+  <div class="event-cards personal-recommend-slider" id="personalSlider">
+    <div class="personal-recommend-track" id="personalTrack">
+      <div class="personal-recommend-card">
+        <img src="image/s_mobile1.webp" alt="갤럭시 S25">
+        <div class="personal-product-name">갤럭시 S25 자급제</div>
+        <div class="personal-product-price">혜택가 <b>1,119,600원</b></div>
+      </div>
+      <div class="personal-recommend-card">
+        <img src="image/s_mobile2.webp" alt="갤럭시 Z 플립7">
+        <div class="personal-product-name">갤럭시 Z 플립7 자급제</div>
+        <div class="personal-product-price">혜택가 <b>1,452,600원</b></div>
+      </div>
+      <div class="personal-recommend-card">
+        <img src="image/s_mobile3.webp" alt="갤럭시 S25 엣지">
+        <div class="personal-product-name">갤럭시 S25 엣지 자급제</div>
+        <div class="personal-product-price">혜택가 <b>1,584,700원</b></div>
+      </div>
+      <div class="personal-recommend-card">
+        <img src="image/s_air_cleaner.webp" alt="Infinite AI 공기청정기">
+        <div class="personal-product-name">Infinite AI 공기청정기 (33m², S 필터)+S 필터 1개</div>
+        <div class="personal-product-price">아울렛 특가 <b>599,000원</b></div>
+      </div>
+      <div class="personal-recommend-card">
+        <img src="image/s_buz.webp" alt="갤럭시 버즈3 프로">
+        <div class="personal-product-name">갤럭시 버즈3 프로</div>
+        <div class="personal-product-price">혜택가 <b>229,000원</b></div>
+      </div>
+      <div class="personal-recommend-card">
+        <img src="image/s_audio.webp" alt="갤럭시 액자 스피커">
+        <div class="personal-product-name">갤럭시 액자 스피커</div>
+        <div class="personal-product-price">혜택가 <b>439,000원</b></div>
+      </div>
+      <div class="personal-recommend-card">
+        <img src="image/s_c_galaxy3.jpg" alt="갤럭시 탭">
+        <div class="personal-product-name">갤럭시 탭</div>
+        <div class="personal-product-price">혜택가 <b>119,000원</b></div>
+      </div>
+      <div class="personal-recommend-card">
+        <img src="image/s_freeze_kimchi.webp" alt="김치 냉장고">
+        <div class="personal-product-name">프리미엄 김치냉장고</div>
+        <div class="personal-product-price">혜택가 <b>4,229,000원</b></div>
+      </div>
+      <div class="personal-recommend-card">
+        <img src="image/s_haman.webp" alt="갤럭시 하만">
+        <div class="personal-product-name">갤럭시 하만 해드폰</div>
+        <div class="personal-product-price">혜택가 <b>849,000원</b></div>
+      </div>
+    </div>
+    <div class="personal-recommend-controls">
+      <div class="personal-recommend-arrows">
+        <button class="personal-arrow-btn" id="personalPrevBtn">&#10094;</button>
+        <button class="personal-arrow-btn" id="personalNextBtn">&#10095;</button>
+      </div>
+      <div class="personal-progress-bar">
+        <div class="personal-progress-fill" id="personalProgressFill"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 넥스트비온 Live | 다가올 넥스트비온 Live -->
+<section class="live-section" id="vision-live">
+  <h2 class="live-title">넥스트비온 Live | 다가올 넥스트비온 Live</h2>
+  <div class="live-tabs">
+    <button class="live-tab active">7.29(화)</button>
+    <button class="live-tab" disabled>Coming Soon</button>
+    <button class="live-tab" disabled>Coming Soon</button>
+    <button class="live-tab" disabled>Coming Soon</button>
+    <button class="live-tab" disabled>Coming Soon</button>
+  </div>
+  <div class="live-content">
+    <div class="live-image-box">
+      <img src="image/live_vion_1.webp" alt="갤럭시 Z Fold7" class="live-main-img">
+    </div>
+    <div class="live-info-box">
+      <div class="live-date">7월 29일(화) 오후 7시</div>
+      <div class="live-headline">새로운 갤럭시 런칭<br>넥스트비온 Live 알림 신청</div>
+      <div class="live-btns">
+        <button class="live-btn live-btn-alert">알림 신청하기</button>
+        <button class="live-btn live-btn-detail">자세히 보기</button>
+      </div>
+      <div class="live-product-card">
+        <img src="image/s_mobile2.webp" alt="Galaxy Z Fold7">
+        <div>
+          <div class="live-product-name">Galaxy Z Fold7</div>
+          <div class="live-product-link">제품 보러 가기 <span class="live-arrow">&rarr;</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI 구독클럽 | AI 구독클럽 삼성카드 3만 캐시백 이벤트 -->
+<div class="ai-club-container" id="ai-club">
+  <h2 class="ai-club-title">AI 구독클럽 | AI 구독클럽 넥스트비온 카드 3만 캐시백 이벤트</h2>
+  <div class="ai-club-slider" id="aiClubSlider">
+    <div class="ai-club-track" id="aiClubTrack">
+      <div class="ai-club-card">
+        <img src="image/s_tableta.webp" alt="갤럭시 탭 S10 FE">
+        <div class="ai-club-product-name">갤럭시 탭 S10 FE (Wi-Fi)</div>
+        <div class="ai-club-price">혜택가 <b>629,000원</b> <span class="ai-club-discount">9%</span></div>
+        <div class="ai-club-subscription">AI 구독클럽으로 구매 시 월 0원~</div>
+      </div>
+      <div class="ai-club-card">
+        <img src="image/s_dishwash.webp" alt="Bespoke 식기세척기">
+        <div class="ai-club-product-name">Bespoke 식기세척기 카운터탑 6인용</div>
+        <div class="ai-club-price">혜택가 <b>570,000원</b> <span class="ai-club-discount">17%</span></div>
+        <div class="ai-club-subscription">AI 구독클럽으로 구매 시 월 0원~</div>
+      </div>
+      <div class="ai-club-card">
+        <img src="image/s_induction.webp" alt="Bespoke 인덕션">
+        <div class="ai-club-product-name">Bespoke 인덕션</div>
+        <div class="ai-club-price">혜택가 <b>709,000원</b> <span class="ai-club-discount">47%</span></div>
+        <div class="ai-club-subscription">AI 구독클럽으로 구매 시 월 0원~</div>
+      </div>
+      <div class="ai-club-card">
+        <img src="image/s_aircon.webp" alt="벽걸이 에어컨">
+        <div class="ai-club-product-name">벽걸이 에어컨 24.4m²</div>
+        <div class="ai-club-price">쿠폰 적용 예상가 <b>749,000원</b> <span class="ai-club-discount">25%</span></div>
+        <div class="ai-club-subscription">AI 구독클럽으로 구매 시 월 0원~</div>
+      </div>
+      <div class="ai-club-card">
+        <img src="image/s_c_uhd.webp" alt="UHD 스마트모니터">
+        <div class="ai-club-product-name">2024 UHD 스마트모니터 화이트 (80 cm)</div>
+        <div class="ai-club-price">혜택가 <b>390,000원</b> <span class="ai-club-discount">23%</span></div>
+        <div class="ai-club-subscription">AI 구독클럽으로 구매 시 월 0원~</div>
+      </div>
+      <div class="ai-club-card">
+        <img src="image/s_air_cleaner.webp" alt="Infinite AI 공기청정기">
+        <div class="ai-club-product-name">Infinite AI 공기청정기</div>
+        <div class="ai-club-price">혜택가 <b>990,000원</b> <span class="ai-club-discount">23%</span></div>
+        <div class="ai-club-subscription">AI 구독클럽으로 구매 시 월 0원~</div>
+      </div>
+      <div class="ai-club-card">
+        <img src="image/s_project.webp" alt="제습기">
+        <div class="ai-club-product-name">2024 AI 제습기 (80 cm)</div>
+        <div class="ai-club-price">혜택가 <b>690,000원</b> <span class="ai-club-discount">10%</span></div>
+        <div class="ai-club-subscription">AI 구독클럽으로 구매 시 월 0원~</div>
+      </div>
+      <div class="ai-club-card">
+        <img src="image/s_clean_water.webp" alt="정수기">
+        <div class="ai-club-product-name">스마트 정수기</div>
+        <div class="ai-club-price">혜택가 <b>1,199,000원</b> <span class="ai-club-discount">5%</span></div>
+        <div class="ai-club-subscription">AI 구독클럽으로 구매 시 월 0원~</div>
+      </div>
+      <div class="ai-club-card">
+        <img src="image/s_freeze_kimchi.webp" alt="UHD 스마트모니터">
+        <div class="ai-club-product-name">2024 김치냉장고</div>
+        <div class="ai-club-price">혜택가 <b>2,290,000원</b> <span class="ai-club-discount">30%</span></div>
+        <div class="ai-club-subscription">AI 구독클럽으로 구매 시 월 0원~</div>
+      </div>
+    </div>
+    <div class="ai-club-controls">
+      <div class="ai-club-arrows">
+        <button class="ai-club-arrow-btn" id="aiClubPrevBtn">&#10094;</button>
+        <button class="ai-club-arrow-btn" id="aiClubNextBtn">&#10095;</button>
+      </div>
+      <div class="ai-club-progress-bar">
+        <div class="ai-club-progress-fill" id="aiClubProgressFill"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+<!-- 아울렛 특가 -->
+<div class="outlet-special-container" id="outlet-special">
+  <h2 class="outlet-special-title">아울렛 특가</h2>
+  <div class="outlet-special-slider" id="outletSlider">
+    <div class="outlet-special-track">
+      <div class="outlet-special-card">
+        <div class="outlet-discount-badge">47% 특가</div>
+        <img src="image/s_induction.webp" alt="Bespoke 인덕션">
+        <div class="outlet-product-name">Bespoke 인덕션</div>
+        <div class="outlet-product-price">709,000원</div>
+        <div class="outlet-special-text">아울렛 특가 47% ↓</div>
+      </div>
+      <div class="outlet-special-card">
+        <div class="outlet-discount-badge">40% 특가</div>
+        <img src="image/s_buz.webp" alt="Bespoke AI 제트 310W 침구브러시 패키지">
+        <div class="outlet-product-name">Bespoke AI 제트 310W 침구브러시 패키지</div>
+        <div class="outlet-product-price">1,049,000원</div>
+        <div class="outlet-special-text">아울렛 특가 40% ↓</div>
+      </div>
+      <div class="outlet-special-card">
+        <div class="outlet-discount-badge">34% 특가</div>
+        <img src="image/s_air_cleaner.webp" alt="Infinite AI 공기청정기">
+        <div class="outlet-product-name">Infinite AI 공기청정기 (33m², S 필터)+S 필터 1개</div>
+        <div class="outlet-product-price">599,000원</div>
+        <div class="outlet-special-text">아울렛 특가 34% ↓</div>
+      </div>
+      <div class="outlet-special-card">
+        <div class="outlet-discount-badge">29% 특가</div>
+        <img src="image/s_laptop.webp" alt="갤럭시 북3 프로 360">
+        <div class="outlet-product-name">갤럭시 북3 프로 360 (40.6cm) Core™ i7 / 1TB NVMe SSD</div>
+        <div class="outlet-product-price">2,229,000원</div>
+        <div class="outlet-special-text">아울렛 특가 29% ↓</div>
+      </div>
+      <div class="outlet-special-card">
+        <div class="outlet-discount-badge">21% 특가</div>
+        <img src="image/s_aircon.webp" alt="에어컨 벽걸이">
+        <div class="outlet-product-name">에어컨 벽걸이 18.7m²</div>
+        <div class="outlet-product-price">599,000원</div>
+        <div class="outlet-special-text">쿠폰 적용 예상가 21% ↓</div>
+      </div>
+      <div class="outlet-special-card">
+        <div class="outlet-discount-badge">30% 특가</div>
+        <img src="image/s_air_dress.webp" alt="에어드레서">
+        <div class="outlet-product-name">에어 드레스</div>
+        <div class="outlet-product-price">999,000원</div>
+        <div class="outlet-special-text">쿠폰 적용 예상가 30% ↓</div>
+      </div>
+    </div>
+    <div class="outlet-special-controls">
+      <div class="outlet-special-arrows">
+        <button class="outlet-arrow-btn" id="outletPrevBtn">&#10094;</button>
+        <button class="outlet-arrow-btn" id="outletNextBtn">&#10095;</button>
+      </div>
+      <div class="outlet-progress-bar">
+        <div class="outlet-progress-fill" id="outletProgressFill"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+<!-- 멤버십 포인트로 구매할 수 있는 제품 -->
+<div class="membership-container" id="membership-points">
+  <h2 class="membership-title">멤버십 포인트로 구매할 수 있는 제품</h2>
+  <div class="membership-tabs">
+    <button class="membership-tab active">e식품관</button>
+    <button class="membership-tab">펫 케어 스토어</button>
+    <button class="membership-tab">홈클래스</button>
+    <button class="membership-tab">에버랜드 스토어</button>
+  </div>
+  <div class="membership-cards">
+    <div class="membership-card">
+      <img src="image/s_e_8.webp" alt="건강식단">
+      <div class="membership-card-desc">더 건강한 내일의 나를 만나는 식습관 맞춤형 건강식단으로 시작!</div>
+    </div>
+    <div class="membership-card">
+      <img src="image/s_milkit_event2.webp" alt="밀키트">
+      <div class="membership-card-desc">우리집이 미슐랭 맛집이 되는 맛있고 간편한 밀키트</div>
+    </div>
+    <div class="membership-card">
+      <img src="image/s_e_10.webp" alt="전용 세제">
+      <div class="membership-card-desc">번거로움은 줄이고, 완성도는 더하고 고민없이 선택하는 전용 세제</div>
+    </div>
+    <div class="membership-card">
+      <img src="image/s_milkit_event3.webp" alt="간편식">
+      <div class="membership-card-desc">바쁜 하루의 여백을 채워주는 200여개의 간편식</div>
+    </div>
+  </div>
+</div>
+<div class="various-stores-container" id="various-stores">
+  <h2 class="various-stores-title">넥스트비온의 다양한 스토어</h2>
+  <div class="various-stores-cards">
+    <div class="various-stores-card">
+      <img src="image/s_store_1.webp" alt="갤럭시 캠퍼스">
+      <div class="various-stores-card-desc">갤럭시 캠퍼스 / 교육 할인가로 더 특별하게!</div>
+    </div>
+    <div class="various-stores-card">
+      <img src="image/s_store_2.webp" alt="넥스트비온 스토어">
+      <div class="various-stores-card-desc">넥스트비온 스토어 / 넥스트비온의 모든것을 체험하는 공간!</div>
+    </div>
+    <div class="various-stores-card">
+      <img src="image/s_store_3.webp" alt="비즈니스">
+      <div class="various-stores-card-desc">비즈니스 / 더 나은 비즈니스를 위한 제품과 솔루션!</div>
+    </div>
+    <div class="various-stores-card">
+      <img src="image/s_store_4.webp" alt="사업자 몰">
+      <div class="various-stores-card-desc">사업자 몰 / 소상공인 맞춤 패키지로 실속있게!</div>
+    </div>
+  </div>
+</div>
+  <script src="js/s_event.js"></script> 
+  <!-- 위로가기 버튼 -->
+  <button id="scrollToTopBtn" style="display:none;" aria-label="맨 위로 이동">
+    ▲
+  </button>
 </body>
 </html>
