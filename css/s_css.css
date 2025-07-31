@@ -1,3 +1,7 @@
+/* 로그인 패널 폰트 컬러 강제 적용 */
+.login-panel, .login-panel .login-menu, .login-panel .loginb {
+  color: #000 !important;
+}
 /* --- Slider Navigation Buttons --- */
 /* Always show slider navigation buttons */
 .slider-btn,
@@ -1407,9 +1411,6 @@ ul.gnb li a {
   /* 기본은 닫힌 상태 */
 }
 
-.login-panel.open a {
-  display: none;
-}
 
 .login-panel, .login-panel * {
   color: #000;
@@ -2082,12 +2083,9 @@ ul.gnb li a {
   /* 기본은 닫힌 상태 */
 }
 
-.login-panel.open a {
-  display: none;
-}
 
-.login-panel, .login-panel * {
-  color: #000;
+.login-panel, .login-panel .login-menu, .login-panel .loginb, .login-panel a {
+  color: #000 !important;
 }
 
 .login-panel.open {
