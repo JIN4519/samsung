@@ -1600,7 +1600,7 @@ body {
 
 .personal-recommend-track {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   width: 100%;
   justify-content: flex-start;
   transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
@@ -1610,7 +1610,7 @@ body {
   border: 1.5px solid #e5e5e5;
   border-radius: 20px;
   padding: 24px 18px 18px 18px;
-  min-width: 240px;
+  min-width: 234px;
   max-width: 300px;
   display: flex;
   flex-direction: column;
@@ -1730,7 +1730,7 @@ body {
 
 .ai-club-track {
   display: flex;
-  gap: 24px;
+  gap: 18px;
   width: 100%;
   justify-content: flex-start;
   transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
@@ -1739,8 +1739,8 @@ body {
   background: #fff;
   border: 1.5px solid #e5e5e5;
   border-radius: 20px;
-  padding: 24px 18px 18px 18px;
-  min-width: 240px;
+  padding: 18px 16px 16px 16px;
+  min-width: 234px;
   max-width: 320px;
   display: flex;
   flex-direction: column;
