@@ -1156,5 +1156,40 @@
       ▲
     </button>
     <script src="js/s_script.js"></script>
+</script>
+<script>
+// 데스크탑 로그인/카트 아이콘 색상 자동 변경 (흰색 배경에서는 항상 검정)
+const loginImg = document.getElementById('loginimgdesktop');
+const cartImg = document.getElementById('cartimgdesktop');
+function setDesktopIcons(color) {
+  loginImg.src = color === 'black' ? 'image/login_black.png' : 'image/login_white.png';
+  cartImg.src = color === 'black' ? 'image/cart_black.png' : 'image/cart_white.png';
+}
+
+function updateDesktopIconsByDropdown() {
+  // 드롭다운 패널이 보이면 검정, 아니면 흰색
+  const dropdowns = [
+    document.getElementById('dropdownpanel'),
+    document.getElementById('promopanel'),
+    document.getElementById('aipanel'),
+    document.getElementById('customerpanel')
+  ];
+  const isAnyDropdownVisible = dropdowns.some(panel => {
+    return panel && window.getComputedStyle(panel).display !== 'none';
+  });
+  setDesktopIcons(isAnyDropdownVisible ? 'black' : 'white');
+}
+
+['menutoggle', 'promotoggle', 'aitoggle', 'customertoggle'].forEach(id => {
+  const el = document.getElementById(id);
+  el.addEventListener('mouseenter', updateDesktopIconsByDropdown);
+  el.addEventListener('mouseleave', updateDesktopIconsByDropdown);
+});
+['dropdownpanel', 'promopanel', 'aipanel', 'customerpanel'].forEach(id => {
+  const panel = document.getElementById(id);
+  panel.addEventListener('mouseenter', updateDesktopIconsByDropdown);
+  panel.addEventListener('mouseleave', updateDesktopIconsByDropdown);
+});
+</script>
   </body>
 </html>
