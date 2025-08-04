@@ -2288,3 +2288,7 @@ ul.gnb li a {
   object-fit: contain;
   margin-bottom: 10px;
 }
+
+.footer-icons {
+  height: 50px;
+}
