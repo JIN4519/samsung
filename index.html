@@ -1,1195 +1,1149 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Meta 추가 -->
-    <link rel="shortcut icon" href="image/favicon.png">
-    <meta
-      name="description"
-      content="삼성 리디자인 프로젝트입니다. 정보 접근성과 사용자 편의성을 높이기 위해 UI/UX를 개선하였으며, 반응형 웹 퍼블리싱과 시멘틱 마크업을 적용한 결과물입니다.">
-    <meta
-      name="keywords"
-      content="삼성, 리디자인, 웹 퍼블리싱, UI 디자인, UX 개선, 반응형 웹, 시멘틱 마크업, HTML, CSS, JavaScript, 접근성, 사용자 중심 디자인, 프론트엔드 포트폴리오, 웹사이트 리뉴얼">
-    <meta name="author" content="양진섭_Jincompany">
-    <meta property="og:title" content="삼성 메인페이지 리디자인 프로젝트">
-    <meta property="og:url" content="https://jin4519.github.io/samsung/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="images/og-card.png">
-    <meta property="og:site_name" content="삼성 리디자인 프로젝트">
-    <meta
-      property="og:description"
-      content="삼성 메인페이지 리디자인 프로젝트입니다. 정보 접근성과 사용자 편의성을 높이기 위해 UI/UX를 개선하였으며, 반응형 웹 퍼블리싱과 시멘틱 마크업을 적용한 결과물입니다."
-    >
-    <!-- //Meta 끝 -->
-    <title>Nextvion</title>
-    <link rel="stylesheet" href="css/s_css.css">
-  </head>
-  <body>
-    <!-- 팝업 -->
-    <div class="popup">
-      해당 사이트는 학습용으로 제작되었으며 삼성홈페이지와 무관합니다. 구직용
-      포트폴리오로 상업적 목적이 없음을 알립니다.
-      <button>닫기</button>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Meta 추가 -->
+  <link rel="shortcut icon" href="image/favicon.png">
+  <meta name="description"
+    content="삼성 리디자인 프로젝트입니다. 정보 접근성과 사용자 편의성을 높이기 위해 UI/UX를 개선하였으며, 반응형 웹 퍼블리싱과 시멘틱 마크업을 적용한 결과물입니다.">
+  <meta name="keywords"
+    content="삼성, 리디자인, 웹 퍼블리싱, UI 디자인, UX 개선, 반응형 웹, 시멘틱 마크업, HTML, CSS, JavaScript, 접근성, 사용자 중심 디자인, 프론트엔드 포트폴리오, 웹사이트 리뉴얼">
+  <meta name="author" content="양진섭_Jincompany">
+  <meta property="og:title" content="삼성 메인페이지 리디자인 프로젝트">
+  <meta property="og:url" content="https://jin4519.github.io/samsung/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-card.png">
+  <meta property="og:site_name" content="삼성 리디자인 프로젝트">
+  <meta property="og:description"
+    content="삼성 메인페이지 리디자인 프로젝트입니다. 정보 접근성과 사용자 편의성을 높이기 위해 UI/UX를 개선하였으며, 반응형 웹 퍼블리싱과 시멘틱 마크업을 적용한 결과물입니다.">
+  <!-- //Meta 끝 -->
+  <title>메인페이지 | Nextvion</title>
+  <link rel="stylesheet" href="css/s_css.css">
+</head>
+
+<body>
+  <!-- 팝업 -->
+  <div class="popup">
+    해당 사이트는 학습용으로 제작되었으며 삼성홈페이지와 무관합니다. 구직용
+    포트폴리오로 상업적 목적이 없음을 알립니다.
+    <button>닫기</button>
+  </div>
+  <div class="wrap">
+    <!-- 배경 영상 -->
+    <div class="video-container" id="videosection">
+      <video autoplay muted loop playsinline>
+        <source src="image/main_visual.mp4" type="video/mp4">
+        브라우저가 비디오를 지원하지 않습니다.
+      </video>
+      <div class="video-overlay">
+        <div class="video-center-wrap">
+          <h1 class="video-title">갤럭시와 Ai가 결합하다</h1>
+          <a href="#" class="main-action-btn">구매특전</a>
+        </div>
+      </div>
     </div>
-    <div class="wrap">
-      <!-- 배경 영상 -->
-      <div class="video-container" id="videosection">
-        <video autoplay muted loop playsinline>
-          <source src="image/main_visual.mp4" type="video/mp4">
-          브라우저가 비디오를 지원하지 않습니다.
-        </video>
-        <div class="video-overlay">
-          <div class="video-center-wrap">
-            <h1 class="video-title">갤럭시와 Ai가 결합하다</h1>
-            <a href="#" class="main-action-btn">구매특전</a>
+  </div>
+  <!-- 상단 서브 메뉴 -->
+  <div class="top-bar hide-on-mobile" id="topbar">
+    <a href="#">고객센터</a>
+    <a href="#">비즈니스↗</a>
+    <a href="#">넥스트비온 스토어↗</a>
+    <a href="#">지속가능경영</a>
+  </div>
+
+  <!-- 헤더 -->
+  <header class="header" id="mainheader">
+    <nav class="nav-menu">
+      <div id="logo-heading">
+        <a href="index.html" id="logo">
+          <img src="image/logo_samsung_white.png" alt="로고" id="logoimage">
+        </a>
+      </div>
+      <!-- 투명 호버존: 전체메뉴 버튼과 드롭다운 사이에 위치, 드롭다운 열릴 때만 보임 -->
+      <div id="hoverzone"></div>
+      <!-- 모바일에서는 숨겨야 하므로 class 수정 -->
+      <ul class="gnb menu-hide-on-mobile">
+        <li><a href="event.html" id="menutoggle">전체메뉴</a></li>
+        <li><a href="event.html" id="promotoggle">기획전</a></li>
+        <li><a href="event.html" id="aitoggle">AI 구독클럽</a></li>
+        <li><a href="event.html" id="customertoggle">고객지원</a></li>
+      </ul>
+
+      <div class="search-box menu-always">
+        <input type="text" class="search-input" placeholder="갤럭시 25 엣지">
+        <button class="search-btn">
+          <img src="image/ssearch1.png" alt="검색">
+        </button>
+      </div>
+
+      <!-- 데스크탑용 아이콘 -->
+      <div class="icon-group menu-hide-on-mobile">
+        <a href="#">
+          <img id="loginimgdesktop" src="image/login_white.png" alt="로그인">
+        </a>
+        <a href="#">
+          <img id="cartimgdesktop" src="image/cart_white.png" alt="카트">
+        </a>
+      </div>
+      <div id="loginpanel" class="login-panel">
+        <ul class="login-menu">
+          <li>
+            <a href="#"><span class="loginb">로그인/회원가입</span></a>
+          </li>
+          <li><a href="#">비온계정을 만들어야 하는 이유 ></a></li>
+          <li class="divider"></li>
+          <li><a href="#">주문/배송조회</a></li>
+          <li><a href="#">멤버십</a></li>
+          <li><a href="#">나의 제품 관리</a></li>
+          <li><a href="#">쿠폰존</a></li>
+          <li><a href="#">넥스트비온닷컴 회원 혜택</a></li>
+          <li><a href="#">참여형 이벤트</a></li>
+        </ul>
+      </div>
+
+      <!-- 장바구니 패널 -->
+      <div id="cartpanel" class="cart-panel">
+        <div class="cart-empty-message">
+          <p>장바구니가 비었습니다.</p>
+          <button id="cart-close-btn">장바구니 보기</button>
+        </div>
+      </div>
+
+      <!-- 모바일용 아이콘 -->
+      <div class="icon-group menu-mobile-only">
+        <a href="#">
+          <img id="loginimgmobile" src="image/login_black.png" alt="로그인">
+        </a>
+        <a href="#">
+          <img id="cartimgmobile" src="image/cart_black.png" alt="카트">
+        </a>
+        <a href="#" id="menutogglemobile">
+          <img src="image/s_m_h.jpg" alt="메뉴">
+        </a>
+      </div>
+    </nav>
+    <!-- 모바일 전용 메뉴 -->
+    <div class="mobile-menu-panel" id="mobilemenupanel">
+      <ul>
+        <li><a href="#">기업정보</a></li>
+        <li><a href="#">고객지원</a></li>
+        <li><a href="#">넥스트비온 스토어</a></li>
+        <li><a href="#">지속가능경영</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="main-visual dropdown-content" id="dropdownpanel">
+    <div class="dropdown-inner">
+      <!-- 왼쪽 텍스트 메뉴 영역 -->
+      <div class="dropdown-category">
+        <div class="category">
+          <h4>모바일</h4>
+          <ul>
+            <li><a href="#">Galaxy S </a></li>
+            <li><a href="#">Galaxy Z </a></li>
+            <li><a href="#">Galaxy A </a></li>
+            <li><a href="#"> 태블릿 (Tab S/A)</a></li>
+            <li><a href="#">Galaxy Watch/Buds</a></li>
+            <li><a href="#">액세서리</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>TV/오디오</h4>
+          <ul>
+            <li><a href="#">Neo QLED / OLED / Crystal UHD</a></li>
+            <li><a href="#">라이프스타일 TV (The Frame 등)</a></li>
+            <li><a href="#">프로젝터 (The Freestyle 등)</a></li>
+            <li><a href="#">블루투스 해드폰 </a></li>
+            <li><a href="#">사운드바 </a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>가전제품</h4>
+          <ul>
+            <li><a href="#">냉장고 / 김치냉장고 </a></li>
+            <li><a href="#">세탁기 / 건조기 / 스타일러</a></li>
+            <li><a href="#">에어컨 / 공기청정기</a></li>
+            <li><a href="#">청소기 (제트, 로봇청소기 등)</a></li>
+            <li><a href="#">전자레인지 / 오븐 / 식기세척기</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>PC/모니터</h4>
+          <ul>
+            <li><a href="#">Galaxy Book 시리즈</a></li>
+            <li><a href="#">스마트 모니터 / 게이밍 모니터</a></li>
+            <li><a href="#">데스크탑 액세서리 (마우스, 허브 등)</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>스토리지/카메라</h4>
+          <ul>
+            <li><a href="#">외장 SSD</a></li>
+            <li><a href="#">NVMe</a></li>
+            <li><a href="#">microSD 카드</a></li>
+            <li><a href="#">스마트카메라/링카 등</a></li>
+          </ul>
+        </div>
+
+        <div class="category">
+          <h4>스마트 서비스/앱</h4>
+          <ul>
+            <li><a href="#">SmartThings</a></li>
+            <li><a href="#">Samsung Members/Samsung Pay</a></li>
+            <li><a href="#">넥스트비온 케어플러스</a></li>
+            <li><a href="#">비온닷컴 정품 등록</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>온라인 전용 제품 / 혜택</h4>
+          <ul>
+            <li><a href="#">단독 혜택 제품</a></li>
+            <li><a href="#">사전예약 / 프로모션 / 럭키박스</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 오른쪽 이미지 카드 영역 -->
+      <div class="dropdown-visual grid-style">
+        <div class="grid-card">
+          <img src="image/s_r_galaxi_ai.webp" alt="갤럭시 AI">
+          <p>갤럭시 AI</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_one_ui.webp" alt="One UI">
+          <p>One UI</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_watch_health.webp" alt="비온 헬스">
+          <p>넥스트비온 헬스</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_vision_ai.webp" alt="넥스트비온">
+          <p>넥스트비온 Vision Ai</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_tv_all.webp" alt="넥스트비온 티비 올올">
+          <p>넥스트비온 TV의 모든 것</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_bespoke_ai.webp" alt="BEsopke ai">
+          <p>Bespoke Ai의 기술</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_setupguide_ai.webp" alt="설치가이드">
+          <p>설치가이드</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_galaxy_sp.webp" alt="갤럭시의 특별함">
+          <p>갤럭시의 특별함</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-visual dropdown-content" id="promopanel">
+    <div class="dropdown-inner">
+      <!-- 왼쪽 텍스트 메뉴 영역 -->
+      <div class="dropdown-category">
+        <div class="category">
+          <h4>모바일 기획전</h4>
+          <ul>
+            <li>
+              <a href="event.html"><img src="image/s_mobile1.webp" alt="모바일 기획전" /></a>
+            </li>
+            <li><a href="event.html">갤럭시의 특가를 확인하세요! </a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>TV/오디오 기획전</h4>
+          <ul>
+            <li>
+              <a href="event.html"><img src="image/s_neo_qled.webp" alt="TV/오디오 기획전" /></a>
+            </li>
+            <li><a href="event.html">QLED의 대폭 할인 이벤트! </a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>가전제품 기획전</h4>
+          <ul>
+            <li>
+              <a href="event.html"><img src="image/s_freeze1.webp" alt="가전제품 기획전" /></a>
+            </li>
+            <li><a href="event.html">여름을 맞아 냉장고 대폭 할인 이벤트! </a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>PC/모니터 기획전</h4>
+          <ul>
+            <li>
+              <a href="event.html"><img src="image/s_laptop.webp" alt="PC/모니터 기획전" /></a>
+            </li>
+            <li><a href="event.html">데스크탑 및 모니터 20% 할인!</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>스토리지/카메라 기획전</h4>
+          <ul>
+            <li><a href="event.html">외장 SSD 10% 할인 이벤트!</a></li>
+            <li><a href="event.html">NVMe 10% 할인 이벤트!</a></li>
+            <li><a href="event.html">microSD 카드 학생 할인 이벤트!</a></li>
+          </ul>
+        </div>
+
+        <div class="category">
+          <h4>스마트 서비스/앱 기획전</h4>
+          <ul>
+            <li><a href="event.html">SmartThings 할인!</a></li>
+            <li><a href="event.html">S Members/Pay 2년 무상 이벤트!</a></li>
+            <li><a href="event.html">넥스트비온 케어플러스 1년 무료!</a></li>
+            <li><a href="event.html">비온닷컴 정품 등록시 사은품 증정!</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>온라인 전용 제품 / 혜택 / 할인 이벤트</h4>
+          <ul>
+            <li><a href="event.html">단독 혜택 제품</a></li>
+            <li><a href="event.html">사전예약 / 프로모션 / 럭키박스</a></li>
+            <li><a href="event.html">AI 구독 클럽/ 3개 이상 구독 시 할인!</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 오른쪽 이미지 카드 영역 -->
+      <div class="dropdown-visual grid-style">
+        <div class="grid-card">
+          <img src="image/s_e_1.jpeg" alt="으뜸효율가전도 삼닷!" />
+          <p>으뜸효율가전도 삼닷에서!(혜택)</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_e_2.webp" alt="AI 구독클럽베스트 리뷰어 챌린지" />
+          <p>AI 구독클럽 베스트 리뷰어 챌린지</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_e_3.webp" alt="온닷 썸머 페스타" />
+          <p>삼닷 썸머 페스타! (혜택)</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_e_4.webp" alt="혼수 고객 특별 혜택" />
+          <p>혼수 고객 특별 혜택</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_e_5.webp" alt="비온닷컴 명예의전당" />
+          <p>비온닷컴 명예의전당</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_e_6.webp" alt="신라면세점 웨딩프로젝트" />
+          <p>신라면세점 웨딩프로젝트</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_e_7.webp" alt="설치가이드" />
+          <p>비온헬스X펫받기 프로젝트</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_e_8.webp" alt="e식품관 그리팅 기획전" />
+          <p>e식품관 그리팅 기획전</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-visual dropdown-content" id="aipanel">
+    <div class="dropdown-inner">
+      <!-- 왼쪽 텍스트 메뉴 영역 -->
+      <div class="dropdown-category">
+        <div class="category">
+          <h4>AI 구독 안내</h4>
+          <ul>
+            <li><a href="#">AI 클럽 소개 </a></li>
+            <li><a href="#">AI 서비스 개요 </a></li>
+            <li><a href="#">AI 이용 방법 </a></li>
+            <li><a href="#">AI 비교 혜택</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>요금제/상품</h4>
+          <ul>
+            <li><a href="#">요금제 플랜</a></li>
+            <li><a href="#">구독 가능 기기</a></li>
+            <li><a href="#">액세서리 포함 여부</a></li>
+            <li><a href="#">교체/반납 정책</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>멤버 혜택</h4>
+          <ul>
+            <li><a href="#">파손 보장</a></li>
+            <li><a href="#">AI 전용 액세서리</a></li>
+            <li><a href="#">기기 교체 주기</a></li>
+            <li><a href="#">멤버십 포인트 연동</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>이용 가이드</h4>
+          <ul>
+            <li><a href="#">가입 절차</a></li>
+            <li><a href="#">결제 방식</a></li>
+            <li><a href="#">앱 연동 사용법</a></li>
+            <li><a href="#">구독 상태 확인</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>이벤트</h4>
+          <ul>
+            <li><a href="#">AI 클럽 전용 이벤트</a></li>
+            <li><a href="#">사은품/포인트 증정</a></li>
+            <li><a href="#">베스트 후기 챌린지</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>AI 전용 서비스</h4>
+          <ul>
+            <li><a href="#">갤럭시 AI 기능 소개</a></li>
+            <li><a href="#">실시간 번역 및 캘린더 동기화</a></li>
+            <li><a href="#">AI + 스마트싱스 연동</a></li>
+            <li><a href="#">AI 앱 & 툴 다운로드</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>AI 전용 서비스</h4>
+          <ul>
+            <li>
+              <a href="#"><img src="image/test1.png" alt="" /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 오른쪽 이미지 카드 영역 -->
+      <div class="dropdown-visual grid-style">
+        <div class="grid-card">
+          <img src="image/s_r_galaxi_ai.webp" alt="갤럭시 AI">
+          <p>갤럭시 AI</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_one_ui.webp" alt="One UI">
+          <p>One UI</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_watch_health.webp" alt="비온 헬스">
+          <p>넥스트비온 헬스</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_vision_ai.webp" alt="넥스트비온비온">
+          <p>NextVion Ai</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_tv_all.webp" alt="넥스트비온 티비 올">
+          <p>넥스트비온 TV의 모든 것</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_bespoke_ai.webp" alt="BEsopke ai">
+          <p>Bespoke Ai의 기술</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_setupguide_ai.webp" alt="설치가이드">
+          <p>설치가이드</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_galaxy_sp.webp" alt="갤럭시의 특별함">
+          <p>갤럭시의 특별함</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-visual dropdown-content" id="customerpanel">
+    <div class="dropdown-inner">
+      <!-- 왼쪽 텍스트 메뉴 영역 -->
+      <div class="dropdown-category">
+        <div class="category">
+          <h4>상담 서비스</h4>
+          <ul>
+            <li><a href="#">1:1 문의하기</a></li>
+            <li><a href="#">실시간 채팅 상담</a></li>
+            <li><a href="#">전화 상담 예약</a></li>
+            <li><a href="#">영상 상담(화면공유)</a></li>
+            <li><a href="#">카카오톡 상담 연결</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>서비스 센터</h4>
+          <ul>
+            <li><a href="#">서비스 센터 찾기</a></li>
+            <li><a href="#">방문 예약하기</a></li>
+            <li><a href="#">운영시간 및 휴무 확인</a></li>
+            <li><a href="#">수리 진행 조회</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>제품 지원</h4>
+          <ul>
+            <li><a href="#">제품 등록 및 인증</a></li>
+            <li><a href="#">모델명/시리얼 조회</a></li>
+            <li><a href="#">사용자 설명서 다운로드</a></li>
+            <li><a href="#">드라이버 / 소프트웨어 받기</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>수리 및 보증</h4>
+          <ul>
+            <li><a href="#">A/S 접수 신청</a></li>
+            <li><a href="#">보증기간 확인</a></li>
+            <li><a href="#">수리 요금 안내</a></li>
+            <li><a href="#">무상 점검 프로그램</a></li>
+            <li><a href="#">부품 교체 기준</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>설치 가이드</h4>
+          <ul>
+            <li><a href="#">초기 설정 방법</a></li>
+            <li><a href="#">Wi-Fi/Bluetooth 연결</a></li>
+            <li><a href="#">SmartThings 연동 가이드</a></li>
+            <li><a href="#">AI 기능 사용법</a></li>
+            <li><a href="#">데이터 백업/복구 안내</a></li>
+          </ul>
+        </div>
+
+        <div class="category">
+          <h4>자주 묻는 질문 (FAQ)</h4>
+          <ul>
+            <li><a href="#">제품별 FAQ (스마트폰, 가전 등)</a></li>
+            <li><a href="#">결제/배송/환불 문의</a></li>
+            <li><a href="#">계정 및 로그인 문제</a></li>
+            <li><a href="#">AI 기능 관련 자주 묻는 질문</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>고객 혜택</h4>
+          <ul>
+            <li><a href="#">정품 등록 사은품 안내</a></li>
+            <li><a href="#">중고 보상 프로그램</a></li>
+            <li><a href="#">환경 수거 서비스</a></li>
+            <li><a href="#">멤버십 포인트/혜택 문의</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <h4>개인정보 문의</h4>
+          <ul>
+            <li><a href="#">비온 계정 로그인 문제 해결</a></li>
+            <li><a href="#">비밀번호 재설정</a></li>
+            <li><a href="#">2단계 인증 설정</a></li>
+            <li><a href="#">분실/도난 기기 원격 잠금</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 오른쪽 이미지 카드 영역 -->
+      <div class="dropdown-visual grid-style">
+        <div class="grid-card">
+          <img src="image/s_r_galaxi_ai.webp" alt="갤럭시 AI">
+          <p>갤럭시 AI</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_one_ui.webp" alt="One UI">
+          <p>One UI</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_watch_health.webp" alt="넥스트비온 헬스">
+          <p>넥스트비온 헬스</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_vision_ai.webp" alt="NextVion Ai">
+          <p>NextVion Ai</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_tv_all.webp" alt="넥스트비온 TV의 모든 것">
+          <p>넥스트비온 TV의 모든 것</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_bespoke_ai.webp" alt="BEsopke ai">
+          <p>Bespoke Ai의 기술</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_setupguide_ai.webp" alt="설치가이드">
+          <p>설치가이드</p>
+        </div>
+        <div class="grid-card">
+          <img src="image/s_r_galaxy_sp.webp" alt="갤럭시의 특별함">
+          <p>갤럭시의 특별함</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-visual dropdown-content" id="searchpanel">
+    <div class="search-panel-inner">
+      <div class="search-header">
+        <div class="search-input-container">
+          <input type="text" id="search-input-value" placeholder="검색어를 입력하세요" />
+
+          <!-- 🔍 이미지 버튼 -->
+          <button id="search-submit-btn" class="search-submit-icon">
+            <img src="image/ssearch1.png" alt="검색" />
+          </button>
+
+          <!-- ✕ 텍스트 버튼 -->
+          <button id="search-close-btn" class="search-close-icon">✕</button>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="search-content">
+      <div class="popular-keywords">
+        <h4>인기 검색어</h4>
+        <hr />
+        <br />
+        <ul>
+          <li>갤럭시 Z 폴드7</li>
+          <li>갤럭시 S25 엣지</li>
+          <li>에어컨</li>
+          <li>버즈</li>
+        </ul>
+      </div>
+      <div class="search-recommend">
+        <h4>추천</h4>
+        <br />
+        <div class="product-grid">
+          <div class="product-card">
+            <a href="#">
+              <img src="image/desktop1.webp" alt="제품1" />
+              <p><strong>데스크탑 Tower Core™ i9 / 1TB NVMe SSD</strong></p>
+              <p>혜택가<br /><span class="price">3,160,000원</span></p>
+            </a>
+          </div>
+          <div class="product-card">
+            <a href="#">
+              <img src="image/desktop2.webp" alt="제품2" />
+              <p><strong>데스크탑 Tower Core™ i5 / 512GB NVMe SSD</strong></p>
+              <p>혜택가<br /><span class="price">1,470,000원</span></p>
+            </a>
+          </div>
+          <div class="product-card">
+            <a href="#">
+              <img src="image/desktop3.webp" alt="제품3" />
+              <p><strong>데스크탑 Slim Core™ i5 / 512GB NVMe SSD</strong></p>
+              <p>혜택가<br /><span class="price">1,325,000원</span></p>
+            </a>
+          </div>
+          <div class="product-card">
+            <a href="#">
+              <img src="image/desktop4.webp" alt="제품4" />
+              <p><strong>데스크탑 Tower Core™ i7 / 512GB NVMe SSD</strong></p>
+              <p>혜택가<br /><span class="price">2,800,000원</span></p>
+            </a>
           </div>
         </div>
       </div>
     </div>
-    <!-- 상단 서브 메뉴 -->
-    <div class="top-bar hide-on-mobile" id="topbar">
-      <a href="#">고객센터</a>
-      <a href="#">비즈니스↗</a>
-      <a href="#">넥스트비온 스토어↗</a>
-      <a href="#">지속가능경영</a>
+  </div>
+  <!-- 콘텐츠 -->
+  <div class="content-wrapper fade-in">
+    <div class="content-box fade-in">
+      <div class="thumb"><img src="image/s_c_galaxy1.jpg" alt="" /></div>
+      <h4>겔럭시 25 Ultra</h4>
+      <p>New 갤럭시 AI 구독클럽 월 5,900원으로 받아가는 다양한 혜택!</p>
+      <div class="highlight-buttons-small">
+        <a href="#" class="btn-benefit-small">구매혜택</a>
+      </div>
     </div>
+    <div class="content-box fade-in">
+      <div class="thumb"><img src="image/s_c_galaxy2.jpg" alt="" /></div>
+      <h4>갤럭시 S25 Edge</h4>
+      <p>
+        New 갤럭시 Edge를 알뜰한 가격에 구입 월 8,000원으로 받아가는 다양한
+        혜택!
+      </p>
+      <div class="highlight-buttons-small">
+        <a href="#" class="btn-benefit-small">구매혜택</a>
+      </div>
+    </div>
+    <div class="content-box fade-in">
+      <div class="thumb"><img src="image/s_c_galaxy3.jpg" alt="" /></div>
+      <h4>갤럭시 탭 10</h4>
+      <p>
+        갤럭시 탭을 구독으로 월 9000원에 구입해서 다양한 혜택으로 만나보자!
+      </p>
+      <div class="highlight-buttons-small">
+        <a href="#" class="btn-benefit-small">구매혜택</a>
+      </div>
+    </div>
+    <div class="content-box fade-in">
+      <div class="thumb"><img src="image/s_c_galaxy4.jpg" alt="" /></div>
+      <h4>갤럭시 워치 25</h4>
+      <p>
+        갤럭시 워치로 매일 건강을? 월 8000원으로 건강 구독 혜택을 받아보자!
+      </p>
+      <div class="highlight-buttons-small">
+        <a href="#" class="btn-benefit-small">구매혜택</a>
+      </div>
+    </div>
+  </div>
 
-    <!-- 헤더 -->
-    <header class="header" id="mainheader">
-      <nav class="nav-menu">
-        <div id="logo-heading">
-          <a href="index.html" id="logo">
-            <img src="image/logo_samsung_white.png" alt="삼성로고" id="logoimage">
-          </a>
-        </div>
-        <!-- 투명 호버존: 전체메뉴 버튼과 드롭다운 사이에 위치, 드롭다운 열릴 때만 보임 -->
-        <div id="hoverzone"></div>
-        <!-- 모바일에서는 숨겨야 하므로 class 수정 -->
-        <ul class="gnb menu-hide-on-mobile">
-          <li><a href="event.html" id="menutoggle">전체메뉴</a></li>
-          <li><a href="event.html" id="promotoggle">기획전</a></li>
-          <li><a href="event.html" id="aitoggle">AI 구독클럽</a></li>
-          <li><a href="event.html" id="customertoggle">고객지원</a></li>
-        </ul>
+  <!-- 콘텐츠 확장 영역 -->
+  <div class="content2">
+    <div class="highlight-banner">
+      <div class="highlight-image fade-in">
+        <img src="image/s_m_event2.jpg" alt="Galaxy S25 제품 이미지" />
 
-        <div class="search-box menu-always">
-          <input
-            type="text"
-            class="search-input"
-            placeholder="갤럭시 25 엣지"
-          >
-          <button class="search-btn">
-            <img src="image/ssearch1.png" alt="검색">
-          </button>
+        <!-- ✅ 이미지 위에 겹쳐 표시할 버튼 영역 -->
+        <div class="highlight-overlay-buttons">
+          <a href="#" class="btn-learn">더 알아보기</a>
+          <a href="#" class="btn-benefit">구매 혜택 보기</a>
         </div>
-
-        <!-- 데스크탑용 아이콘 -->
-        <div class="icon-group menu-hide-on-mobile">
-          <a href="#">
-            <img id="loginimgdesktop" src="image/login_white.png" alt="로그인">
-          </a>
-          <a href="#">
-            <img id="cartimgdesktop" src="image/cart_white.png" alt="카트">
-          </a>
-        </div>
-        <div id="loginpanel" class="login-panel">
-          <ul class="login-menu">
-            <li>
-              <a href="#"><span class="loginb">로그인/회원가입</span></a>
-            </li>
-            <li><a href="#">삼성계정을 만들어야 하는 이유 ></a></li>
-            <li class="divider"></li>
-            <li><a href="#">주문/배송조회</a></li>
-            <li><a href="#">멤버십</a></li>
-            <li><a href="#">나의 제품 관리</a></li>
-            <li><a href="#">쿠폰존</a></li>
-            <li><a href="#">넥스트비온닷컴 회원 혜택</a></li>
-            <li><a href="#">참여형 이벤트</a></li>
-          </ul>
-        </div>
-
-        <!-- 장바구니 패널 -->
-        <div id="cartpanel" class="cart-panel">
-          <div class="cart-empty-message">
-            <p>장바구니가 비었습니다.</p>
-            <button id="cart-close-btn">장바구니 보기</button>
+      </div>
+    </div>
+  </div>
+  <!-- 콘텐츠2 -->
+  <div class="content-wrapper">
+    <div class="content-box fade-in">
+      <div class="thumb"><img src="image/s_c2_tv1.webp" alt="NEO QLED" /></div>
+      <h4>Neo QLED</h4>
+      <p>New 갤럭시 AI 구독클럽 월 5,900원으로 받아가는 다양한 혜택!</p>
+      <div class="highlight-buttons-small">
+        <a href="#" class="btn-benefit-small">구매혜택</a>
+      </div>
+    </div>
+    <div class="content-box fade-in">
+      <div class="thumb"><img src="image/s_c2_tv2.webp" alt="OLED" /></div>
+      <h4>OLED</h4>
+      <p>
+        New 갤럭시 Edge를 알뜰한 가격에 구입 월 8,000원으로 받아가는 다양한
+        혜택!
+      </p>
+      <div class="highlight-buttons-small">
+        <a href="#" class="btn-benefit-small">구매혜택</a>
+      </div>
+    </div>
+    <div class="content-box fade-in">
+      <div class="thumb"><img src="image/s_c2_tv3.webp" alt="The Frame" /></div>
+      <h4>The Frame</h4>
+      <p>
+        갤럭시 탭을 구독으로 월 9000원에 구입해서 다양한 혜택으로 만나보자!
+      </p>
+      <div class="highlight-buttons-small">
+        <a href="#" class="btn-benefit-small">구매혜택</a>
+      </div>
+    </div>
+    <div class="content-box fade-in">
+      <div class="thumb"><img src="image/s_c2_tv4.webp" alt="무빙스타일" /></div>
+      <h4>무빙스타일</h4>
+      <p>
+        갤럭시 워치로 매일 건강을? 월 8000원으로 건강 구독 혜택을 받아보자!
+      </p>
+      <div class="highlight-buttons-small">
+        <a href="#" class="btn-benefit-small">구매혜택</a>
+      </div>
+    </div>
+  </div>
+  <div class="content2">
+    <div class="highlight-banner">
+      <div class="highlight-image fade-in">
+        <img src="image/s_m_event3.webp" alt="Galaxy S25 제품 이미지" />
+        <!-- ✅ 이미지 위에 겹쳐 표시할 버튼 영역 -->
+        <div class="highlight-overlay-buttons1">
+          <h2>2025 QLED TV</h2>
+          <p>으뜸효율가전도 삼닷에서 만나보세요</p>
+          <div class="button-row">
+            <a href="#" class="btn-learn1">더 알아보기</a>
+            <a href="#" class="btn-benefit1">구매 혜택 보기</a>
           </div>
         </div>
-
-        <!-- 모바일용 아이콘 -->
-        <div class="icon-group menu-mobile-only">
-          <a href="#">
-            <img id="loginimgmobile" src="image/login_black.png" alt="로그인">
-          </a>
-          <a href="#">
-            <img id="cartimgmobile" src="image/cart_black.png" alt="카트">
-          </a>
-          <a href="#" id="menutogglemobile">
-            <img src="image/s_m_h.jpg" alt="메뉴">
-          </a>
+      </div>
+    </div>
+  </div>
+  <!-- 슬라이드 콘텐츠 영역 1-->
+  <div class="slider-wrapper">
+    <button class="slider-btn prev-btn">&#10094;</button>
+    <div class="slider-content">
+      <div class="slider-item fade-in">
+        <a href="#"><img src="image/s_h_r1.webp" alt="Bespoke AI 원바디 런칭" /></a>
+        <h4>Bespoke AI 원바디 런칭</h4>
+      </div>
+      <div class="slider-item fade-in">
+        <a href="#"><img src="image/s_h_aircon.webp" alt="AI 무풍콤보 벽걸이" /></a>
+        <h4>AI 무풍콤보 벽걸이</h4>
+      </div>
+      <div class="slider-item fade-in">
+        <a href="#"><img src="image/s_h_aircleaner.webp" alt="Infinite AI 공기청정기" /></a>
+        <h4>Infinite AI 공기청정기</h4>
+      </div>
+      <div class="slider-item fade-in">
+        <a href="#"><img src="image/s_h_aird.webp" alt="Bespoke AI 에어드레서" /></a>
+        <h4>Bespoke AI 에어드레서</h4>
+      </div>
+      <div class="slider-item fade-in">
+        <a href="#"><img src="image/s_h_aiz.webp" alt="Bespoke AI 제트" /></a>
+        <h4>Bespoke AI 제트</h4>
+      </div>
+      <div class="slider-item fade-in">
+        <a href="#"><img src="image/s_h_crean.webp" alt="Bespoke AI 스팀" /></a>
+        <h4>Bespoke AI 스팀</h4>
+      </div>
+      <div class="slider-item fade-in">
+        <a href="#"><img src="image/s_h_inverter.webp" alt="인버터 제습기" /></a>
+        <h4>인버터 제습기</h4>
+      </div>
+      <div class="slider-item fade-in">
+        <a href="#"><img src="image/s_h_system.webp" alt="무풍 시스템에어컨" /></a>
+        <h4>무풍 시스템에어컨</h4>
+      </div>
+    </div>
+    <button class="slider-btn next-btn">&#10095;</button>
+  </div>
+  <div class="content2">
+    <div class="highlight-banner">
+      <div class="highlight-image fade-in">
+        <img src="image/s_m_event4.png" alt="Galaxy S25 제품 이미지" />
+        <!-- ✅ 이미지 위에 겹쳐 표시할 버튼 영역 -->
+        <div class="highlight-overlay-buttons1">
+          <h2>
+            Bespoke AI<br>
+            무풍콤보 갤러리
+          </h2>
+          <p>으뜸효율가전도 삼닷에서 만나보세요</p>
+          <div class="button-row">
+            <a href="#" class="btn-learn1">더 알아보기</a>
+            <a href="#" class="btn-benefit1">구매 혜택 보기</a>
+          </div>
         </div>
-      </nav>
-      <!-- 모바일 전용 메뉴 -->
-      <div class="mobile-menu-panel" id="mobilemenupanel">
+      </div>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div class="content-box fade-in">
+      <div class="thumb"><img src="image/s_l_kimch.webp" alt="Bespoke AI 김치플러스" /></div>
+      <h4>Bespoke AI 김치플러스</h4>
+      <p>Bespoke AI 김치플러스 월 29,000원으로 받아가는 다양한 혜택!</p>
+      <div class="highlight-buttons-small">
+        <a href="#" class="btn-benefit-small">구매혜택</a>
+      </div>
+    </div>
+    <div class="content-box fade-in">
+      <div class="thumb"><img src="image/s_l_induction.webp" alt="Bespoke AI 인덕션" /></div>
+      <h4>Bespoke AI 인덕션</h4>
+      <p>
+        Bespoke AI 인덕션 월 9,000원으로 받아가는 다양한 혜택!
+      </p>
+      <div class="highlight-buttons-small">
+        <a href="#" class="btn-benefit-small">구매혜택</a>
+      </div>
+    </div>
+    <div class="content-box fade-in">
+      <div class="thumb"><img src="image/s_l_dishw.webp" alt="Bespoke AI 식기세척기" /></div>
+      <h4>Bespoke AI 식기세척기</h4>
+      <p>
+        Bespoke AI 식기세척기 월 19,000원으로 받아가는 다양한 혜택!
+      </p>
+      <div class="highlight-buttons-small">
+        <a href="#" class="btn-benefit-small">구매혜택</a>
+      </div>
+    </div>
+    <div class="content-box fade-in">
+      <div class="thumb"><img src="image/s_l_cleanw.webp" alt="Bespoke 정수기" /></div>
+      <h4>Bespoke 정수기</h4>
+      <p>
+        Bespoke 정수기 월 5,900원으로 받아가는 다양한 혜택!
+      </p>
+      <div class="highlight-buttons-small">
+        <a href="#" class="btn-benefit-small">구매혜택</a>
+      </div>
+    </div>
+  </div>
+  <div class="content2">
+    <div class="highlight-banner">
+      <div class="highlight-image fade-in">
+        <img src="image/s_m_event5.jpg" alt="Galaxy S25 제품 이미지" />
+        <!-- ✅ 이미지 위에 겹쳐 표시할 버튼 영역 -->
+        <div class="highlight-overlay-buttons1">
+          <h2>
+            Bespoke AI 하이브리드
+          </h2>
+          <p>으뜸효율가전도 삼닷에서 만나보세요</p>
+          <div class="button-row">
+            <a href="#" class="btn-learn1">더 알아보기</a>
+            <a href="#" class="btn-benefit1">구매 혜택 보기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 컨텐츠 4 -->
+  <div class="custom-recommend-wrapper">
+    <h3 class="custom-recommend-title">당신에게 딱 맞는 추천제품</h3>
+    <div class="custom-recommend-slider" id="customSlider">
+      <div class="custom-recommend-track" id="customTrack">
+        <div class="custom-recommend-card fade-in">
+          <img src="image/s_c2_tv1.webp" alt="QLED 65형 스마트TV">
+          <p class="product-name">QLED 65형 스마트TV</p>
+          <p class="product-price">혜택가<br><strong>3,190,000원</strong></p>
+          <button class="hover-btn">자세히 보기</button>
+        </div>
+        <div class="custom-recommend-card">
+          <img src="image/s_air_dress.webp" alt="Bespoke AI 에어드레서">
+          <p class="product-name">Bespoke AI 에어드레서</p>
+          <p class="product-price">혜택가<br><strong>1,599,000원</strong></p>
+          <button class="hover-btn">자세히 보기</button>
+        </div>
+        <div class="custom-recommend-card">
+          <img src="image/s_audio.webp" alt="Bespoke AI 오디오">
+          <p class="product-name">Bespoke AI 오디오</p>
+          <p class="product-price">혜택가<br><strong>449,000원</strong></p>
+          <button class="hover-btn">자세히 보기</button>
+        </div>
+        <div class="custom-recommend-card">
+          <img src="image/desktop4.webp" alt="비온 데스크탑">
+          <p class="product-name">넥스트비온 데스크탑</p>
+          <p class="product-price">혜택가<br><strong>2,290,000원</strong></p>
+          <button class="hover-btn">자세히 보기</button>
+        </div>
+        <div class="custom-recommend-card">
+          <img src="image/s_h_system.webp" alt="무풍 시스템에어컨">
+          <p class="product-name">무풍 시스템에어컨 116.3㎡ 5실</p>
+          <p class="product-price">혜택가<br><strong>9,135,000원</strong></p>
+          <button class="hover-btn">자세히 보기</button>
+        </div>
+        <div class="custom-recommend-card">
+          <img src="image/s_h_inverter.webp" alt="인버터 제습기">
+          <p class="product-name">인버터 제습기</p>
+          <p class="product-price">혜택가<br><strong>990,000원</strong></p>
+          <button class="hover-btn">자세히 보기</button>
+        </div>
+        <div class="custom-recommend-card">
+          <img src="image/s_c_uhd.webp" alt="UHD 4K 스마트TV">
+          <p class="product-name">UHD 4K 스마트TV</p>
+          <p class="product-price">혜택가<br><strong>890,000원</strong></p>
+          <button class="hover-btn">자세히 보기</button>
+        </div>
+        <div class="custom-recommend-card">
+          <img src="image/s_c_galaxy1.jpg" alt="갤럭시 S25 엣지">
+          <p class="product-name">갤럭시 S25 엣지</p>
+          <p class="product-price">혜택가<br><strong>1,490,000원</strong></p>
+          <button class="hover-btn">자세히 보기</button>
+        </div>
+        <div class="custom-recommend-card">
+          <img src="image/s_c_galaxy1.jpg" alt="갤럭시 S25 플러스">
+          <p class="product-name">갤럭시 S25 플러스</p>
+          <p class="product-price">혜택가<br><strong>1,890,000원</strong></p>
+          <button class="hover-btn">자세히 보기</button>
+        </div>
+        <div class="custom-recommend-card">
+          <img src="image/s_laundry.webp" alt="Bespoke AI 세탁기">
+          <p class="product-name">Bespoke AI 세탁기</p>
+          <p class="product-price">혜택가<br><strong>4,290,000원</strong></p>
+          <button class="hover-btn">자세히 보기</button>
+        </div>
+        <div class="custom-recommend-card">
+          <img src="image/s_h_crean.webp" alt="Bespoke AI 스팀">
+          <p class="product-name">Bespoke AI 스팀</p>
+          <p class="product-price">혜택가<br><strong>1,290,000원</strong></p>
+          <button class="hover-btn">자세히 보기</button>
+        </div>
+        <div class="custom-recommend-card">
+          <img src="image/s_haman.webp" alt="하만 오디오">
+          <p class="product-name">하만 오디오</p>
+          <p class="product-price">혜택가<br><strong>1,990,000원</strong></p>
+          <button class="hover-btn">자세히 보기</button>
+        </div>
+      </div>
+    </div>
+    <div class="custom-recommend-controls">
+      <div class="custom-progress-bar">
+        <div class="custom-progress-fill" id="customProgressFill"></div>
+      </div>
+      <div class="custom-recommend-arrows">
+        <button class="custom-arrow-btn" id="customPrevBtn">&#10094;</button>
+        <button class="custom-arrow-btn" id="customNextBtn">&#10095;</button>
+      </div>
+    </div>
+  </div>
+  <!-- 컨텐츠 5 (복제된 추천제품 영역) -->
+
+  <div class="custom-recommend-wrapper1">
+    <h3 class="custom-recommend-title1">넥스트비온의 다양한 스토리</h3>
+    <div class="custom-recommend-slider1" id="customSlider1">
+      <div class="custom-recommend-track1" id="customTrack1">
+        <div class="custom-recommend-card1 fade-in">
+          <img src="image/s_c5_gai1.webp" alt="당신의 하루를 더 편리하게 하는 완성하는 AI">
+          <p class="product-name1">당신의 하루를<br>더 편리하게 하는 완성하는 AI</p>
+          <button class="hover-btn1">자세히 보기</button>
+        </div>
+        <div class="custom-recommend-card1">
+          <img src="image/s_c5_story.jpg" alt="갤럭시가 특별한 이유">
+          <p class="product-name1">갤럭시가 특별한 이유</p>
+          <button class="hover-btn1">자세히 보기</button>
+        </div>
+        <div class="custom-recommend-card1">
+          <img src="image/s_c5_gai.webp" alt="갤럭시 AI 솔루션">
+          <p class="product-name1">갤럭시 AI 솔루션</p>
+          <button class="hover-btn1">자세히 보기</button>
+        </div>
+        <div class="custom-recommend-card1">
+          <img src="image/s_c5_four.webp" alt="갤럭시로 스위치">
+          <p class="product-name1">갤럭시로 스위치</p>
+          <button class="hover-btn1">자세히 보기</button>
+        </div>
+        <div class="custom-recommend-card1">
+          <img src="image/s_c5_favori.webp" alt="You privacy.Secure">
+          <p class="product-name1">You privacy.Secure</p>
+          <button class="hover-btn1">자세히 보기</button>
+        </div>
+        <div class="custom-recommend-card1">
+          <img src="image/s_e_1.jpeg" alt="으뜸가전 솔루션">
+          <p class="product-name1">으뜸가전 솔루션</p>
+          <button class="hover-btn1">자세히 보기</button>
+        </div>
+      </div>
+    </div>
+    <div class="custom-recommend-controls1">
+      <div class="custom-progress-bar1">
+        <div class="custom-progress-fill1" id="customProgressFill1"></div>
+      </div>
+      <div class="custom-recommend-arrows1">
+        <button class="custom-arrow-btn1" id="customPrevBtn1">&#10094;</button>
+        <button class="custom-arrow-btn1" id="customNextBtn1">&#10095;</button>
+      </div>
+    </div>
+  </div>
+  <!-- 컨텐츠 5 end -->
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>가전 제품</h4>
+        <ul>
+          <li><a href="#">갤럭시 스마트폰</a></li>
+          <li><a href="#">갤럭시 탭</a></li>
+          <li><a href="#">갤럭시 워치</a></li>
+          <li><a href="#">갤럭시 버즈</a></li>
+          <li><a href="#">갤럭시 북</a></li>
+          <li><a href="#">모니터</a></li>
+          <li><a href="#">프린터</a></li>
+          <li><a href="#">메모리/스토리지</a></li>
+          <li><a href="#">TV</a></li>
+          <li><a href="#">라이프스타일 TV</a></li>
+          <li><a href="#">프로젝터</a></li>
+          <li><a href="#">넥스트비온 오디오</a></li>
+          <li><a href="#">하만 오디오</a></li>
+          <li><a href="#">냉장고</a></li>
+          <!-- 필요시 추가 -->
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>생활 제품</h4>
+        <ul>
+          <li><a href="#">김치냉장고</a></li>
+          <li><a href="#">인덕션</a></li>
+          <li><a href="#">식기세척기</a></li>
+          <li><a href="#">세탁기</a></li>
+          <li><a href="#">건조기</a></li>
+          <li><a href="#">에어드레서</a></li>
+          <li><a href="#">에어컨</a></li>
+          <li><a href="#">시스템 에어컨</a></li>
+          <li><a href="#">공기청정기</a></li>
+          <li><a href="#">청소기</a></li>
+          <li><a href="#">스마트싱스</a></li>
+          <li><a href="#">소모품/액세서리</a></li>
+          <li><a href="#">데이코↗</a></li>
+          <!-- 필요시 추가 -->
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>기획전/혜택</h4>
+        <ul>
+          <li><a href="#">AI 구독클럽</a></li>
+          <li><a href="#">아울렛</a></li>
+          <li><a href="#">스토어 진열 할인 제품</a></li>
+          <li><a href="#">e식품관</a></li>
+          <li><a href="#">펫 케어 스토어</a></li>
+          <li><a href="#">홈클래스</a></li>
+          <li><a href="#">삼닷 Live</a></li>
+          <li><a href="#">갤럭시와 함께하는 AI 클래스</a></li>
+          <li><a href="#">닷컴 회원 혜택</a></li>
+          <li><a href="#">카드 혜택</a></li>
+          <li><a href="#">비즈니스↗</a></li>
+          <li><a href="#">갤럭시 캠퍼스↗</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>고객서비스</h4>
+        <ul>
+          <li><a href="#">매뉴얼 & 다운로드</a></li>
+          <li><a href="#">비온닷컴 FAQ</a></li>
+          <li><a href="#">넥스트비온 스토어</a></li>
+          <li><a href="#">넥스트비온스토어 찾기</a></li>
+          <li><a href="#">서비스센터 찾기</a></li>
+          <li><a href="#">넥스트비온 케어플러스 모바일/PC</a></li>
+          <li><a href="#">넥스트비온 케어플러스 가전/TV</a></li>
+          <li><a href="#">오늘보장&시간 맞춤 설치 서비스</a></li>
+          <li><a href="#">넥스트비온 멤버십↗</a></li>
+          <li><a href="#">비즈니스 협력제안↗</a></li>
+          <li><a href="#">E-카탈로그↗</a></li>
+          <li><a href="#">넥스트비온 경험조사↗</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>지속가능경영</h4>
+        <ul>
+          <li><a href="#">환경</a></li>
+          <li><a href="#">보안 & 개인정보 보호</a></li>
+          <li><a href="#">접근성</a></li>
+          <li><a href="#">다양성 · 형평성 · 포용성</a></li>
+          <li><a href="#">사회공헌↗</a></li>
+          <li><a href="#">Corporate Sustainability↗</a></li>
+        </ul>
+        <br>
+        <h4>윤리&준법경영</h4>
+        <ul>
+          <li><a href="#">경영원칙↗</a></li>
+          <li><a href="#">부정제보↗</a></li>
+          <li><a href="#">법위반제보↗</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>회사소개</h4>
         <ul>
           <li><a href="#">기업정보</a></li>
-          <li><a href="#">고객지원</a></li>
-          <li><a href="#">넥스트비온 스토어</a></li>
-          <li><a href="#">지속가능경영</a></li>
+          <li><a href="#">사업정보</a></li>
+          <li><a href="#">채용</a></li>
+          <li><a href="#">투자자 정보</a></li>
+          <li><a href="#">뉴스룸↗</a></li>
+          <li><a href="#">윤리</a></li>
+          <li><a href="#">디자인 넥스트비온↗</a></li>
+          <li><a href="#">배당조회↗</a></li>
+          <li><a href="#">공지사항</a></li>
+        </ul>
+        <br>
+        <h4>부가정보</h4>
+        <ul>
+          <li><a href="#">협력회사 고충 건의↗</a></li>
+          <li><a href="#">폐카트리지 회수신청</a></li>
         </ul>
       </div>
-    </header>
-    <div class="main-visual dropdown-content" id="dropdownpanel">
-      <div class="dropdown-inner">
-        <!-- 왼쪽 텍스트 메뉴 영역 -->
-        <div class="dropdown-category">
-          <div class="category">
-            <h4>모바일</h4>
-            <ul>
-              <li><a href="#">Galaxy S </a></li>
-              <li><a href="#">Galaxy Z </a></li>
-              <li><a href="#">Galaxy A </a></li>
-              <li><a href="#"> 태블릿 (Tab S/A)</a></li>
-              <li><a href="#">Galaxy Watch/Buds</a></li>
-              <li><a href="#">액세서리</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>TV/오디오</h4>
-            <ul>
-              <li><a href="#">Neo QLED / OLED / Crystal UHD</a></li>
-              <li><a href="#">라이프스타일 TV (The Frame 등)</a></li>
-              <li><a href="#">프로젝터 (The Freestyle 등)</a></li>
-              <li><a href="#">블루투스 해드폰 </a></li>
-              <li><a href="#">사운드바 </a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>가전제품</h4>
-            <ul>
-              <li><a href="#">냉장고 / 김치냉장고 </a></li>
-              <li><a href="#">세탁기 / 건조기 / 스타일러</a></li>
-              <li><a href="#">에어컨 / 공기청정기</a></li>
-              <li><a href="#">청소기 (제트, 로봇청소기 등)</a></li>
-              <li><a href="#">전자레인지 / 오븐 / 식기세척기</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>PC/모니터</h4>
-            <ul>
-              <li><a href="#">Galaxy Book 시리즈</a></li>
-              <li><a href="#">스마트 모니터 / 게이밍 모니터</a></li>
-              <li><a href="#">데스크탑 액세서리 (마우스, 허브 등)</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>스토리지/카메라</h4>
-            <ul>
-              <li><a href="#">외장 SSD</a></li>
-              <li><a href="#">NVMe</a></li>
-              <li><a href="#">microSD 카드</a></li>
-              <li><a href="#">스마트카메라/링카 등</a></li>
-            </ul>
-          </div>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        Nextvion 주식회사 대표이사 : 양진섭 ｜ 사업자등록번호 : 000-00-00000
+      </p>
+      <p>
+        주소 : 화성구 화성시 화성리 화성이 000 (화성동) ｜ 통신판매업 신고 :
+        0000-화성-0000
+      </p>
+      <p>
+        고객센터: 000-0000 ｜ © 2025 Nextvion Electronics Co., Ltd. All rights
+        reserved.
+      </p>
+    </div>
+    <div class="footer-icons">
+      <a href="https://validator.w3.org/check?uri=mangopub.cafe24.com"><img src="https://www.w3.org/Icons/valid-html401"
+          alt=""></a> 
+      <a href="https://jigsaw.w3.org/css-validator/validator?uri=mangopub.cafe24.com"><img
+      src="https://jigsaw.w3.org/css-validator/images/vcss" alt=""></a>
+    </div>
+  </footer>
+  <!-- 위로가기 버튼 -->
+  <button id="scrollToTopBtn" style="display:none;" aria-label="맨 위로 이동">
+    ▲
+  </button>
+  <script src="js/s_script.js"></script>
+</body>
 
-          <div class="category">
-            <h4>스마트 서비스/앱</h4>
-            <ul>
-              <li><a href="#">SmartThings</a></li>
-              <li><a href="#">Samsung Members/Samsung Pay</a></li>
-              <li><a href="#">삼성 케어플러스</a></li>
-              <li><a href="#">삼성닷컴 정품 등록</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>온라인 전용 제품 / 혜택</h4>
-            <ul>
-              <li><a href="#">단독 혜택 제품</a></li>
-              <li><a href="#">사전예약 / 프로모션 / 럭키박스</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 오른쪽 이미지 카드 영역 -->
-        <div class="dropdown-visual grid-style">
-          <div class="grid-card">
-            <img src="image/s_r_galaxi_ai.webp" alt="갤럭시 AI">
-            <p>갤럭시 AI</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_one_ui.webp" alt="One UI">
-            <p>One UI</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_watch_health.webp" alt="비온 헬스">
-            <p>삼성 헬스</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_vision_ai.webp" alt="넥스트비온">
-            <p>삼성 Vision Ai</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_tv_all.webp" alt="넥스트비온 티비 올올">
-            <p>삼성TV의 모든 것</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_bespoke_ai.webp" alt="BEsopke ai">
-            <p>Bespoke Ai의 기술</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_setupguide_ai.webp" alt="설치가이드">
-            <p>설치가이드</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_galaxy_sp.webp" alt="갤럭시의 특별함">
-            <p>갤럭시의 특별함</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="main-visual dropdown-content" id="promopanel">
-      <div class="dropdown-inner">
-        <!-- 왼쪽 텍스트 메뉴 영역 -->
-        <div class="dropdown-category">
-          <div class="category">
-            <h4>모바일 기획전</h4>
-            <ul>
-              <li>
-                <a href="event.html"
-                  ><img src="image/s_mobile1.webp" alt="모바일 기획전"
-                /></a>
-              </li>
-              <li><a href="event.html">갤럭시의 특가를 확인하세요! </a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>TV/오디오 기획전</h4>
-            <ul>
-              <li>
-                <a href="event.html"
-                  ><img src="image/s_neo_qled.webp" alt="TV/오디오 기획전"
-                /></a>
-              </li>
-              <li><a href="event.html">QLED의 대폭 할인 이벤트! </a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>가전제품 기획전</h4>
-            <ul>
-              <li>
-                <a href="event.html"
-                  ><img src="image/s_freeze1.webp" alt="가전제품 기획전"
-                /></a>
-              </li>
-              <li><a href="event.html">여름을 맞아 냉장고 대폭 할인 이벤트! </a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>PC/모니터 기획전</h4>
-            <ul>
-              <li>
-                <a href="event.html"
-                  ><img src="image/s_laptop.webp" alt="PC/모니터 기획전"
-                /></a>
-              </li>
-              <li><a href="event.html">데스크탑 및 모니터 20% 할인!</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>스토리지/카메라 기획전</h4>
-            <ul>
-              <li><a href="event.html">외장 SSD 10% 할인 이벤트!</a></li>
-              <li><a href="event.html">NVMe 10% 할인 이벤트!</a></li>
-              <li><a href="event.html">microSD 카드 학생 할인 이벤트!</a></li>
-            </ul>
-          </div>
-
-          <div class="category">
-            <h4>스마트 서비스/앱 기획전</h4>
-            <ul>
-              <li><a href="event.html">SmartThings 할인!</a></li>
-              <li><a href="event.html">S Members/Pay 2년 무상 이벤트!</a></li>
-              <li><a href="event.html">삼성 케어플러스 1년 무료!</a></li>
-              <li><a href="event.html">삼성닷컴 정품 등록시 사은품 증정!</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>온라인 전용 제품 / 혜택 / 할인 이벤트</h4>
-            <ul>
-              <li><a href="event.html">단독 혜택 제품</a></li>
-              <li><a href="event.html">사전예약 / 프로모션 / 럭키박스</a></li>
-              <li><a href="event.html">AI 구독 클럽/ 3개 이상 구독 시 할인!</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 오른쪽 이미지 카드 영역 -->
-        <div class="dropdown-visual grid-style">
-          <div class="grid-card">
-            <img src="image/s_e_1.jpeg" alt="으뜸효율가전도 삼닷!" />
-            <p>으뜸효율가전도 삼닷에서!(혜택)</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_e_2.webp" alt="AI 구독클럽베스트 리뷰어 챌린지" />
-            <p>AI 구독클럽 베스트 리뷰어 챌린지</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_e_3.webp" alt="삼닷 썸머 페스타" />
-            <p>삼닷 썸머 페스타! (혜택)</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_e_4.webp" alt="혼수 고객 특별 혜택" />
-            <p>혼수 고객 특별 혜택</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_e_5.webp" alt="삼성닷컴 명예의전당" />
-            <p>삼성닷컴 명예의전당</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_e_6.webp" alt="신라면세점 웨딩프로젝트" />
-            <p>신라면세점 웨딩프로젝트</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_e_7.webp" alt="설치가이드" />
-            <p>삼성헬스X펫받기 프로젝트</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_e_8.webp" alt="e식품관 그리팅 기획전" />
-            <p>e식품관 그리팅 기획전</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="main-visual dropdown-content" id="aipanel">
-      <div class="dropdown-inner">
-        <!-- 왼쪽 텍스트 메뉴 영역 -->
-        <div class="dropdown-category">
-          <div class="category">
-            <h4>AI 구독 안내</h4>
-            <ul>
-              <li><a href="#">AI 클럽 소개 </a></li>
-              <li><a href="#">AI 서비스 개요 </a></li>
-              <li><a href="#">AI 이용 방법 </a></li>
-              <li><a href="#">AI 비교 혜택</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>요금제/상품</h4>
-            <ul>
-              <li><a href="#">요금제 플랜</a></li>
-              <li><a href="#">구독 가능 기기</a></li>
-              <li><a href="#">액세서리 포함 여부</a></li>
-              <li><a href="#">교체/반납 정책</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>멤버 혜택</h4>
-            <ul>
-              <li><a href="#">파손 보장</a></li>
-              <li><a href="#">AI 전용 액세서리</a></li>
-              <li><a href="#">기기 교체 주기</a></li>
-              <li><a href="#">멤버십 포인트 연동</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>이용 가이드</h4>
-            <ul>
-              <li><a href="#">가입 절차</a></li>
-              <li><a href="#">결제 방식</a></li>
-              <li><a href="#">앱 연동 사용법</a></li>
-              <li><a href="#">구독 상태 확인</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>이벤트</h4>
-            <ul>
-              <li><a href="#">AI 클럽 전용 이벤트</a></li>
-              <li><a href="#">사은품/포인트 증정</a></li>
-              <li><a href="#">베스트 후기 챌린지</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>AI 전용 서비스</h4>
-            <ul>
-              <li><a href="#">갤럭시 AI 기능 소개</a></li>
-              <li><a href="#">실시간 번역 및 캘린더 동기화</a></li>
-              <li><a href="#">AI + 스마트싱스 연동</a></li>
-              <li><a href="#">AI 앱 & 툴 다운로드</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>AI 전용 서비스</h4>
-            <ul>
-              <li>
-                <a href="#"><img src="image/test1.png" alt="" /></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 오른쪽 이미지 카드 영역 -->
-        <div class="dropdown-visual grid-style">
-          <div class="grid-card">
-            <img src="image/s_r_galaxi_ai.webp" alt="갤럭시 AI">
-            <p>갤럭시 AI</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_one_ui.webp" alt="One UI">
-            <p>One UI</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_watch_health.webp" alt="비온 헬스">
-            <p>삼성 헬스</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_vision_ai.webp" alt="넥스트비온비온">
-            <p>NextVion Ai</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_tv_all.webp" alt="삼성 티비 올올">
-            <p>삼성TV의 모든 것</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_bespoke_ai.webp" alt="BEsopke ai">
-            <p>Bespoke Ai의 기술</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_setupguide_ai.webp" alt="설치가이드">
-            <p>설치가이드</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_galaxy_sp.webp" alt="갤럭시의 특별함">
-            <p>갤럭시의 특별함</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="main-visual dropdown-content" id="customerpanel">
-      <div class="dropdown-inner">
-        <!-- 왼쪽 텍스트 메뉴 영역 -->
-        <div class="dropdown-category">
-          <div class="category">
-            <h4>상담 서비스</h4>
-            <ul>
-              <li><a href="#">1:1 문의하기</a></li>
-              <li><a href="#">실시간 채팅 상담</a></li>
-              <li><a href="#">전화 상담 예약</a></li>
-              <li><a href="#">영상 상담(화면공유)</a></li>
-              <li><a href="#">카카오톡 상담 연결</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>서비스 센터</h4>
-            <ul>
-              <li><a href="#">서비스 센터 찾기</a></li>
-              <li><a href="#">방문 예약하기</a></li>
-              <li><a href="#">운영시간 및 휴무 확인</a></li>
-              <li><a href="#">수리 진행 조회</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>제품 지원</h4>
-            <ul>
-              <li><a href="#">제품 등록 및 인증</a></li>
-              <li><a href="#">모델명/시리얼 조회</a></li>
-              <li><a href="#">사용자 설명서 다운로드</a></li>
-              <li><a href="#">드라이버 / 소프트웨어 받기</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>수리 및 보증</h4>
-            <ul>
-              <li><a href="#">A/S 접수 신청</a></li>
-              <li><a href="#">보증기간 확인</a></li>
-              <li><a href="#">수리 요금 안내</a></li>
-              <li><a href="#">무상 점검 프로그램</a></li>
-              <li><a href="#">부품 교체 기준</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>설치 가이드</h4>
-            <ul>
-              <li><a href="#">초기 설정 방법</a></li>
-              <li><a href="#">Wi-Fi/Bluetooth 연결</a></li>
-              <li><a href="#">SmartThings 연동 가이드</a></li>
-              <li><a href="#">AI 기능 사용법</a></li>
-              <li><a href="#">데이터 백업/복구 안내</a></li>
-            </ul>
-          </div>
-
-          <div class="category">
-            <h4>자주 묻는 질문 (FAQ)</h4>
-            <ul>
-              <li><a href="#">제품별 FAQ (스마트폰, 가전 등)</a></li>
-              <li><a href="#">결제/배송/환불 문의</a></li>
-              <li><a href="#">계정 및 로그인 문제</a></li>
-              <li><a href="#">AI 기능 관련 자주 묻는 질문</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>고객 혜택</h4>
-            <ul>
-              <li><a href="#">정품 등록 사은품 안내</a></li>
-              <li><a href="#">중고 보상 프로그램</a></li>
-              <li><a href="#">환경 수거 서비스</a></li>
-              <li><a href="#">멤버십 포인트/혜택 문의</a></li>
-            </ul>
-          </div>
-          <div class="category">
-            <h4>개인정보 문의</h4>
-            <ul>
-              <li><a href="#">삼성 계정 로그인 문제 해결</a></li>
-              <li><a href="#">비밀번호 재설정</a></li>
-              <li><a href="#">2단계 인증 설정</a></li>
-              <li><a href="#">분실/도난 기기 원격 잠금</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 오른쪽 이미지 카드 영역 -->
-        <div class="dropdown-visual grid-style">
-          <div class="grid-card">
-            <img src="image/s_r_galaxi_ai.webp" alt="갤럭시 AI">
-            <p>갤럭시 AI</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_one_ui.webp" alt="One UI">
-            <p>One UI</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_watch_health.webp" alt="넥스트비온 헬스">
-            <p>넥스트비온 헬스</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_vision_ai.webp" alt="NextVion Ai">
-            <p>NextVion Ai</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_tv_all.webp" alt="넥스트비온 TV의 모든 것">
-            <p>넥스트비온 TV의 모든 것</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_bespoke_ai.webp" alt="BEsopke ai">
-            <p>Bespoke Ai의 기술</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_setupguide_ai.webp" alt="설치가이드">
-            <p>설치가이드</p>
-          </div>
-          <div class="grid-card">
-            <img src="image/s_r_galaxy_sp.webp" alt="갤럭시의 특별함">
-            <p>갤럭시의 특별함</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="main-visual dropdown-content" id="searchpanel">
-      <div class="search-panel-inner">
-        <div class="search-header">
-          <div class="search-input-container">
-            <input
-              type="text"
-              id="search-input-value"
-              placeholder="검색어를 입력하세요"
-            />
-
-            <!-- 🔍 이미지 버튼 -->
-            <button id="search-submit-btn" class="search-submit-icon">
-              <img src="image/ssearch1.png" alt="검색" />
-            </button>
-
-            <!-- ✕ 텍스트 버튼 -->
-            <button id="search-close-btn" class="search-close-icon">✕</button>
-          </div>
-        </div>
-      </div>
-      <hr />
-      <div class="search-content">
-        <div class="popular-keywords">
-          <h4>인기 검색어</h4>
-          <hr />
-          <br />
-          <ul>
-            <li>갤럭시 Z 폴드7</li>
-            <li>갤럭시 S25 엣지</li>
-            <li>에어컨</li>
-            <li>버즈</li>
-          </ul>
-        </div>
-        <div class="search-recommend">
-          <h4>추천</h4>
-          <br />
-          <div class="product-grid">
-            <div class="product-card">
-              <a href="#">
-                <img src="image/desktop1.webp" alt="제품1" />
-                <p><strong>데스크탑 Tower Core™ i9 / 1TB NVMe SSD</strong></p>
-                <p>혜택가<br /><span class="price">3,160,000원</span></p>
-              </a>
-            </div>
-            <div class="product-card">
-              <a href="#">
-                <img src="image/desktop2.webp" alt="제품2" />
-                <p><strong>데스크탑 Tower Core™ i5 / 512GB NVMe SSD</strong></p>
-                <p>혜택가<br /><span class="price">1,470,000원</span></p>
-              </a>
-            </div>
-            <div class="product-card">
-              <a href="#">
-                <img src="image/desktop3.webp" alt="제품3" />
-                <p><strong>데스크탑 Slim Core™ i5 / 512GB NVMe SSD</strong></p>
-                <p>혜택가<br /><span class="price">1,325,000원</span></p>
-              </a>
-            </div>
-            <div class="product-card">
-              <a href="#">
-                <img src="image/desktop4.webp" alt="제품4" />
-                <p><strong>데스크탑 Tower Core™ i7 / 512GB NVMe SSD</strong></p>
-                <p>혜택가<br /><span class="price">2,800,000원</span></p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- 콘텐츠 -->
-    <div class="content-wrapper fade-in">
-      <div class="content-box fade-in">
-        <div class="thumb"><img src="image/s_c_galaxy1.jpg" alt="" /></div>
-        <h4>겔럭시 25 Ultra</h4>
-        <p>New 갤럭시 AI 구독클럽 월 5,900원으로 받아가는 다양한 혜택!</p>
-        <div class="highlight-buttons-small">
-          <a href="#" class="btn-benefit-small">구매혜택</a>
-        </div>
-      </div>
-      <div class="content-box fade-in">
-        <div class="thumb"><img src="image/s_c_galaxy2.jpg" alt="" /></div>
-        <h4>갤럭시 S25 Edge</h4>
-        <p>
-          New 갤럭시 Edge를 알뜰한 가격에 구입 월 8,000원으로 받아가는 다양한
-          혜택!
-        </p>
-        <div class="highlight-buttons-small">
-          <a href="#" class="btn-benefit-small">구매혜택</a>
-        </div>
-      </div>
-      <div class="content-box fade-in">
-        <div class="thumb"><img src="image/s_c_galaxy3.jpg" alt="" /></div>
-        <h4>갤럭시 탭 10</h4>
-        <p>
-          갤럭시 탭을 구독으로 월 9000원에 구입해서 다양한 혜택으로 만나보자!
-        </p>
-        <div class="highlight-buttons-small">
-          <a href="#" class="btn-benefit-small">구매혜택</a>
-        </div>
-      </div>
-      <div class="content-box fade-in">
-        <div class="thumb"><img src="image/s_c_galaxy4.jpg" alt="" /></div>
-        <h4>갤럭시 워치 25</h4>
-        <p>
-          갤럭시 워치로 매일 건강을? 월 8000원으로 건강 구독 혜택을 받아보자!
-        </p>
-        <div class="highlight-buttons-small">
-          <a href="#" class="btn-benefit-small">구매혜택</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 콘텐츠 확장 영역 -->
-    <div class="content2">
-      <div class="highlight-banner">
-        <div class="highlight-image fade-in">
-          <img src="image/s_m_event2.jpg" alt="Galaxy S25 제품 이미지" />
-
-          <!-- ✅ 이미지 위에 겹쳐 표시할 버튼 영역 -->
-          <div class="highlight-overlay-buttons">
-            <a href="#" class="btn-learn">더 알아보기</a>
-            <a href="#" class="btn-benefit">구매 혜택 보기</a>
-          </div>
-        </div>
-      </div>
-    </div>
-     <!-- 콘텐츠2 -->
-    <div class="content-wrapper">
-      <div class="content-box fade-in">
-        <div class="thumb"><img src="image/s_c2_tv1.webp" alt="NEO QLED" /></div>
-        <h4>Neo QLED</h4>
-        <p>New 갤럭시 AI 구독클럽 월 5,900원으로 받아가는 다양한 혜택!</p>
-        <div class="highlight-buttons-small">
-          <a href="#" class="btn-benefit-small">구매혜택</a>
-        </div>
-      </div>
-      <div class="content-box fade-in">
-        <div class="thumb"><img src="image/s_c2_tv2.webp" alt="OLED" /></div>
-        <h4>OLED</h4>
-        <p>
-          New 갤럭시 Edge를 알뜰한 가격에 구입 월 8,000원으로 받아가는 다양한
-          혜택!
-        </p>
-        <div class="highlight-buttons-small">
-          <a href="#" class="btn-benefit-small">구매혜택</a>
-        </div>
-      </div>
-      <div class="content-box fade-in">
-        <div class="thumb"><img src="image/s_c2_tv3.webp" alt="The Frame" /></div>
-        <h4>The Frame</h4>
-        <p>
-          갤럭시 탭을 구독으로 월 9000원에 구입해서 다양한 혜택으로 만나보자!
-        </p>
-        <div class="highlight-buttons-small">
-          <a href="#" class="btn-benefit-small">구매혜택</a>
-        </div>
-      </div>
-      <div class="content-box fade-in">
-        <div class="thumb"><img src="image/s_c2_tv4.webp" alt="무빙스타일" /></div>
-        <h4>무빙스타일</h4>
-        <p>
-          갤럭시 워치로 매일 건강을? 월 8000원으로 건강 구독 혜택을 받아보자!
-        </p>
-        <div class="highlight-buttons-small">
-          <a href="#" class="btn-benefit-small">구매혜택</a>
-        </div>
-      </div>
-    </div>
-    <div class="content2">
-  <div class="highlight-banner">
-    <div class="highlight-image fade-in">
-      <img src="image/s_m_event3.webp" alt="Galaxy S25 제품 이미지" />
-      <!-- ✅ 이미지 위에 겹쳐 표시할 버튼 영역 -->
-      <div class="highlight-overlay-buttons1">
-        <h2>2025 QLED TV</h2>
-        <p>으뜸효율가전도 삼닷에서 만나보세요</p>
-        <div class="button-row">
-          <a href="#" class="btn-learn1">더 알아보기</a>
-          <a href="#" class="btn-benefit1">구매 혜택 보기</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
- <!-- 슬라이드 콘텐츠 영역 1-->
-    <div class="slider-wrapper">
-      <button class="slider-btn prev-btn">&#10094;</button>
-      <div class="slider-content">
-        <div class="slider-item fade-in">
-          <a href="#"><img src="image/s_h_r1.webp" alt="Bespoke AI 원바디 런칭" /></a>
-          <h4>Bespoke AI 원바디 런칭</h4>
-        </div>
-        <div class="slider-item fade-in">
-          <a href="#"><img src="image/s_h_aircon.webp" alt="AI 무풍콤보 벽걸이" /></a>
-          <h4>AI 무풍콤보 벽걸이</h4>
-        </div>
-        <div class="slider-item fade-in">
-          <a href="#"><img src="image/s_h_aircleaner.webp" alt="Infinite AI 공기청정기" /></a>
-          <h4>Infinite AI 공기청정기</h4>
-        </div>
-        <div class="slider-item fade-in">
-          <a href="#"><img src="image/s_h_aird.webp" alt="Bespoke AI 에어드레서" /></a>
-          <h4>Bespoke AI 에어드레서</h4>
-        </div>
-         <div class="slider-item fade-in">
-          <a href="#"><img src="image/s_h_aiz.webp" alt="Bespoke AI 제트" /></a>
-          <h4>Bespoke AI 제트</h4>
-        </div>
-         <div class="slider-item fade-in">
-          <a href="#"><img src="image/s_h_crean.webp" alt="Bespoke AI 스팀" /></a>
-          <h4>Bespoke AI 스팀</h4>
-        </div>
-         <div class="slider-item fade-in">
-          <a href="#"><img src="image/s_h_inverter.webp" alt="인버터 제습기" /></a>
-          <h4>인버터 제습기</h4>
-        </div>
-         <div class="slider-item fade-in">
-          <a href="#"><img src="image/s_h_system.webp" alt="무풍 시스템에어컨" /></a>
-          <h4>무풍 시스템에어컨</h4>
-        </div>
-      </div>
-      <button class="slider-btn next-btn">&#10095;</button>
-    </div>
-       <div class="content2">
-  <div class="highlight-banner">
-    <div class="highlight-image fade-in">
-      <img src="image/s_m_event4.png" alt="Galaxy S25 제품 이미지" />
-      <!-- ✅ 이미지 위에 겹쳐 표시할 버튼 영역 -->
-      <div class="highlight-overlay-buttons1">
-        <h2>
-          Bespoke AI<br>
-          무풍콤보 갤러리
-        </h2>
-        <p>으뜸효율가전도 삼닷에서 만나보세요</p>
-        <div class="button-row">
-          <a href="#" class="btn-learn1">더 알아보기</a>
-          <a href="#" class="btn-benefit1">구매 혜택 보기</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
- <div class="content-wrapper">
-      <div class="content-box fade-in">
-        <div class="thumb"><img src="image/s_l_kimch.webp" alt="Bespoke AI 김치플러스" /></div>
-        <h4>Bespoke AI 김치플러스</h4>
-        <p>Bespoke AI 김치플러스 월 29,000원으로 받아가는 다양한 혜택!</p>
-        <div class="highlight-buttons-small">
-          <a href="#" class="btn-benefit-small">구매혜택</a>
-        </div>
-      </div>
-      <div class="content-box fade-in">
-        <div class="thumb"><img src="image/s_l_induction.webp" alt="Bespoke AI 인덕션" /></div>
-        <h4>Bespoke AI 인덕션</h4>
-        <p>
-          Bespoke AI 인덕션 월 9,000원으로 받아가는 다양한 혜택!
-        </p>
-        <div class="highlight-buttons-small">
-          <a href="#" class="btn-benefit-small">구매혜택</a>
-        </div>
-      </div>
-      <div class="content-box fade-in">
-        <div class="thumb"><img src="image/s_l_dishw.webp" alt="Bespoke AI 식기세척기" /></div>
-        <h4>Bespoke AI 식기세척기</h4>
-        <p>
-          Bespoke AI 식기세척기 월 19,000원으로 받아가는 다양한 혜택!
-        </p>
-        <div class="highlight-buttons-small">
-          <a href="#" class="btn-benefit-small">구매혜택</a>
-        </div>
-      </div>
-      <div class="content-box fade-in">
-        <div class="thumb"><img src="image/s_l_cleanw.webp" alt="Bespoke 정수기" /></div>
-        <h4>Bespoke 정수기</h4>
-        <p>
-          Bespoke 정수기 월 5,900원으로 받아가는 다양한 혜택!
-        </p>
-        <div class="highlight-buttons-small">
-          <a href="#" class="btn-benefit-small">구매혜택</a>
-        </div>
-      </div>
-    </div>
-           <div class="content2">
-  <div class="highlight-banner">
-    <div class="highlight-image fade-in">
-      <img src="image/s_m_event5.jpg" alt="Galaxy S25 제품 이미지" />
-      <!-- ✅ 이미지 위에 겹쳐 표시할 버튼 영역 -->
-      <div class="highlight-overlay-buttons1">
-        <h2>
-          Bespoke AI 하이브리드
-        </h2>
-        <p>으뜸효율가전도 삼닷에서 만나보세요</p>
-        <div class="button-row">
-          <a href="#" class="btn-learn1">더 알아보기</a>
-          <a href="#" class="btn-benefit1">구매 혜택 보기</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    <!-- 컨텐츠 4 -->
-<div class="custom-recommend-wrapper">
-  <h3 class="custom-recommend-title">당신에게 딱 맞는 추천제품</h3>
-  <div class="custom-recommend-slider" id="customSlider">
-    <div class="custom-recommend-track" id="customTrack">
-      <div class="custom-recommend-card fade-in">
-        <img src="image/s_c2_tv1.webp" alt="QLED 65형 스마트TV">
-        <p class="product-name">QLED 65형 스마트TV</p>
-        <p class="product-price">혜택가<br><strong>3,190,000원</strong></p>
-        <button class="hover-btn">자세히 보기</button>
-      </div>
-      <div class="custom-recommend-card">
-        <img src="image/s_air_dress.webp" alt="Bespoke AI 에어드레서">
-        <p class="product-name">Bespoke AI 에어드레서</p>
-        <p class="product-price">혜택가<br><strong>1,599,000원</strong></p>
-        <button class="hover-btn">자세히 보기</button>
-      </div>
-      <div class="custom-recommend-card">
-        <img src="image/s_audio.webp" alt="Bespoke AI 오디오">
-        <p class="product-name">Bespoke AI 오디오</p>
-        <p class="product-price">혜택가<br><strong>449,000원</strong></p>
-        <button class="hover-btn">자세히 보기</button>
-      </div>
-      <div class="custom-recommend-card">
-        <img src="image/desktop4.webp" alt="삼성 데스크탑">
-        <p class="product-name">삼성 데스크탑</p>
-        <p class="product-price">혜택가<br><strong>2,290,000원</strong></p>
-        <button class="hover-btn">자세히 보기</button>
-      </div>
-      <div class="custom-recommend-card">
-        <img src="image/s_h_system.webp" alt="무풍 시스템에어컨">
-        <p class="product-name">무풍 시스템에어컨 116.3㎡ 5실</p>
-        <p class="product-price">혜택가<br><strong>9,135,000원</strong></p>
-        <button class="hover-btn">자세히 보기</button>
-      </div>
-      <div class="custom-recommend-card">
-        <img src="image/s_h_inverter.webp" alt="인버터 제습기">
-        <p class="product-name">인버터 제습기</p>
-        <p class="product-price">혜택가<br><strong>990,000원</strong></p>
-        <button class="hover-btn">자세히 보기</button>
-      </div>
-      <div class="custom-recommend-card">
-        <img src="image/s_c_uhd.webp" alt="UHD 4K 스마트TV">
-        <p class="product-name">UHD 4K 스마트TV</p>
-        <p class="product-price">혜택가<br><strong>890,000원</strong></p>
-        <button class="hover-btn">자세히 보기</button>
-      </div>
-      <div class="custom-recommend-card">
-        <img src="image/s_c_galaxy1.jpg" alt="갤럭시 S25 엣지">
-        <p class="product-name">갤럭시 S25 엣지</p>
-        <p class="product-price">혜택가<br><strong>1,490,000원</strong></p>
-        <button class="hover-btn">자세히 보기</button>
-      </div>
-      <div class="custom-recommend-card">
-        <img src="image/s_c_galaxy1.jpg" alt="갤럭시 S25 플러스">
-        <p class="product-name">갤럭시 S25 플러스</p>
-        <p class="product-price">혜택가<br><strong>1,890,000원</strong></p>
-        <button class="hover-btn">자세히 보기</button>
-      </div>
-      <div class="custom-recommend-card">
-        <img src="image/s_laundry.webp" alt="Bespoke AI 세탁기">
-        <p class="product-name">Bespoke AI 세탁기</p>
-        <p class="product-price">혜택가<br><strong>4,290,000원</strong></p>
-        <button class="hover-btn">자세히 보기</button>
-      </div>
-      <div class="custom-recommend-card">
-        <img src="image/s_h_crean.webp" alt="Bespoke AI 스팀">
-        <p class="product-name">Bespoke AI 스팀</p>
-        <p class="product-price">혜택가<br><strong>1,290,000원</strong></p>
-        <button class="hover-btn">자세히 보기</button>
-      </div>
-      <div class="custom-recommend-card">
-        <img src="image/s_haman.webp" alt="하만 오디오">
-        <p class="product-name">하만 오디오</p>
-        <p class="product-price">혜택가<br><strong>1,990,000원</strong></p>
-        <button class="hover-btn">자세히 보기</button>
-      </div>
-    </div>
-  </div>
-  <div class="custom-recommend-controls">
-    <div class="custom-progress-bar">
-      <div class="custom-progress-fill" id="customProgressFill"></div>
-    </div>
-    <div class="custom-recommend-arrows">
-      <button class="custom-arrow-btn" id="customPrevBtn">&#10094;</button>
-      <button class="custom-arrow-btn" id="customNextBtn">&#10095;</button>
-    </div>
-  </div>
-</div>
-<!-- 컨텐츠 5 (복제된 추천제품 영역) -->
-
-<div class="custom-recommend-wrapper1">
-  <h3 class="custom-recommend-title1">넥스트비온의 다양한 스토리</h3>
-  <div class="custom-recommend-slider1" id="customSlider1">
-    <div class="custom-recommend-track1" id="customTrack1">
-      <div class="custom-recommend-card1 fade-in">
-        <img src="image/s_c5_gai1.webp" alt="당신의 하루를 더 편리하게 하는 완성하는 AI">
-        <p class="product-name1">당신의 하루를<br>더 편리하게 하는 완성하는 AI</p>
-        <button class="hover-btn1">자세히 보기</button>
-      </div>
-      <div class="custom-recommend-card1">
-        <img src="image/s_c5_story.jpg" alt="갤럭시가 특별한 이유">
-        <p class="product-name1">갤럭시가 특별한 이유</p>
-        <button class="hover-btn1">자세히 보기</button>
-      </div>
-      <div class="custom-recommend-card1">
-        <img src="image/s_c5_gai.webp" alt="갤럭시 AI 솔루션">
-        <p class="product-name1">갤럭시 AI 솔루션</p>
-        <button class="hover-btn1">자세히 보기</button>
-      </div>
-      <div class="custom-recommend-card1">
-        <img src="image/s_c5_four.webp" alt="갤럭시로 스위치">
-        <p class="product-name1">갤럭시로 스위치</p>
-        <button class="hover-btn1">자세히 보기</button>
-      </div>
-      <div class="custom-recommend-card1">
-        <img src="image/s_c5_favori.webp" alt="You privacy.Secure">
-        <p class="product-name1">You privacy.Secure</p>
-        <button class="hover-btn1">자세히 보기</button>
-      </div>
-      <div class="custom-recommend-card1">
-        <img src="image/s_e_1.jpeg" alt="으뜸가전 솔루션">
-        <p class="product-name1">으뜸가전 솔루션</p>
-        <button class="hover-btn1">자세히 보기</button>
-      </div>
-    </div>
-  </div>
-  <div class="custom-recommend-controls1">
-    <div class="custom-progress-bar1">
-      <div class="custom-progress-fill1" id="customProgressFill1"></div>
-    </div>
-    <div class="custom-recommend-arrows1">
-      <button class="custom-arrow-btn1" id="customPrevBtn1">&#10094;</button>
-      <button class="custom-arrow-btn1" id="customNextBtn1">&#10095;</button>
-    </div>
-  </div>
-</div>
-<!-- 컨텐츠 5 end -->
-    <!-- 푸터 -->
-    <footer class="footer">
-      <div class="footer-columns">
-        <div class="footer-column">
-          <h4>가전 제품</h4>
-          <ul>
-            <li><a href="#">갤럭시 스마트폰</a></li>
-            <li><a href="#">갤럭시 탭</a></li>
-            <li><a href="#">갤럭시 워치</a></li>
-            <li><a href="#">갤럭시 버즈</a></li>
-            <li><a href="#">갤럭시 북</a></li>
-            <li><a href="#">모니터</a></li>
-            <li><a href="#">프린터</a></li>
-            <li><a href="#">메모리/스토리지</a></li>
-            <li><a href="#">TV</a></li>
-            <li><a href="#">라이프스타일 TV</a></li>
-            <li><a href="#">프로젝터</a></li>
-            <li><a href="#">삼성 오디오</a></li>
-            <li><a href="#">하만 오디오</a></li>
-            <li><a href="#">냉장고</a></li>
-            <!-- 필요시 추가 -->
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>생활 제품</h4>
-          <ul>
-            <li><a href="#">김치냉장고</a></li>
-            <li><a href="#">인덕션</a></li>
-            <li><a href="#">식기세척기</a></li>
-            <li><a href="#">세탁기</a></li>
-            <li><a href="#">건조기</a></li>
-            <li><a href="#">에어드레서</a></li>
-            <li><a href="#">에어컨</a></li>
-            <li><a href="#">시스템 에어컨</a></li>
-            <li><a href="#">공기청정기</a></li>
-            <li><a href="#">청소기</a></li>
-            <li><a href="#">스마트싱스</a></li>
-            <li><a href="#">소모품/액세서리</a></li>
-            <li><a href="#">데이코↗</a></li>
-            <!-- 필요시 추가 -->
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>기획전/혜택</h4>
-          <ul>
-            <li><a href="#">AI 구독클럽</a></li>
-            <li><a href="#">아울렛</a></li>
-            <li><a href="#">스토어 진열 할인 제품</a></li>
-            <li><a href="#">e식품관</a></li>
-            <li><a href="#">펫 케어 스토어</a></li>
-            <li><a href="#">홈클래스</a></li>
-            <li><a href="#">삼닷 Live</a></li>
-            <li><a href="#">갤럭시와 함께하는 AI 클래스</a></li>
-            <li><a href="#">닷컴 회원 혜택</a></li>
-            <li><a href="#">카드 혜택</a></li>
-            <li><a href="#">비즈니스↗</a></li>
-            <li><a href="#">갤럭시 캠퍼스↗</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>고객서비스</h4>
-          <ul>
-            <li><a href="#">매뉴얼 & 다운로드</a></li>
-            <li><a href="#">삼성닷컴 FAQ</a></li>
-            <li><a href="#">삼성스토어</a></li>
-            <li><a href="#">삼성스토어 찾기</a></li>
-            <li><a href="#">서비스센터 찾기</a></li>
-            <li><a href="#">넥스트비온 케어플러스 모바일/PC</a></li>
-            <li><a href="#">넥스트비온 케어플러스 가전/TV</a></li>
-            <li><a href="#">오늘보장&시간 맞춤 설치 서비스</a></li>
-            <li><a href="#">넥스트비온 멤버십↗</a></li>
-            <li><a href="#">비즈니스 협력제안↗</a></li>
-            <li><a href="#">E-카탈로그↗</a></li>
-            <li><a href="#">넥스트비온 경험조사↗</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>지속가능경영</h4>
-          <ul>
-            <li><a href="#">환경</a></li>
-            <li><a href="#">보안 & 개인정보 보호</a></li>
-            <li><a href="#">접근성</a></li>
-            <li><a href="#">다양성 · 형평성 · 포용성</a></li>
-            <li><a href="#">사회공헌↗</a></li>
-            <li><a href="#">Corporate Sustainability↗</a></li>
-          </ul>
-          <br>
-          <h4>윤리&준법경영</h4>
-          <ul>
-            <li><a href="#">경영원칙↗</a></li>
-            <li><a href="#">부정제보↗</a></li>
-            <li><a href="#">법위반제보↗</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>회사소개</h4>
-          <ul>
-            <li><a href="#">기업정보</a></li>
-            <li><a href="#">사업정보</a></li>
-            <li><a href="#">채용</a></li>
-            <li><a href="#">투자자 정보</a></li>
-            <li><a href="#">뉴스룸↗</a></li>
-            <li><a href="#">윤리</a></li>
-            <li><a href="#">디자인 넥스트비온↗</a></li>
-            <li><a href="#">배당조회↗</a></li>
-            <li><a href="#">공지사항</a></li>
-          </ul>
-          <br>
-          <h4>부가정보</h4>
-          <ul>
-            <li><a href="#">협력회사 고충 건의↗</a></li>
-            <li><a href="#">폐카트리지 회수신청</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>
-          Nextvion 주식회사 대표이사 : 양진섭 ｜ 사업자등록번호 : 000-00-00000
-        </p>
-        <p>
-          주소 : 화성구 화성시 화성리 화성이 000 (화성동) ｜ 통신판매업 신고 :
-          0000-화성-0000
-        </p>
-        <p>
-          고객센터: 000-0000 ｜ © 2025 Nextvion Electronics Co., Ltd. All rights
-          reserved.
-        </p>
-      </div>
-    </footer>
-    <!-- 위로가기 버튼 -->
-    <button id="scrollToTopBtn" style="display:none;" aria-label="맨 위로 이동">
-      ▲
-    </button>
-    <script src="js/s_script.js"></script>
-</script>
-<script>
-// 데스크탑 로그인/카트 아이콘 색상 자동 변경 (흰색 배경에서는 항상 검정)
-const loginImg = document.getElementById('loginimgdesktop');
-const cartImg = document.getElementById('cartimgdesktop');
-function setDesktopIcons(color) {
-  loginImg.src = color === 'black' ? 'image/login_black.png' : 'image/login_white.png';
-  cartImg.src = color === 'black' ? 'image/cart_black.png' : 'image/cart_white.png';
-}
-
-function updateDesktopIconsByDropdown() {
-  // 드롭다운 패널이 보이면 검정, 아니면 흰색
-  const dropdowns = [
-    document.getElementById('dropdownpanel'),
-    document.getElementById('promopanel'),
-    document.getElementById('aipanel'),
-    document.getElementById('customerpanel')
-  ];
-  const isAnyDropdownVisible = dropdowns.some(panel => {
-    return panel && window.getComputedStyle(panel).display !== 'none';
-  });
-  setDesktopIcons(isAnyDropdownVisible ? 'black' : 'white');
-}
-
-['menutoggle', 'promotoggle', 'aitoggle', 'customertoggle'].forEach(id => {
-  const el = document.getElementById(id);
-  el.addEventListener('mouseenter', updateDesktopIconsByDropdown);
-  el.addEventListener('mouseleave', updateDesktopIconsByDropdown);
-});
-['dropdownpanel', 'promopanel', 'aipanel', 'customerpanel'].forEach(id => {
-  const panel = document.getElementById(id);
-  panel.addEventListener('mouseenter', updateDesktopIconsByDropdown);
-  panel.addEventListener('mouseleave', updateDesktopIconsByDropdown);
-});
-</script>
-  </body>
 </html>

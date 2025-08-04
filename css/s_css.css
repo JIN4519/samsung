@@ -1063,10 +1063,8 @@ ul.gnb li a {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  text-decoration: none;
   height: auto;
   margin-bottom: 20px;
-  /* ✅ 아래 여백 추가 */
 }
 
 .product-card img {
@@ -1079,6 +1077,10 @@ ul.gnb li a {
 .product-card p {
   font-size: 14px;
   margin: 6px 0;
+}
+
+.product-card a{
+  text-decoration: none;
 }
 
 .product-card .price {
@@ -1810,7 +1812,7 @@ ul.gnb li a {
   }
   .footer-column {
     min-width: 120px;
-    max-width: 1fr;
+    max-width: 300px;
     padding: 16px 6px;
   }
 }
